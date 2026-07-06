@@ -1,4 +1,10 @@
 {
-	"$comment": "Puzzle answers (quotations to be enciphered). SPEC §4. Populated in a later TODO.",
-	"puzzles": []
+	"$comment": "Puzzle answers (quotations to be enciphered). SPEC §4.",
+	"puzzles": [
+		{
+			"id": "lenny-duchovny",
+			"text": "Duchovny does not deserve treats nor place on couch.",
+			"attribution": "Lenny"
+		}
+	]
 }

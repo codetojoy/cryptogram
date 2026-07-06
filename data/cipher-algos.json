@@ -1,4 +1,10 @@
 {
-	"$comment": "Cipher algorithms (TBD). SPEC §4. Populated in a later TODO.",
-	"algorithms": []
+	"$comment": "Cipher algorithms. SPEC §4. `seed` deterministically fixes the substitution alphabet.",
+	"algorithms": [
+		{
+			"id": "seeded-substitution",
+			"type": "substitution",
+			"seed": 1234
+		}
+	]
 }
