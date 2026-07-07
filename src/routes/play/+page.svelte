@@ -3,7 +3,7 @@
 	import BackLink from '$lib/ui/BackLink.svelte';
 	import Keypad from '$lib/ui/Keypad.svelte';
 	import { isLetter } from '$lib/domain/cipher.js';
-	import { defaultPuzzle, defaultAlgorithm } from '$lib/data/puzzles.js';
+	import { puzzles, defaultAlgorithm } from '$lib/data/puzzles.js';
 	import {
 		startGame,
 		setGuess,
@@ -15,7 +15,7 @@
 
 	type Cell = { letter: true; cipher: string } | { letter: false; ch: string };
 
-	// Group the ciphertext into words (arrays of cells) so a word never breaks
+	// Group a cipher string into words (arrays of cells) so a word never breaks
 	// across lines; spaces become the gaps between word groups.
 	function buildWords(text: string): Cell[][] {
 		const words: Cell[][] = [];
@@ -34,10 +34,13 @@
 		return words;
 	}
 
-	let game = $state(startGame(defaultPuzzle, defaultAlgorithm));
+	let index = $state(0);
+	let game = $state(startGame(puzzles[0], defaultAlgorithm));
 	let selected = $state<string | null>(null);
+	let showHint = $state(false);
 
 	const words = $derived(buildWords(game.ciphertext));
+	const authorWords = $derived(buildWords(game.attributionCiphertext));
 	const solved = $derived(isSolved(game));
 	const used = $derived(new Set(Object.values(game.guesses)));
 
@@ -58,9 +61,20 @@
 		game = clearGuess(game, selected);
 	}
 
-	function resetGame() {
-		game = startGame(defaultPuzzle, defaultAlgorithm);
+	/** Load a puzzle by index and reset all per-puzzle UI state. */
+	function loadPuzzle(i: number) {
+		index = ((i % puzzles.length) + puzzles.length) % puzzles.length;
+		game = startGame(puzzles[index], defaultAlgorithm);
 		selected = null;
+		showHint = false;
+	}
+
+	function resetGame() {
+		loadPuzzle(index);
+	}
+
+	function nextPuzzle() {
+		loadPuzzle(index + 1);
 	}
 
 	function clearBoard() {
@@ -90,12 +104,38 @@
 
 <svelte:window onkeydown={onKeydown} />
 
+{#snippet letters(wordList: Cell[][])}
+	{#each wordList as word, wi (wi)}
+		<span class="word">
+			{#each word as cell, ci (ci)}
+				{#if cell.letter}
+					<button
+						type="button"
+						class="cell"
+						class:active={selected === cell.cipher}
+						class:filled={!!game.guesses[cell.cipher]}
+						disabled={solved}
+						aria-label={`Cipher letter ${cell.cipher}, ${game.guesses[cell.cipher] ? 'guess ' + game.guesses[cell.cipher] : 'no guess'}`}
+						aria-pressed={selected === cell.cipher}
+						onclick={() => selectCell(cell.cipher)}
+					>
+						<span class="guess">{game.guesses[cell.cipher] ?? ''}</span>
+						<span class="cipher">{cell.cipher}</span>
+					</button>
+				{:else}
+					<span class="sym" aria-hidden="true">{cell.ch}</span>
+				{/if}
+			{/each}
+		</span>
+	{/each}
+{/snippet}
+
 <main>
 	<BackLink href="{base}/" label="Home" />
 
 	<header>
 		<h1>Play</h1>
-		<p class="subtitle">Every letter stands for another. Crack the substitution to reveal the quote.</p>
+		<p class="subtitle">Every letter stands for another. Crack the substitution to reveal the quote — and who said it.</p>
 	</header>
 
 	{#if solved}
@@ -115,34 +155,37 @@
 	{/if}
 
 	<section class="board" class:done={solved} aria-label="Cryptogram puzzle">
-		{#each words as word, wi (wi)}
-			<span class="word">
-				{#each word as cell, ci (ci)}
-					{#if cell.letter}
-						<button
-							type="button"
-							class="cell"
-							class:active={selected === cell.cipher}
-							class:filled={!!game.guesses[cell.cipher]}
-							disabled={solved}
-							aria-label={`Cipher letter ${cell.cipher}, ${game.guesses[cell.cipher] ? 'guess ' + game.guesses[cell.cipher] : 'no guess'}`}
-							aria-pressed={selected === cell.cipher}
-							onclick={() => selectCell(cell.cipher)}
-						>
-							<span class="guess">{game.guesses[cell.cipher] ?? ''}</span>
-							<span class="cipher">{cell.cipher}</span>
-						</button>
-					{:else}
-						<span class="sym" aria-hidden="true">{cell.ch}</span>
-					{/if}
-				{/each}
-			</span>
-		{/each}
+		{@render letters(words)}
 	</section>
+
+	<div class="byline board" class:done={solved} aria-label="Quote author (enciphered)">
+		<span class="sym dash" aria-hidden="true">—</span>
+		{@render letters(authorWords)}
+	</div>
+
+	<div class="reveal">
+		<button
+			type="button"
+			class="text-button"
+			aria-expanded={showHint}
+			onclick={() => (showHint = !showHint)}
+		>
+			{showHint ? 'Hide hint' : 'Show hint'}
+		</button>
+		{#if showHint}
+			<dl class="clue">
+				<dt>Category</dt>
+				<dd>{game.category}</dd>
+				<dt>Hint</dt>
+				<dd>{game.hint}</dd>
+			</dl>
+		{/if}
+	</div>
 
 	{#if solved}
 		<div class="actions">
 			<button type="button" class="big-button" onclick={resetGame}>Play again</button>
+			<button type="button" class="big-button" onclick={nextPuzzle}>Next puzzle</button>
 		</div>
 	{:else}
 		<Keypad {selected} {used} onletter={assign} onclear={clearSelected} />
@@ -150,6 +193,7 @@
 			<button type="button" class="text-button" onclick={clearBoard} disabled={Object.keys(game.guesses).length === 0}>
 				Clear all
 			</button>
+			<button type="button" class="text-button" onclick={nextPuzzle}>Next puzzle</button>
 		</div>
 	{/if}
 </main>
@@ -279,6 +323,54 @@
 		visibility: hidden;
 	}
 
+	/* The enciphered author line: same cipher cells as the quote, set apart as a byline. */
+	.byline {
+		gap: 0.35rem 0.75rem;
+		margin-top: -0.75rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.dash {
+		align-self: flex-end;
+		padding-bottom: 0.1rem;
+		color: var(--muted);
+	}
+
+	.reveal {
+		text-align: center;
+		margin-bottom: 1.5rem;
+	}
+
+	.clue {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		gap: 0.25rem 0.75rem;
+		max-width: 28rem;
+		margin: 0.75rem auto 0;
+		padding: 0.75rem 1rem;
+		border: 1px solid var(--rule);
+		border-left: 4px solid var(--accent);
+		border-radius: 6px;
+		background: var(--panel);
+		text-align: left;
+	}
+
+	.clue dt {
+		font-family: var(--sans);
+		font-weight: 700;
+		font-size: 0.8rem;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		color: var(--muted);
+		align-self: baseline;
+	}
+
+	.clue dd {
+		margin: 0;
+		font-family: var(--serif);
+		color: var(--ink);
+	}
+
 	.banner {
 		border: 1px solid var(--rule);
 		border-left: 4px solid var(--good);
@@ -312,6 +404,8 @@
 
 	.actions {
 		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem 1.5rem;
 		justify-content: center;
 		margin-top: 1.25rem;
 	}

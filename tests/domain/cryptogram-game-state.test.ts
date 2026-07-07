@@ -10,13 +10,19 @@ import {
 	type Puzzle,
 	type CipherAlgorithm
 } from '$lib/domain/cryptogram-game-state.js';
-import { invert, buildSubstitution } from '$lib/domain/cipher.js';
+import { invert, buildSubstitution, isLetter } from '$lib/domain/cipher.js';
+import { hashString } from '$lib/domain/rng.js';
 
 const puzzle: Puzzle = {
 	id: 'test',
 	text: 'Bee to bee.',
-	attribution: 'Test'
+	attribution: 'Test',
+	category: 'Test category',
+	hint: 'Test hint'
 };
+
+/** The seed startGame derives for a puzzle: the algorithm seed mixed with the id hash. */
+const seedFor = (p: Puzzle) => (algorithm.seed ^ hashString(p.id)) >>> 0;
 const algorithm: CipherAlgorithm = { id: 'a', type: 'substitution', seed: 1234 };
 
 /** Solve a state fully by assigning the correct plaintext for every cipher letter. */
@@ -35,9 +41,23 @@ describe('startGame', () => {
 		expect(isSolved(s)).toBe(false);
 	});
 
-	it('solution is the inverse of the seed substitution', () => {
+	it('solution is the inverse of the per-puzzle seed substitution', () => {
 		const s = startGame(puzzle, algorithm);
-		expect(s.solution).toEqual(invert(buildSubstitution(algorithm.seed)));
+		expect(s.solution).toEqual(invert(buildSubstitution(seedFor(puzzle))));
+	});
+
+	it('enciphers the author with the same substitution', () => {
+		const s = startGame(puzzle, algorithm);
+		expect(s.attributionCiphertext).toMatch(/^[A-Z]{4}$/); // "Test"
+		expect(reconstruct(s, s.attributionCiphertext)).toBe('____'); // blank until guessed
+		expect(s.category).toBe('Test category');
+		expect(s.hint).toBe('Test hint');
+	});
+
+	it('uses a distinct substitution per puzzle id', () => {
+		const a = startGame({ ...puzzle, id: 'one' }, algorithm);
+		const b = startGame({ ...puzzle, id: 'two' }, algorithm);
+		expect(a.solution).not.toEqual(b.solution);
 	});
 });
 
@@ -102,5 +122,18 @@ describe('isSolved', () => {
 		const s = solve();
 		expect(isSolved(s)).toBe(true);
 		expect(reconstruct(s)).toBe(puzzle.text.toUpperCase());
+	});
+
+	it('is not solved until the enciphered author is also decoded', () => {
+		let s = startGame(puzzle, algorithm);
+		// Solve only the cipher letters that occur in the quote.
+		const quoteCiphers = [...new Set([...s.ciphertext].filter(isLetter))];
+		for (const c of quoteCiphers) s = setGuess(s, c, s.solution[c]);
+		expect(reconstruct(s)).toBe(puzzle.text.toUpperCase()); // quote reads correctly
+		expect(isSolved(s)).toBe(false); // author has a letter ('S') not in the quote
+		// Finish the author byline.
+		for (const c of cipherLetters(s)) s = setGuess(s, c, s.solution[c]);
+		expect(isSolved(s)).toBe(true);
+		expect(reconstruct(s, s.attributionCiphertext)).toBe('TEST');
 	});
 });

@@ -13,6 +13,7 @@
  */
 
 import { buildSubstitution, encipher, invert, isLetter, type Substitution } from './cipher.js';
+import { hashString } from './rng.js';
 
 /** A puzzle answer, as stored in data/puzzles.json. */
 export interface Puzzle {
@@ -21,6 +22,10 @@ export interface Puzzle {
 	text: string;
 	/** Author or source (e.g. a name, or "Anonymous"). */
 	attribution: string;
+	/** Theme the puzzle belongs to (e.g. "Philosophy"). */
+	category: string;
+	/** A short nudge toward the answer, hidden until the player asks. */
+	hint: string;
 }
 
 /** A cipher algorithm, as stored in data/cipher-algos.json. */
@@ -33,31 +38,49 @@ export interface CipherAlgorithm {
 
 export interface GameState {
 	puzzleId: string;
+	/** Author or source, in plaintext — revealed only once the puzzle is solved. */
 	attribution: string;
-	/** The puzzle enciphered: uppercase cipher letters with spaces/punctuation intact. */
+	/** Theme the puzzle belongs to (e.g. "Philosophy"). */
+	category: string;
+	/** A short nudge toward the answer, shown only when the player asks. */
+	hint: string;
+	/** The quote enciphered: uppercase cipher letters with spaces/punctuation intact. */
 	ciphertext: string;
+	/** The author enciphered with the same substitution — part of the puzzle to crack. */
+	attributionCiphertext: string;
 	/** Answer key: cipher letter → plaintext letter. */
 	solution: Substitution;
 	/** Player's assignments: cipher letter → guessed plaintext letter (uppercase). Absent = blank. */
 	guesses: Substitution;
 }
 
-/** Start a fresh game: encipher the puzzle with the algorithm's seeded substitution. */
+/**
+ * Start a fresh game: encipher the puzzle (quote and author) with a substitution
+ * seeded distinctly per puzzle. The algorithm seed is folded together with a hash
+ * of the puzzle id so each puzzle gets its own alphabet, deterministically.
+ */
 export function startGame(puzzle: Puzzle, algorithm: CipherAlgorithm): GameState {
-	const substitution = buildSubstitution(algorithm.seed);
+	const seed = (algorithm.seed ^ hashString(puzzle.id)) >>> 0;
+	const substitution = buildSubstitution(seed);
 	return {
 		puzzleId: puzzle.id,
 		attribution: puzzle.attribution,
+		category: puzzle.category,
+		hint: puzzle.hint,
 		ciphertext: encipher(puzzle.text, substitution),
+		attributionCiphertext: encipher(puzzle.attribution, substitution),
 		solution: invert(substitution),
 		guesses: {}
 	};
 }
 
-/** The distinct cipher letters that appear in the puzzle, in first-seen order. */
+/**
+ * The distinct cipher letters in the puzzle (quote and author together), in
+ * first-seen order.
+ */
 export function cipherLetters(state: GameState): string[] {
 	const seen: string[] = [];
-	for (const ch of state.ciphertext) {
+	for (const ch of state.ciphertext + state.attributionCiphertext) {
 		if (isLetter(ch) && !seen.includes(ch)) seen.push(ch);
 	}
 	return seen;
@@ -99,10 +122,14 @@ export function clearAll(state: GameState): GameState {
 	return { ...state, guesses: {} };
 }
 
-/** The player's current attempt: ciphertext rewritten through their guesses (blanks stay as the cipher letter lowercased? no — as a gap). */
-export function reconstruct(state: GameState): string {
+/**
+ * The player's current attempt: a cipher string rewritten through their guesses,
+ * with un-guessed letters shown as `_`. Defaults to the quote; pass
+ * `state.attributionCiphertext` to reconstruct the author line.
+ */
+export function reconstruct(state: GameState, cipher: string = state.ciphertext): string {
 	let out = '';
-	for (const ch of state.ciphertext) {
+	for (const ch of cipher) {
 		if (isLetter(ch)) {
 			out += state.guesses[ch] ?? '_';
 		} else {

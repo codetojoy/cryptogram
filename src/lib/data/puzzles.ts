@@ -22,7 +22,9 @@ function toPuzzle(raw: unknown, i: number): Puzzle {
 	return {
 		id: asString(o.id, `puzzles[${i}].id`),
 		text: asString(o.text, `puzzles[${i}].text`),
-		attribution: asString(o.attribution, `puzzles[${i}].attribution`)
+		attribution: asString(o.attribution, `puzzles[${i}].attribution`),
+		category: asString(o.category, `puzzles[${i}].category`),
+		hint: asString(o.hint, `puzzles[${i}].hint`)
 	};
 }
 

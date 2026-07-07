@@ -13,6 +13,20 @@ export interface Rng {
 	pick<T>(items: readonly T[]): T;
 }
 
+/**
+ * Deterministic 32-bit hash of a string (FNV-1a). Used to fold a puzzle's id
+ * into its cipher seed so each puzzle gets a distinct substitution alphabet
+ * regardless of its position in the list.
+ */
+export function hashString(str: string): number {
+	let h = 0x811c9dc5;
+	for (let i = 0; i < str.length; i++) {
+		h ^= str.charCodeAt(i);
+		h = Math.imul(h, 0x01000193);
+	}
+	return h >>> 0;
+}
+
 export function createRng(seed: number = Date.now() >>> 0): Rng {
 	let state = seed >>> 0;
 	const next = (): number => {

@@ -1,10 +1,47 @@
 {
-	"$comment": "Puzzle answers (quotations to be enciphered). SPEC §4.",
+	"$comment": "Puzzle answers (quotations to be enciphered). SPEC §4. Each puzzle carries a category and a hint (TODO-004); the attribution is enciphered alongside the quote and revealed on solve.",
 	"puzzles": [
 		{
 			"id": "lenny-duchovny",
 			"text": "Duchovny does not deserve treats nor a spot on the couch.",
-			"attribution": "Lenny"
+			"attribution": "Lenny",
+			"category": "Humor",
+			"hint": "A stern verdict on a misbehaving dog."
+		},
+		{
+			"id": "socrates-unexamined-life",
+			"text": "The unexamined life is not worth living.",
+			"attribution": "Socrates",
+			"category": "Philosophy",
+			"hint": "A classical Greek philosopher on the value of self-reflection."
+		},
+		{
+			"id": "descartes-cogito",
+			"text": "I think, therefore I am.",
+			"attribution": "Descartes",
+			"category": "Philosophy",
+			"hint": "An early modern rationalist's proof of his own existence."
+		},
+		{
+			"id": "confucius-slowly",
+			"text": "It does not matter how slowly you go as long as you do not stop.",
+			"attribution": "Confucius",
+			"category": "Philosophy",
+			"hint": "An ancient Chinese sage on perseverance."
+		},
+		{
+			"id": "nietzsche-stronger",
+			"text": "That which does not kill us makes us stronger.",
+			"attribution": "Nietzsche",
+			"category": "Philosophy",
+			"hint": "A 19th-century German philosopher on surviving adversity."
+		},
+		{
+			"id": "aristotle-know-yourself",
+			"text": "Knowing yourself is the beginning of all wisdom.",
+			"attribution": "Aristotle",
+			"category": "Philosophy",
+			"hint": "A classical Greek philosopher on self-knowledge."
 		}
 	]
 }
