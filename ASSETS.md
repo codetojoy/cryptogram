@@ -24,8 +24,9 @@ re-authored for this project.
 The quotations in `data/puzzles.json` are short excerpts used as game answers. Their
 provenance by category:
 
-- **Philosophy / Music** — brief attributed quotations (aphorisms and remarks). Short
-  factual quotations attributed to their author; used here as puzzle answers.
+- **Philosophy / Music / General / Chess / Music [Guitar]** — brief attributed
+  quotations (aphorisms and remarks). Short factual quotations attributed to their
+  author; used here as puzzle answers.
 - **Lyrics** — lines from **public-domain / traditional songs only** (spirituals, folk
   songs, and works published before 1929): *Swing Low, Sweet Chariot*; *Amazing Grace*
   (John Newton, 1779); *Danny Boy* (Weatherly, 1913); *Home on the Range*; *Scarborough

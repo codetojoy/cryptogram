@@ -61,7 +61,14 @@ describe('puzzle data', () => {
 		expect(count('Religion'), 'Religion').toBe(10);
 	});
 
-	it('has forty-six puzzles in total (TODO-006)', () => {
-		expect(puzzles.length).toBe(46);
+	it('includes ten each of General, Chess and Music [Guitar] (TODO-007)', () => {
+		const count = (category: string) => puzzles.filter((p) => p.category === category).length;
+		expect(count('General'), 'General').toBe(10);
+		expect(count('Chess'), 'Chess').toBe(10);
+		expect(count('Music [Guitar]'), 'Music [Guitar]').toBe(10);
+	});
+
+	it('has seventy-six puzzles in total (TODO-007)', () => {
+		expect(puzzles.length).toBe(76);
 	});
 });
