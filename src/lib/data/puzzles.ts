@@ -45,6 +45,14 @@ export const algorithms: CipherAlgorithm[] = (algosData.algorithms as unknown[])
 if (puzzles.length === 0) throw new Error('data/puzzles.json has no puzzles');
 if (algorithms.length === 0) throw new Error('data/cipher-algos.json has no algorithms');
 
+// Puzzle ids must be unique — they key the "seen" persistence (TODO-005), so a
+// duplicate would silently hide two puzzles behind one id. Fail fast at load.
+const seenIds = new Set<string>();
+for (const p of puzzles) {
+	if (seenIds.has(p.id)) throw new Error(`data/puzzles.json has a duplicate puzzle id: "${p.id}"`);
+	seenIds.add(p.id);
+}
+
 /** The puzzle and algorithm shown by the single-game MVP (TODO-002): the first of each. */
 export const defaultPuzzle: Puzzle = puzzles[0];
 export const defaultAlgorithm: CipherAlgorithm = algorithms[0];

@@ -42,6 +42,76 @@
 			"attribution": "Aristotle",
 			"category": "Philosophy",
 			"hint": "A classical Greek philosopher on self-knowledge."
+		},
+		{
+			"id": "plato-measure-power",
+			"text": "The measure of a man is what he does with power.",
+			"attribution": "Plato",
+			"category": "Philosophy",
+			"hint": "An ancient Greek thinker on how authority reveals character."
+		},
+		{
+			"id": "aristotle-patience-fruit",
+			"text": "Patience is bitter, but its fruit is sweet.",
+			"attribution": "Aristotle",
+			"category": "Philosophy",
+			"hint": "A classical Greek philosopher on enduring for a later reward."
+		},
+		{
+			"id": "confucius-know-ignorance",
+			"text": "Real knowledge is to know the extent of one's ignorance.",
+			"attribution": "Confucius",
+			"category": "Philosophy",
+			"hint": "An ancient Chinese sage on recognizing the boundary of what we grasp."
+		},
+		{
+			"id": "nietzsche-why-live",
+			"text": "He who has a why to live can bear almost any how.",
+			"attribution": "Nietzsche",
+			"category": "Philosophy",
+			"hint": "A 19th-century German philosopher on purpose making hardship endurable."
+		},
+		{
+			"id": "socrates-good-evil",
+			"text": "There is only one good, knowledge, and one evil, ignorance.",
+			"attribution": "Socrates",
+			"category": "Philosophy",
+			"hint": "A classical Greek philosopher equating a single virtue with a single flaw."
+		},
+		{
+			"id": "descartes-good-mind",
+			"text": "It is not enough to have a good mind; the main thing is to use it well.",
+			"attribution": "Descartes",
+			"category": "Philosophy",
+			"hint": "An early modern rationalist on the importance of applying one's reason."
+		},
+		{
+			"id": "kant-rich-without",
+			"text": "We are not rich by what we possess but by what we can do without.",
+			"attribution": "Kant",
+			"category": "Philosophy",
+			"hint": "An Enlightenment thinker on freedom from material craving."
+		},
+		{
+			"id": "epictetus-react",
+			"text": "It is not what happens to you, but how you react to it that matters.",
+			"attribution": "Epictetus",
+			"category": "Philosophy",
+			"hint": "A Stoic teacher on choosing our attitude toward circumstance."
+		},
+		{
+			"id": "seneca-luck-preparation",
+			"text": "Luck is what happens when preparation meets opportunity.",
+			"attribution": "Seneca",
+			"category": "Philosophy",
+			"hint": "A Roman Stoic on why fortune favors the ready."
+		},
+		{
+			"id": "laotzu-journey-step",
+			"text": "The journey of a thousand miles begins with a single step.",
+			"attribution": "Lao Tzu",
+			"category": "Philosophy",
+			"hint": "An ancient Chinese sage on how vast undertakings get underway."
 		}
 	]
 }

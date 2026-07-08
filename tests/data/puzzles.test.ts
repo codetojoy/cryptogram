@@ -27,8 +27,30 @@ describe('puzzle data', () => {
 		}
 	});
 
-	it('includes the five Philosophy puzzles (TODO-004)', () => {
+	// Common function words that may harmlessly appear in both a quote and a hint;
+	// only significant *content* words leaking would spoil the puzzle (TODO-005).
+	const STOPWORDS = new Set([
+		'the', 'and', 'but', 'nor', 'not', 'you', 'your', 'that', 'this', 'with', 'what',
+		'when', 'then', 'than', 'from', 'have', 'has', 'had', 'does', 'did', 'done', 'our',
+		'his', 'her', 'its', 'one', 'all', 'any', 'can', 'how', 'why', 'who', 'was', 'are',
+		'for', 'only', 'into', 'out', 'off', 'yourself'
+	]);
+	const words = (s: string) =>
+		s
+			.toLowerCase()
+			.split(/[^a-z]+/)
+			.filter((w) => w.length >= 4 && !STOPWORDS.has(w));
+
+	it('hints reveal no significant word from their quote (TODO-005 vague-hint rule)', () => {
+		for (const p of puzzles) {
+			const quoteWords = new Set(words(p.text));
+			const leaked = words(p.hint).filter((w) => quoteWords.has(w));
+			expect(leaked, `${p.id} hint leaks: ${leaked.join(', ')}`).toEqual([]);
+		}
+	});
+
+	it('includes fifteen Philosophy puzzles (TODO-004 + TODO-005)', () => {
 		const philosophy = puzzles.filter((p) => p.category === 'Philosophy');
-		expect(philosophy.length).toBe(5);
+		expect(philosophy.length).toBe(15);
 	});
 });

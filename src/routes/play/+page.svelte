@@ -1,16 +1,19 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { base } from '$app/paths';
 	import BackLink from '$lib/ui/BackLink.svelte';
 	import Keypad from '$lib/ui/Keypad.svelte';
 	import { isLetter } from '$lib/domain/cipher.js';
 	import { puzzles, defaultAlgorithm } from '$lib/data/puzzles.js';
+	import { loadSeen, saveSeen, clearSeen } from '$lib/ui/persistence.js';
 	import {
 		startGame,
 		setGuess,
 		clearGuess,
 		clearAll,
 		reconstruct,
-		isSolved
+		isSolved,
+		type Puzzle
 	} from '$lib/domain/cryptogram-game-state.js';
 
 	type Cell = { letter: true; cipher: string } | { letter: false; ch: string };
@@ -34,15 +37,41 @@
 		return words;
 	}
 
-	let index = $state(0);
 	let game = $state(startGame(puzzles[0], defaultAlgorithm));
 	let selected = $state<string | null>(null);
 	let showHint = $state(false);
+	// Ids of puzzles already moved past; loaded from localStorage on mount so each
+	// puzzle is shown once (TODO-005). Empty during SSR/prerender.
+	let seen = $state<Set<string>>(new Set());
+	// True once every puzzle has been seen — the end-of-game state.
+	let ended = $state(false);
 
 	const words = $derived(buildWords(game.ciphertext));
 	const authorWords = $derived(buildWords(game.attributionCiphertext));
 	const solved = $derived(isSolved(game));
 	const used = $derived(new Set(Object.values(game.guesses)));
+
+	/** The first puzzle (in data order) the player hasn't moved past yet. */
+	function firstUnseen(): Puzzle | undefined {
+		return puzzles.find((p) => !seen.has(p.id));
+	}
+
+	/** Show a puzzle and reset all per-puzzle UI state. */
+	function loadPuzzle(puzzle: Puzzle) {
+		game = startGame(puzzle, defaultAlgorithm);
+		selected = null;
+		showHint = false;
+		ended = false;
+	}
+
+	// On the client, honour previously-seen puzzles: resume at the first unseen
+	// one, or show the end state if they've all been played.
+	onMount(() => {
+		seen = loadSeen();
+		const next = firstUnseen();
+		if (next) loadPuzzle(next);
+		else ended = true;
+	});
 
 	function selectCell(cipher: string) {
 		if (solved) return;
@@ -61,20 +90,29 @@
 		game = clearGuess(game, selected);
 	}
 
-	/** Load a puzzle by index and reset all per-puzzle UI state. */
-	function loadPuzzle(i: number) {
-		index = ((i % puzzles.length) + puzzles.length) % puzzles.length;
-		game = startGame(puzzles[index], defaultAlgorithm);
-		selected = null;
-		showHint = false;
-	}
-
+	/** Restart the current puzzle from scratch (does not mark it seen). */
 	function resetGame() {
-		loadPuzzle(index);
+		const current = puzzles.find((p) => p.id === game.puzzleId);
+		if (current) loadPuzzle(current);
 	}
 
+	// Mark the current puzzle seen (persisted) and advance; when none are left,
+	// show the end-of-game message.
 	function nextPuzzle() {
-		loadPuzzle(index + 1);
+		const updated = new Set(seen);
+		updated.add(game.puzzleId);
+		seen = updated;
+		saveSeen(seen);
+		const next = firstUnseen();
+		if (next) loadPuzzle(next);
+		else ended = true;
+	}
+
+	/** Forget all progress and begin again from the first puzzle. */
+	function startOver() {
+		clearSeen();
+		seen = new Set();
+		loadPuzzle(puzzles[0]);
 	}
 
 	function clearBoard() {
@@ -138,63 +176,73 @@
 		<p class="subtitle">Every letter stands for another. Crack the substitution to reveal the quote — and who said it.</p>
 	</header>
 
-	{#if solved}
-		<div class="banner" role="status">
-			<p class="banner-title">Solved! 🎉</p>
-			<p class="quote">“{reconstruct(game)}”</p>
-			<p class="attribution">— {game.attribution}</p>
+	{#if ended}
+		<div class="banner end" role="status">
+			<p class="banner-title">That's every puzzle! 🏁</p>
+			<p>You've reached the end of the game — you've played every cryptogram.</p>
+			<div class="actions">
+				<button type="button" class="big-button" onclick={startOver}>Start over</button>
+			</div>
 		</div>
 	{:else}
-		<p class="hint" aria-live="polite">
-			{#if selected}
-				Cipher letter <strong>{selected}</strong> selected — choose its real letter below.
-			{:else}
-				Tap a letter in the puzzle, then pick its real letter on the keypad.
-			{/if}
-		</p>
-	{/if}
-
-	<section class="board" class:done={solved} aria-label="Cryptogram puzzle">
-		{@render letters(words)}
-	</section>
-
-	<div class="byline board" class:done={solved} aria-label="Quote author (enciphered)">
-		<span class="sym dash" aria-hidden="true">—</span>
-		{@render letters(authorWords)}
-	</div>
-
-	<div class="reveal">
-		<button
-			type="button"
-			class="text-button"
-			aria-expanded={showHint}
-			onclick={() => (showHint = !showHint)}
-		>
-			{showHint ? 'Hide hint' : 'Show hint'}
-		</button>
-		{#if showHint}
-			<dl class="clue">
-				<dt>Category</dt>
-				<dd>{game.category}</dd>
-				<dt>Hint</dt>
-				<dd>{game.hint}</dd>
-			</dl>
+		{#if solved}
+			<div class="banner" role="status">
+				<p class="banner-title">Solved! 🎉</p>
+				<p class="quote">“{reconstruct(game)}”</p>
+				<p class="attribution">— {game.attribution}</p>
+			</div>
+		{:else}
+			<p class="hint" aria-live="polite">
+				{#if selected}
+					Cipher letter <strong>{selected}</strong> selected — choose its real letter below.
+				{:else}
+					Tap a letter in the puzzle, then pick its real letter on the keypad.
+				{/if}
+			</p>
 		{/if}
-	</div>
 
-	{#if solved}
-		<div class="actions">
-			<button type="button" class="big-button" onclick={resetGame}>Play again</button>
-			<button type="button" class="big-button" onclick={nextPuzzle}>Next puzzle</button>
+		<section class="board" class:done={solved} aria-label="Cryptogram puzzle">
+			{@render letters(words)}
+		</section>
+
+		<div class="byline board" class:done={solved} aria-label="Quote author (enciphered)">
+			<span class="sym dash" aria-hidden="true">—</span>
+			{@render letters(authorWords)}
 		</div>
-	{:else}
-		<Keypad {selected} {used} onletter={assign} onclear={clearSelected} />
-		<div class="actions">
-			<button type="button" class="text-button" onclick={clearBoard} disabled={Object.keys(game.guesses).length === 0}>
-				Clear all
+
+		<div class="reveal">
+			<button
+				type="button"
+				class="text-button"
+				aria-expanded={showHint}
+				onclick={() => (showHint = !showHint)}
+			>
+				{showHint ? 'Hide hint' : 'Show hint'}
 			</button>
-			<button type="button" class="text-button" onclick={nextPuzzle}>Next puzzle</button>
+			{#if showHint}
+				<dl class="clue">
+					<dt>Category</dt>
+					<dd>{game.category}</dd>
+					<dt>Hint</dt>
+					<dd>{game.hint}</dd>
+				</dl>
+			{/if}
 		</div>
+
+		{#if solved}
+			<div class="actions">
+				<button type="button" class="big-button" onclick={resetGame}>Play again</button>
+				<button type="button" class="big-button" onclick={nextPuzzle}>Next puzzle</button>
+			</div>
+		{:else}
+			<Keypad {selected} {used} onletter={assign} onclear={clearSelected} />
+			<div class="actions">
+				<button type="button" class="text-button" onclick={clearBoard} disabled={Object.keys(game.guesses).length === 0}>
+					Clear all
+				</button>
+				<button type="button" class="text-button" onclick={nextPuzzle}>Next puzzle</button>
+			</div>
+		{/if}
 	{/if}
 </main>
 
@@ -398,6 +446,12 @@
 
 	.attribution {
 		margin: 0.4rem 0 0;
+		font-family: var(--serif);
+		color: var(--muted);
+	}
+
+	.banner.end p {
+		margin: 0;
 		font-family: var(--serif);
 		color: var(--muted);
 	}
