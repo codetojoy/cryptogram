@@ -112,6 +112,216 @@
 			"attribution": "Lao Tzu",
 			"category": "Philosophy",
 			"hint": "An ancient Chinese sage on how vast undertakings get underway."
+		},
+		{
+			"id": "beethoven-wrong-note",
+			"text": "To play a wrong note is insignificant; to play without passion is inexcusable.",
+			"attribution": "Beethoven",
+			"category": "Music",
+			"hint": "A towering deaf German composer on valuing feeling over mere accuracy."
+		},
+		{
+			"id": "armstrong-ask-jazz",
+			"text": "If you have to ask what jazz is, you'll never know.",
+			"attribution": "Louis Armstrong",
+			"category": "Music",
+			"hint": "A gravelly-voiced trumpet great on how improvised swing defies explanation."
+		},
+		{
+			"id": "bach-aim-music",
+			"text": "The aim and final end of all music should be none other than the glory of God.",
+			"attribution": "Bach",
+			"category": "Music",
+			"hint": "A Baroque master of counterpoint on the sacred purpose of composition."
+		},
+		{
+			"id": "mozart-silence-notes",
+			"text": "The music is not in the notes, but in the silence between.",
+			"attribution": "Mozart",
+			"category": "Music",
+			"hint": "A child-prodigy Classical composer on what lies in the pauses."
+		},
+		{
+			"id": "ellington-problem-chance",
+			"text": "A problem is a chance for you to do your best.",
+			"attribution": "Duke Ellington",
+			"category": "Music",
+			"hint": "A jazz bandleader and pianist reframing difficulty as opportunity."
+		},
+		{
+			"id": "tchaikovsky-inspiration-lazy",
+			"text": "Inspiration is a guest that does not willingly visit the lazy.",
+			"attribution": "Tchaikovsky",
+			"category": "Music",
+			"hint": "A Romantic Russian composer on why effort precedes the muse."
+		},
+		{
+			"id": "miles-fear-mistakes",
+			"text": "Do not fear mistakes. There are none.",
+			"attribution": "Miles Davis",
+			"category": "Music",
+			"hint": "A pioneering jazz trumpeter urging boldness in improvisation."
+		},
+		{
+			"id": "chopin-simplicity",
+			"text": "Simplicity is the final achievement.",
+			"attribution": "Chopin",
+			"category": "Music",
+			"hint": "A Romantic pianist-composer prizing the hard-won plainness of art."
+		},
+		{
+			"id": "stravinsky-constraints",
+			"text": "The more constraints one imposes, the more one frees oneself.",
+			"attribution": "Stravinsky",
+			"category": "Music",
+			"hint": "A revolutionary modernist composer on the paradox of creative limits."
+		},
+		{
+			"id": "ray-charles-music-me",
+			"text": "Music is nothing separate from me. It is me.",
+			"attribution": "Ray Charles",
+			"category": "Music",
+			"hint": "A soul and R&B pioneer describing his art as identity itself."
+		},
+		{
+			"id": "swing-low-chariot",
+			"text": "Swing low, sweet chariot, coming for to carry me home.",
+			"attribution": "Swing Low, Sweet Chariot",
+			"category": "Lyrics",
+			"hint": "A spiritual longing for deliverance and rest beyond this life."
+		},
+		{
+			"id": "amazing-grace",
+			"text": "Amazing grace, how sweet the sound, that saved a wretch like me.",
+			"attribution": "Amazing Grace",
+			"category": "Lyrics",
+			"hint": "A beloved hymn of redemption and undeserved mercy."
+		},
+		{
+			"id": "danny-boy-summer",
+			"text": "The summer's gone, and all the roses falling.",
+			"attribution": "Danny Boy",
+			"category": "Lyrics",
+			"hint": "A wistful Irish ballad of farewell and waiting."
+		},
+		{
+			"id": "home-on-the-range",
+			"text": "Home, home on the range, where the deer and the antelope play.",
+			"attribution": "Home on the Range",
+			"category": "Lyrics",
+			"hint": "An American West anthem of open prairie contentment."
+		},
+		{
+			"id": "scarborough-fair",
+			"text": "Are you going to Scarborough Fair? Parsley, sage, rosemary and thyme.",
+			"attribution": "Scarborough Fair",
+			"category": "Lyrics",
+			"hint": "A traditional English ballad listing herbs as a refrain."
+		},
+		{
+			"id": "water-is-wide",
+			"text": "The water is wide, I cannot cross over.",
+			"attribution": "The Water Is Wide",
+			"category": "Lyrics",
+			"hint": "A folk lament on love separated by distance."
+		},
+		{
+			"id": "shenandoah",
+			"text": "Oh Shenandoah, I long to hear you, away you rolling river.",
+			"attribution": "Shenandoah",
+			"category": "Lyrics",
+			"hint": "An American sea shanty pining for a far western valley."
+		},
+		{
+			"id": "auld-lang-syne",
+			"text": "Should auld acquaintance be forgot, and never brought to mind.",
+			"attribution": "Auld Lang Syne",
+			"category": "Lyrics",
+			"hint": "A Scottish New Year toast to old friendships."
+		},
+		{
+			"id": "saints-marching-in",
+			"text": "Oh, when the saints go marching in, I want to be in that number.",
+			"attribution": "When the Saints Go Marching In",
+			"category": "Lyrics",
+			"hint": "A New Orleans gospel standard about joining the blessed procession."
+		},
+		{
+			"id": "greensleeves",
+			"text": "Alas, my love, you do me wrong to cast me off discourteously.",
+			"attribution": "Greensleeves",
+			"category": "Lyrics",
+			"hint": "A Renaissance English tune mourning a cruel rejection."
+		},
+		{
+			"id": "john-god-loved-world",
+			"text": "For God so loved the world that he gave his one and only Son.",
+			"attribution": "John",
+			"category": "Religion",
+			"hint": "The gospel's summary of divine sacrifice for humanity."
+		},
+		{
+			"id": "proverbs-trust-lord",
+			"text": "Trust in the Lord with all your heart and lean not on your own understanding.",
+			"attribution": "Proverbs",
+			"category": "Religion",
+			"hint": "A call to rely on God rather than personal insight."
+		},
+		{
+			"id": "psalms-shepherd",
+			"text": "The Lord is my shepherd, I lack nothing.",
+			"attribution": "Psalms",
+			"category": "Religion",
+			"hint": "A comforting image of divine provision and care."
+		},
+		{
+			"id": "genesis-beginning",
+			"text": "In the beginning God created the heavens and the earth.",
+			"attribution": "Genesis",
+			"category": "Religion",
+			"hint": "The opening declaration of creation itself."
+		},
+		{
+			"id": "matthew-peacemakers",
+			"text": "Blessed are the peacemakers, for they will be called children of God.",
+			"attribution": "Matthew",
+			"category": "Religion",
+			"hint": "A beatitude honoring those who reconcile others."
+		},
+		{
+			"id": "isaiah-hope-renew",
+			"text": "But those who hope in the Lord will renew their strength.",
+			"attribution": "Isaiah",
+			"category": "Religion",
+			"hint": "A promise of restored vigor for the faithful."
+		},
+		{
+			"id": "philippians-strength",
+			"text": "I can do all this through him who gives me strength.",
+			"attribution": "Philippians",
+			"category": "Religion",
+			"hint": "An affirmation of empowerment from a higher source."
+		},
+		{
+			"id": "romans-overcome-evil",
+			"text": "Do not be overcome by evil, but overcome evil with good.",
+			"attribution": "Romans",
+			"category": "Religion",
+			"hint": "A charge to conquer wrongdoing through virtue."
+		},
+		{
+			"id": "ecclesiastes-time-season",
+			"text": "There is a time for everything, and a season for every activity under the heavens.",
+			"attribution": "Ecclesiastes",
+			"category": "Religion",
+			"hint": "A meditation on the proper moment for all things."
+		},
+		{
+			"id": "corinthians-love-patient",
+			"text": "Love is patient, love is kind. It does not envy, it does not boast.",
+			"attribution": "Corinthians",
+			"category": "Religion",
+			"hint": "A famous description of selfless devotion."
 		}
 	]
 }

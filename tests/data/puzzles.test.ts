@@ -53,4 +53,15 @@ describe('puzzle data', () => {
 		const philosophy = puzzles.filter((p) => p.category === 'Philosophy');
 		expect(philosophy.length).toBe(15);
 	});
+
+	it('includes ten each of Music, Lyrics and Religion (TODO-006)', () => {
+		const count = (category: string) => puzzles.filter((p) => p.category === category).length;
+		expect(count('Music'), 'Music').toBe(10);
+		expect(count('Lyrics'), 'Lyrics').toBe(10);
+		expect(count('Religion'), 'Religion').toBe(10);
+	});
+
+	it('has forty-six puzzles in total (TODO-006)', () => {
+		expect(puzzles.length).toBe(46);
+	});
 });

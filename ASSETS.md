@@ -19,6 +19,28 @@ which sourced Lato and Lora from Google Fonts under the SIL OFL 1.1. No forty-fi
 source files are copied verbatim except where noted; the shared UI primitives are
 re-authored for this project.
 
+## Puzzle text content
+
+The quotations in `data/puzzles.json` are short excerpts used as game answers. Their
+provenance by category:
+
+- **Philosophy / Music** — brief attributed quotations (aphorisms and remarks). Short
+  factual quotations attributed to their author; used here as puzzle answers.
+- **Lyrics** — lines from **public-domain / traditional songs only** (spirituals, folk
+  songs, and works published before 1929): *Swing Low, Sweet Chariot*; *Amazing Grace*
+  (John Newton, 1779); *Danny Boy* (Weatherly, 1913); *Home on the Range*; *Scarborough
+  Fair*; *The Water Is Wide*; *Shenandoah*; *Auld Lang Syne* (Burns, 1788); *When the
+  Saints Go Marching In*; *Greensleeves*. No lyrics under current copyright are used.
+- **Religion** — verses quoted from the **New International Version (NIV)**. Required
+  attribution notice:
+
+  > Scripture quotations taken from The Holy Bible, New International Version® NIV®.
+  > Copyright © 1973, 1978, 1984, 2011 by Biblica, Inc.™ Used by permission. All rights
+  > reserved worldwide.
+
+  Fewer than 500 verses are quoted and they do not constitute a complete book of the
+  Bible, within Biblica's standard permission terms for the NIV.
+
 ## Note on future assets
 
 SPEC §5 lists remaining assets as TBD. When puzzle content, letter/tile artwork, or any

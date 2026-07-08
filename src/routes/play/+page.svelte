@@ -51,9 +51,13 @@
 	const solved = $derived(isSolved(game));
 	const used = $derived(new Set(Object.values(game.guesses)));
 
-	/** The first puzzle (in data order) the player hasn't moved past yet. */
-	function firstUnseen(): Puzzle | undefined {
-		return puzzles.find((p) => !seen.has(p.id));
+	/** A random puzzle the player hasn't moved past yet (TODO-006), or undefined
+	 *  once every puzzle has been seen. Randomised so the order varies each play,
+	 *  while `seen` still guarantees no repeats until the deck is exhausted. */
+	function randomUnseen(): Puzzle | undefined {
+		const remaining = puzzles.filter((p) => !seen.has(p.id));
+		if (remaining.length === 0) return undefined;
+		return remaining[Math.floor(Math.random() * remaining.length)];
 	}
 
 	/** Show a puzzle and reset all per-puzzle UI state. */
@@ -64,11 +68,11 @@
 		ended = false;
 	}
 
-	// On the client, honour previously-seen puzzles: resume at the first unseen
-	// one, or show the end state if they've all been played.
+	// On the client, honour previously-seen puzzles: open on a random unseen one
+	// (TODO-006), or show the end state if they've all been played.
 	onMount(() => {
 		seen = loadSeen();
-		const next = firstUnseen();
+		const next = randomUnseen();
 		if (next) loadPuzzle(next);
 		else ended = true;
 	});
@@ -103,16 +107,16 @@
 		updated.add(game.puzzleId);
 		seen = updated;
 		saveSeen(seen);
-		const next = firstUnseen();
+		const next = randomUnseen();
 		if (next) loadPuzzle(next);
 		else ended = true;
 	}
 
-	/** Forget all progress and begin again from the first puzzle. */
+	/** Forget all progress and begin again on a random puzzle. */
 	function startOver() {
 		clearSeen();
 		seen = new Set();
-		loadPuzzle(puzzles[0]);
+		loadPuzzle(randomUnseen() ?? puzzles[0]);
 	}
 
 	function clearBoard() {
