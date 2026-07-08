@@ -4,6 +4,7 @@ import {
 	setGuess,
 	clearGuess,
 	clearAll,
+	crackOne,
 	cipherLetters,
 	reconstruct,
 	isSolved,
@@ -106,6 +107,49 @@ describe('clearGuess / clearAll', () => {
 	it('clearAll empties all guesses', () => {
 		const s = clearAll(solve());
 		expect(s.guesses).toEqual({});
+	});
+});
+
+describe('crackOne', () => {
+	it('reveals exactly one correct letter into a blank board', () => {
+		const s0 = startGame(puzzle, algorithm);
+		const s1 = crackOne(s0, () => 0); // pick the first candidate
+		const revealed = Object.keys(s1.guesses);
+		expect(revealed).toHaveLength(1);
+		const c = revealed[0];
+		expect(s1.guesses[c]).toBe(s0.solution[c]); // always correct
+	});
+
+	it('picks the candidate selected by the injected random source', () => {
+		const s0 = startGame(puzzle, algorithm);
+		const candidates = cipherLetters(s0); // all blank, so all are candidates
+		// random() → 0.99 maps to the last candidate.
+		const s1 = crackOne(s0, () => 0.99);
+		const expected = candidates[Math.floor(0.99 * candidates.length)];
+		expect(s1.guesses[expected]).toBe(s0.solution[expected]);
+	});
+
+	it('never introduces an incorrect guess, one crack at a time', () => {
+		let s = startGame(puzzle, algorithm);
+		for (let i = 0; i < cipherLetters(s).length; i++) {
+			s = crackOne(s, () => 0);
+			for (const [c, p] of Object.entries(s.guesses)) expect(p).toBe(s.solution[c]);
+		}
+		expect(isSolved(s)).toBe(true);
+	});
+
+	it('corrects a wrong guess by overwriting it with the solution', () => {
+		let s = startGame(puzzle, algorithm);
+		const c = cipherLetters(s)[0];
+		const wrong = s.solution[c] === 'Z' ? 'Y' : 'Z';
+		s = setGuess(s, c, wrong); // deliberately wrong; now the only not-correct candidate
+		s = crackOne(s, () => 0);
+		expect(s.guesses[c]).toBe(s.solution[c]);
+	});
+
+	it('returns the state unchanged once the puzzle is solved', () => {
+		const s = solve();
+		expect(crackOne(s)).toBe(s);
 	});
 });
 

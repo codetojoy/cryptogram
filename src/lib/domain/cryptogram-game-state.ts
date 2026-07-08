@@ -123,6 +123,19 @@ export function clearAll(state: GameState): GameState {
 }
 
 /**
+ * Reveal one correct letter as an assist (TODO-008, "Crack One"). Picks at random
+ * among the cipher letters not yet guessed correctly (blank or wrong) and assigns
+ * its true plaintext letter; returns the state unchanged once the puzzle is solved
+ * (nothing left to crack). Randomness is injected so this stays pure and testable.
+ */
+export function crackOne(state: GameState, random: () => number = Math.random): GameState {
+	const candidates = cipherLetters(state).filter((c) => state.guesses[c] !== state.solution[c]);
+	if (candidates.length === 0) return state;
+	const chosen = candidates[Math.floor(random() * candidates.length)];
+	return setGuess(state, chosen, state.solution[chosen]);
+}
+
+/**
  * The player's current attempt: a cipher string rewritten through their guesses,
  * with un-guessed letters shown as `_`. Defaults to the quote; pass
  * `state.attributionCiphertext` to reconstruct the author line.

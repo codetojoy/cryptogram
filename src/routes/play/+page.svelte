@@ -11,6 +11,7 @@
 		setGuess,
 		clearGuess,
 		clearAll,
+		crackOne,
 		reconstruct,
 		isSolved,
 		type Puzzle
@@ -123,6 +124,13 @@
 		game = clearAll(game);
 	}
 
+	// "Crack One" (TODO-008): reveal one correct letter to help a stuck player.
+	function crackLetter() {
+		game = crackOne(game);
+		// Dropping in the last letter can complete the puzzle; clear the highlight.
+		if (isSolved(game)) selected = null;
+	}
+
 	// Physical-keyboard support (desktop / accessibility): with a cell selected,
 	// a letter key assigns it, Backspace/Delete clears it, Escape deselects.
 	function onKeydown(e: KeyboardEvent) {
@@ -222,6 +230,9 @@
 				onclick={() => (showHint = !showHint)}
 			>
 				{showHint ? 'Hide hint' : 'Show hint'}
+			</button>
+			<button type="button" class="text-button" onclick={crackLetter} disabled={solved}>
+				Crack One
 			</button>
 			{#if showHint}
 				<dl class="clue">
