@@ -2,6 +2,7 @@
 ### TODO-008 — COMPLETE
 
 Like "Show Hint" and in proximity to it, add a new link/button called "Crack One". ✅ (a second `text-button` beside "Show hint" in the `.reveal` block)
+    * NOTE: this was later changed by human to be "Crack one" to match capitalization in UI
 
 When "Crack One" is pressed, choose a letter at random and fill it into the puzzle. This is an assist for players who are stuck. ✅
 * New pure domain transition `crackOne(state, random = Math.random)` picks at random among the cipher letters not yet guessed correctly (blank *or* wrong) and assigns the true plaintext letter via `setGuess`; returns the state unchanged once solved. Randomness is injected so it stays pure and deterministically testable.

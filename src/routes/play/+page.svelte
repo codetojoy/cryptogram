@@ -232,7 +232,7 @@
 				{showHint ? 'Hide hint' : 'Show hint'}
 			</button>
 			<button type="button" class="text-button" onclick={crackLetter} disabled={solved}>
-				Crack One
+				Crack one
 			</button>
 			{#if showHint}
 				<dl class="clue">
