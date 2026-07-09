@@ -50,25 +50,53 @@
 				src: url('./fonts/lora-400-italic.woff2') format('woff2');
 			}
 		</style>
-		<link href="./_app/immutable/entry/start.IG6SN-88.js" rel="modulepreload">
-		<link href="./_app/immutable/chunks/DvzI6y_e.js" rel="modulepreload">
-		<link href="./_app/immutable/chunks/C8KkHjjR.js" rel="modulepreload">
-		<link href="./_app/immutable/entry/app.D0p5u8El.js" rel="modulepreload">
+		<script>
+			/*
+			 * Apply the saved theme (TODO-011) before first paint so Prince users
+			 * don't see a flash of the Original palette on cold load. Reads the same
+			 * localStorage key/label the app uses; falls back silently to Original.
+			 * No network (privacy, SPEC §3). The app re-asserts this on hydration.
+			 */
+			(function () {
+				try {
+					var raw = localStorage.getItem('cryptogram.settings.v1');
+					var label = raw ? JSON.parse(raw).theme : 'Original';
+					var themes = {
+						Original: { id: 'original', color: '#9c4632' },
+						Prince: { id: 'prince', color: '#7b2cbf' },
+						Dark: { id: 'dark', color: '#4f8ef0' },
+						Bengal: { id: 'bengal', color: '#d9631a' }
+					};
+					var theme = themes[label] || themes.Original;
+					document.documentElement.setAttribute('data-theme', theme.id);
+					var meta = document.querySelector('meta[name="theme-color"]');
+					if (meta) meta.setAttribute('content', theme.color);
+				} catch (e) {
+					/* storage unavailable — Original (the base :root) applies */
+				}
+			})();
+		</script>
+		<link href="./_app/immutable/entry/start.DarL4rpX.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/BjQcnpwp.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/Bqpw2ixH.js" rel="modulepreload">
+		<link href="./_app/immutable/entry/app.BMAqvFad.js" rel="modulepreload">
 		<link href="./_app/immutable/chunks/xihTtKlq.js" rel="modulepreload">
-		<link href="./_app/immutable/nodes/0.DsNNNkze.js" rel="modulepreload">
-		<link href="./_app/immutable/nodes/4.B-nuMzrY.js" rel="modulepreload">
-		<link href="./_app/immutable/chunks/CRMKYkgF.js" rel="modulepreload">
+		<link href="./_app/immutable/nodes/0.BRltPZFC.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/33cc_O6e.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/wIsGoMUZ.js" rel="modulepreload">
+		<link href="./_app/immutable/nodes/4.CQGOhC1R.js" rel="modulepreload">
+		<link href="./_app/immutable/chunks/rXIFeitY.js" rel="modulepreload">
 		<!--12qhfyh--><link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KCTxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iOTYiIGZpbGw9IiM5YzQ2MzIiLz4KCTxyZWN0IHg9IjIyIiB5PSIyMiIgd2lkdGg9IjQ2OCIgaGVpZ2h0PSI0NjgiIHJ4PSI3OCIgZmlsbD0iI2Y3ZjJlNyIvPgoJPHRleHQgeD0iMjU2IiB5PSIzMDAiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCAnVGltZXMgTmV3IFJvbWFuJywgc2VyaWYiIGZvbnQtc2l6ZT0iMTgwIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iIzljNDYzMiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+QT1aPC90ZXh0PgoJPGcgZmlsbD0iIzZmNjc1OCI+CgkJPHJlY3QgeD0iMTUwIiB5PSIzOTIiIHdpZHRoPSI1NiIgaGVpZ2h0PSIxNCIgcng9IjciLz4KCQk8cmVjdCB4PSIyMjgiIHk9IjM5MiIgd2lkdGg9IjU2IiBoZWlnaHQ9IjE0IiByeD0iNyIvPgoJCTxyZWN0IHg9IjMwNiIgeT0iMzkyIiB3aWR0aD0iNTYiIGhlaWdodD0iMTQiIHJ4PSI3Ii8+Cgk8L2c+Cjwvc3ZnPgo="/><!----><!--1gp6n77--><meta name="description" content="Display and interaction preferences for Cryptogram."/><!----><title>Config — Cryptogram</title>
-		<link href="./_app/immutable/assets/0.KquYmHrZ.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/0.D8ZvrCAa.css" rel="stylesheet">
 		<link href="./_app/immutable/assets/BackLink.3QHO-Omm.css" rel="stylesheet">
-		<link href="./_app/immutable/assets/4.DHx15ZFa.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/4._JG961FF.css" rel="stylesheet">
 	</head>
 	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents"><!--[--><!--[0--><!--[--><!--[--><main class="svelte-1gp6n77"><nav class="top-nav svelte-1nm93r3"><a class="home-link svelte-1nm93r3" href="./">← Home</a></nav><!----> <header class="svelte-1gp6n77"><h1 class="svelte-1gp6n77">Config</h1> <p class="subtitle svelte-1gp6n77">Display &amp; interaction preferences.</p></header> <section class="placeholder svelte-1gp6n77"><p class="svelte-1gp6n77">Settings are coming soon.</p></section></main><!--]--><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+		<div style="display: contents"><!--[--><!--[0--><!--[--><!--[--><main class="svelte-1gp6n77"><nav class="top-nav svelte-1nm93r3"><a class="home-link svelte-1nm93r3" href="./">← Home</a></nav><!----> <header class="svelte-1gp6n77"><h1 class="svelte-1gp6n77">Config</h1> <p class="subtitle svelte-1gp6n77">Display &amp; interaction preferences. Always editable. Save to apply.</p></header> <form><fieldset class="svelte-1gp6n77"><legend class="svelte-1gp6n77">Display</legend> <div class="setting svelte-1gp6n77"><label class="setting-desc svelte-1gp6n77" for="theme">Theme</label> <select id="theme" class="control svelte-1gp6n77"><!--[--><option value="Original" selected="">Original</option><option value="Prince">Prince</option><option value="Dark">Dark</option><option value="Bengal">Bengal</option><!--]--></select></div></fieldset> <div class="actions svelte-1gp6n77"><button type="submit" class="big-button svelte-1gp6n77" disabled="">Save</button> <span class="save-state svelte-1gp6n77" aria-live="polite">Saved</span></div></form></main><!--]--><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
 			
 			<script>
 				{
-					__sveltekit_ij39jk = {
+					__sveltekit_b7oo38 = {
 						base: new URL(".", location).pathname.slice(0, -1),
 						assets: "/cryptogram"
 					};
@@ -76,8 +104,8 @@
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("./_app/immutable/entry/start.IG6SN-88.js"),
-						import("./_app/immutable/entry/app.D0p5u8El.js")
+						import("./_app/immutable/entry/start.DarL4rpX.js"),
+						import("./_app/immutable/entry/app.BMAqvFad.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 4],
