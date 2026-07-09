@@ -40,6 +40,9 @@
 
 	let game = $state(startGame(puzzles[0], defaultAlgorithm));
 	let selected = $state<string | null>(null);
+	// Category and hint reveal independently (TODO-009) so a stuck player can
+	// escalate gradually — peek at the category first, reach for the hint only if needed.
+	let showCategory = $state(false);
 	let showHint = $state(false);
 	// Ids of puzzles already moved past; loaded from localStorage on mount so each
 	// puzzle is shown once (TODO-005). Empty during SSR/prerender.
@@ -65,6 +68,7 @@
 	function loadPuzzle(puzzle: Puzzle) {
 		game = startGame(puzzle, defaultAlgorithm);
 		selected = null;
+		showCategory = false;
 		showHint = false;
 		ended = false;
 	}
@@ -226,6 +230,14 @@
 			<button
 				type="button"
 				class="text-button"
+				aria-expanded={showCategory}
+				onclick={() => (showCategory = !showCategory)}
+			>
+				{showCategory ? 'Hide category' : 'Show category'}
+			</button>
+			<button
+				type="button"
+				class="text-button"
 				aria-expanded={showHint}
 				onclick={() => (showHint = !showHint)}
 			>
@@ -234,12 +246,16 @@
 			<button type="button" class="text-button" onclick={crackLetter} disabled={solved}>
 				Crack one
 			</button>
-			{#if showHint}
+			{#if showCategory || showHint}
 				<dl class="clue">
-					<dt>Category</dt>
-					<dd>{game.category}</dd>
-					<dt>Hint</dt>
-					<dd>{game.hint}</dd>
+					{#if showCategory}
+						<dt>Category</dt>
+						<dd>{game.category}</dd>
+					{/if}
+					{#if showHint}
+						<dt>Hint</dt>
+						<dd>{game.hint}</dd>
+					{/if}
 				</dl>
 			{/if}
 		</div>
