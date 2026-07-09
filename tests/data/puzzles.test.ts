@@ -68,7 +68,12 @@ describe('puzzle data', () => {
 		expect(count('Music [Guitar]'), 'Music [Guitar]').toBe(10);
 	});
 
-	it('has seventy-six puzzles in total (TODO-007)', () => {
-		expect(puzzles.length).toBe(76);
+	it('includes ten Humor puzzles and retired the proof-of-concept seed (TODO-013)', () => {
+		expect(puzzles.filter((p) => p.category === 'Humor').length).toBe(10);
+		expect(puzzles.some((p) => p.id === 'lenny-duchovny')).toBe(false);
+	});
+
+	it('has eighty-five puzzles in total (TODO-013)', () => {
+		expect(puzzles.length).toBe(85);
 	});
 });

@@ -2,13 +2,6 @@
 	"$comment": "Puzzle answers (quotations to be enciphered). SPEC §4. Each puzzle carries a category and a hint (TODO-004); the attribution is enciphered alongside the quote and revealed on solve.",
 	"puzzles": [
 		{
-			"id": "lenny-duchovny",
-			"text": "Duchovny does not deserve treats nor a spot on the couch.",
-			"attribution": "Lenny",
-			"category": "Humor",
-			"hint": "A stern verdict on a rival cat."
-		},
-		{
 			"id": "socrates-unexamined-life",
 			"text": "The unexamined life is not worth living.",
 			"attribution": "Socrates",
@@ -532,6 +525,76 @@
 			"attribution": "Keith Richards",
 			"category": "Music [Guitar]",
 			"hint": "A Rolling Stones riff-master on melody's wordless power."
+		},
+		{
+			"id": "groucho-marx-club",
+			"text": "I refuse to join any club that would have me as a member.",
+			"attribution": "Groucho Marx",
+			"category": "Humor",
+			"hint": "A wry dig at belonging to exclusive social circles."
+		},
+		{
+			"id": "wc-fields-wine",
+			"text": "I cook with wine. Sometimes I even add it to the food.",
+			"attribution": "W. C. Fields",
+			"category": "Humor",
+			"hint": "A tippler's excuse dressed up as a kitchen tip."
+		},
+		{
+			"id": "steven-wright-forever",
+			"text": "I intend to live forever. So far, so good.",
+			"attribution": "Steven Wright",
+			"category": "Humor",
+			"hint": "A deadpan boast about achieving immortality."
+		},
+		{
+			"id": "george-burns-family",
+			"text": "Happiness is having a large, loving, caring, close-knit family in another city.",
+			"attribution": "George Burns",
+			"category": "Humor",
+			"hint": "A cheeky nod to relatives kept at a comfortable distance."
+		},
+		{
+			"id": "phyllis-diller-shoveling",
+			"text": "Cleaning your house while your kids are still growing up is like shoveling the walk before it stops snowing.",
+			"attribution": "Phyllis Diller",
+			"category": "Humor",
+			"hint": "The futility of tidying amid small children."
+		},
+		{
+			"id": "bob-hope-bank",
+			"text": "A bank is a place that will lend you money if you can prove that you don't need it.",
+			"attribution": "Bob Hope",
+			"category": "Humor",
+			"hint": "A wry line about credit offered to the already wealthy."
+		},
+		{
+			"id": "will-rogers-track",
+			"text": "Even if you're on the right track, you'll get run over if you just sit there.",
+			"attribution": "Will Rogers",
+			"category": "Humor",
+			"hint": "The homespun humorist on the peril of standing pat."
+		},
+		{
+			"id": "erma-bombeck-housework",
+			"text": "Housework, if you do it right, will kill you.",
+			"attribution": "Erma Bombeck",
+			"category": "Humor",
+			"hint": "A humorist's warning that chores can be lethal."
+		},
+		{
+			"id": "robert-benchley-language",
+			"text": "Drawing on my fine command of the English language, I said nothing.",
+			"attribution": "Robert Benchley",
+			"category": "Humor",
+			"hint": "A writer's joke about eloquent silence."
+		},
+		{
+			"id": "milton-berle-committee",
+			"text": "A committee is a group that keeps minutes and loses hours.",
+			"attribution": "Milton Berle",
+			"category": "Humor",
+			"hint": "A jab at meetings that squander everyone's time."
 		}
 	]
 }
