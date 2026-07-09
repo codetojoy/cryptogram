@@ -2,10 +2,7 @@
 	import { base } from '$app/paths';
 	import BackLink from '$lib/ui/BackLink.svelte';
 	import { loadSettings, saveSettings, type Settings } from '$lib/ui/persistence.js';
-
-	// The available themes (TODO-010). Only "Original" exists so far; more become
-	// entries here without any change to this page's logic.
-	const THEMES = ['Original'];
+	import { THEMES, applyTheme } from '$lib/ui/theme.js';
 
 	// Editable prefs plus a snapshot of what's in storage, to detect unsaved changes.
 	let prefs = $state<Settings>(loadSettings());
@@ -16,6 +13,8 @@
 	function save() {
 		saveSettings({ ...prefs });
 		saved = { ...prefs };
+		// Apply the chosen theme app-wide immediately (TODO-011).
+		applyTheme(prefs.theme);
 	}
 </script>
 
@@ -38,8 +37,8 @@
 			<div class="setting">
 				<label class="setting-desc" for="theme">Theme</label>
 				<select id="theme" class="control" bind:value={prefs.theme}>
-					{#each THEMES as theme (theme)}
-						<option value={theme}>{theme}</option>
+					{#each THEMES as theme (theme.id)}
+						<option value={theme.label}>{theme.label}</option>
 					{/each}
 				</select>
 			</div>

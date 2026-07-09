@@ -50,6 +50,27 @@
 				src: url('%sveltekit.assets%/fonts/lora-400-italic.woff2') format('woff2');
 			}
 		</style>
+		<script>
+			/*
+			 * Apply the saved theme (TODO-011) before first paint so Prince users
+			 * don't see a flash of the Original palette on cold load. Reads the same
+			 * localStorage key/label the app uses; falls back silently to Original.
+			 * No network (privacy, SPEC §3). The app re-asserts this on hydration.
+			 */
+			(function () {
+				try {
+					var raw = localStorage.getItem('cryptogram.settings.v1');
+					var label = raw ? JSON.parse(raw).theme : 'Original';
+					var themes = { Original: { id: 'original', color: '#9c4632' }, Prince: { id: 'prince', color: '#7b2cbf' } };
+					var theme = themes[label] || themes.Original;
+					document.documentElement.setAttribute('data-theme', theme.id);
+					var meta = document.querySelector('meta[name="theme-color"]');
+					if (meta) meta.setAttribute('content', theme.color);
+				} catch (e) {
+					/* storage unavailable — Original (the base :root) applies */
+				}
+			})();
+		</script>
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">

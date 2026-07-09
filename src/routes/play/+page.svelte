@@ -365,7 +365,7 @@
 
 	.cell.active .guess {
 		border-bottom-color: var(--accent);
-		background: rgba(176, 80, 58, 0.12);
+		background: var(--accent-tint);
 	}
 
 	.cell:focus-visible {
