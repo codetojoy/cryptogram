@@ -90,6 +90,38 @@
 		--bad: #f87171;
 	}
 
+	/* "Dark" theme (TODO-012): a typical dark theme — near-black paper, light-grey
+	   ink, a friendly blue accent. */
+	:global(:root[data-theme='dark']) {
+		--bg: #121212;
+		--panel: #1e1e1e;
+		--ink: #e8e8e8;
+		--muted: #a0a0a0;
+		--accent: #6ea8fe;
+		--accent-deep: #4f8ef0;
+		--accent-tint: rgba(110, 168, 254, 0.16);
+		--rule: #333333;
+		--focus: #8ab4f8;
+		--good: #4ade80;
+		--bad: #f87171;
+	}
+
+	/* "Bengal" theme (TODO-012): a tiger palette — near-black paper, warm off-white
+	   ink, vivid tiger-orange accents. */
+	:global(:root[data-theme='bengal']) {
+		--bg: #1a1206;
+		--panel: #241a0d;
+		--ink: #ffe9d0;
+		--muted: #c9a97f;
+		--accent: #f57c1f;
+		--accent-deep: #d9631a;
+		--accent-tint: rgba(245, 124, 31, 0.2);
+		--rule: #4a3620;
+		--focus: #f9a03f;
+		--good: #4ade80;
+		--bad: #f87171;
+	}
+
 	:global(body) {
 		margin: 0;
 		min-height: 100vh;

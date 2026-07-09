@@ -61,7 +61,12 @@
 				try {
 					var raw = localStorage.getItem('cryptogram.settings.v1');
 					var label = raw ? JSON.parse(raw).theme : 'Original';
-					var themes = { Original: { id: 'original', color: '#9c4632' }, Prince: { id: 'prince', color: '#7b2cbf' } };
+					var themes = {
+						Original: { id: 'original', color: '#9c4632' },
+						Prince: { id: 'prince', color: '#7b2cbf' },
+						Dark: { id: 'dark', color: '#4f8ef0' },
+						Bengal: { id: 'bengal', color: '#d9631a' }
+					};
 					var theme = themes[label] || themes.Original;
 					document.documentElement.setAttribute('data-theme', theme.id);
 					var meta = document.querySelector('meta[name="theme-color"]');

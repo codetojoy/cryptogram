@@ -4,8 +4,8 @@ import { THEMES, themeFor, themeId, applyTheme } from '$lib/ui/theme.js';
 // Runs under the node (SSR) environment, where `browser` is false — applyTheme
 // must be a safe no-op there, since every route is prerendered (CLAUDE.md).
 describe('theme registry (TODO-011)', () => {
-	it('offers Original and Prince', () => {
-		expect(THEMES.map((t) => t.label)).toEqual(['Original', 'Prince']);
+	it('offers Original, Prince, Dark and Bengal', () => {
+		expect(THEMES.map((t) => t.label)).toEqual(['Original', 'Prince', 'Dark', 'Bengal']);
 	});
 
 	it('maps a stored label to its data-theme slug', () => {

@@ -21,9 +21,14 @@ export interface ThemeOption {
 	themeColor: string;
 }
 
+// NOTE: the anti-flash inline script in src/app.html hardcodes an equivalent
+// label→{id,color} map (it runs before this module can load); keep the two in
+// sync when adding a theme.
 export const THEMES: ThemeOption[] = [
 	{ id: 'original', label: 'Original', themeColor: '#9c4632' },
-	{ id: 'prince', label: 'Prince', themeColor: '#7b2cbf' }
+	{ id: 'prince', label: 'Prince', themeColor: '#7b2cbf' },
+	{ id: 'dark', label: 'Dark', themeColor: '#4f8ef0' },
+	{ id: 'bengal', label: 'Bengal', themeColor: '#d9631a' }
 ];
 
 const DEFAULT_THEME = THEMES[0];
