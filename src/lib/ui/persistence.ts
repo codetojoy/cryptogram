@@ -47,3 +47,50 @@ export function clearSeen(): void {
 		// Nothing to do — storage is unavailable.
 	}
 }
+
+/**
+ * Display & interaction preferences (TODO-010). Currently just the theme; only
+ * "Original" exists so far. Kept as a plain string (not a union) so adding a
+ * theme later is a data change, not a type change.
+ */
+export interface Settings {
+	theme: string;
+}
+
+const SETTINGS_KEY = 'cryptogram.settings.v1';
+
+/** The defaults a fresh install (or unavailable storage) falls back to. */
+export function defaultSettings(): Settings {
+	return { theme: 'Original' };
+}
+
+/**
+ * Load saved preferences, merged per-field onto the defaults so a save that
+ * predates a newly-added setting still yields a complete, valid Settings.
+ * SSR-safe: returns the defaults when storage is unavailable.
+ */
+export function loadSettings(): Settings {
+	const d = defaultSettings();
+	if (!browser) return d;
+	try {
+		const raw = localStorage.getItem(SETTINGS_KEY);
+		if (!raw) return d;
+		const parsed = JSON.parse(raw);
+		if (typeof parsed !== 'object' || parsed === null) return d;
+		return {
+			theme: typeof parsed.theme === 'string' ? parsed.theme : d.theme
+		};
+	} catch {
+		return d;
+	}
+}
+
+export function saveSettings(settings: Settings): void {
+	if (!browser) return;
+	try {
+		localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings));
+	} catch {
+		// Storage may be unavailable (private browsing); preferences just
+		// won't persist across sessions.
+	}
+}
