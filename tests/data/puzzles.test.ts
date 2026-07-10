@@ -73,7 +73,13 @@ describe('puzzle data', () => {
 		expect(puzzles.some((p) => p.id === 'lenny-duchovny')).toBe(false);
 	});
 
-	it('has eighty-five puzzles in total (TODO-013)', () => {
-		expect(puzzles.length).toBe(85);
+	it('includes ten each of Cuisine and Shakespeare (TODO-015)', () => {
+		const count = (category: string) => puzzles.filter((p) => p.category === category).length;
+		expect(count('Cuisine'), 'Cuisine').toBe(10);
+		expect(count('Shakespeare'), 'Shakespeare').toBe(10);
+	});
+
+	it('has one hundred and five puzzles in total (TODO-015)', () => {
+		expect(puzzles.length).toBe(105);
 	});
 });

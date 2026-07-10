@@ -595,6 +595,146 @@
 			"attribution": "Milton Berle",
 			"category": "Humor",
 			"hint": "A jab at meetings that squander everyone's time."
+		},
+		{
+			"id": "julia-child-love",
+			"text": "People who love to eat are always the best people.",
+			"attribution": "Julia Child",
+			"category": "Cuisine",
+			"hint": "A warm endorsement of hearty appetites as good company."
+		},
+		{
+			"id": "james-beard-common",
+			"text": "Food is our common ground, a universal experience.",
+			"attribution": "James Beard",
+			"category": "Cuisine",
+			"hint": "A dean of American cooking on the shared table that unites us."
+		},
+		{
+			"id": "anthony-bourdain-temple",
+			"text": "Your body is not a temple, it's an amusement park.",
+			"attribution": "Anthony Bourdain",
+			"category": "Cuisine",
+			"hint": "A rakish case for enjoying life rather than guarding it."
+		},
+		{
+			"id": "wolfgang-puck-painting",
+			"text": "Cooking is like painting or writing a song.",
+			"attribution": "Wolfgang Puck",
+			"category": "Cuisine",
+			"hint": "A celebrity restaurateur likens the kitchen to the arts."
+		},
+		{
+			"id": "escoffier-foundation",
+			"text": "Good food is the foundation of genuine happiness.",
+			"attribution": "Auguste Escoffier",
+			"category": "Cuisine",
+			"hint": "The master chef on nourishment as the root of contentment."
+		},
+		{
+			"id": "paul-prudhomme-fork",
+			"text": "You don't need a silver fork to eat good food.",
+			"attribution": "Paul Prudhomme",
+			"category": "Cuisine",
+			"hint": "A Cajun cook insists fine tools aren't required to enjoy a meal."
+		},
+		{
+			"id": "alice-waters-taste",
+			"text": "Let things taste of what they are.",
+			"attribution": "Alice Waters",
+			"category": "Cuisine",
+			"hint": "A farm-to-table pioneer urges cooks to respect each ingredient's true nature."
+		},
+		{
+			"id": "fernand-point-details",
+			"text": "Success is the sum of a lot of small things done correctly.",
+			"attribution": "Fernand Point",
+			"category": "Cuisine",
+			"hint": "A revered French chef credits greatness to many minor details."
+		},
+		{
+			"id": "thomas-keller-soul",
+			"text": "A recipe has no soul. You as the cook must bring soul to the recipe.",
+			"attribution": "Thomas Keller",
+			"category": "Cuisine",
+			"hint": "A renowned American chef says the maker gives a dish its spirit."
+		},
+		{
+			"id": "marco-pierre-white-nature",
+			"text": "Mother Nature is the true artist and our job as cooks is to allow her to shine.",
+			"attribution": "Marco Pierre White",
+			"category": "Cuisine",
+			"hint": "A fiery British chef credits ingredients, not the kitchen, for brilliance."
+		},
+		{
+			"id": "shakespeare-hamlet-question",
+			"text": "To be, or not to be, that is the question.",
+			"attribution": "William Shakespeare",
+			"category": "Shakespeare",
+			"hint": "Hamlet weighs existence against oblivion in his most famous soliloquy."
+		},
+		{
+			"id": "shakespeare-romeo-name",
+			"text": "What's in a name? That which we call a rose by any other name would smell as sweet.",
+			"attribution": "William Shakespeare",
+			"category": "Shakespeare",
+			"hint": "Juliet argues that labels matter less than the thing itself."
+		},
+		{
+			"id": "shakespeare-caesar-cowards",
+			"text": "Cowards die many times before their deaths; the valiant never taste of death but once.",
+			"attribution": "William Shakespeare",
+			"category": "Shakespeare",
+			"hint": "In a Roman tragedy, the fearful perish repeatedly while the brave meet mortality just a single moment."
+		},
+		{
+			"id": "shakespeare-as-you-like-stage",
+			"text": "All the world's a stage, and all the men and women merely players.",
+			"attribution": "William Shakespeare",
+			"category": "Shakespeare",
+			"hint": "A melancholy courtier compares life to a theatrical performance."
+		},
+		{
+			"id": "shakespeare-macbeth-candle",
+			"text": "Out, out, brief candle! Life's but a walking shadow.",
+			"attribution": "William Shakespeare",
+			"category": "Shakespeare",
+			"hint": "A doomed Scottish king likens mortal existence to a flickering flame."
+		},
+		{
+			"id": "shakespeare-twelfth-night-music",
+			"text": "If music be the food of love, play on.",
+			"attribution": "William Shakespeare",
+			"category": "Shakespeare",
+			"hint": "A lovesick duke calls for more melody to feed his longing."
+		},
+		{
+			"id": "shakespeare-hamlet-true",
+			"text": "This above all: to thine own self be true.",
+			"attribution": "William Shakespeare",
+			"category": "Shakespeare",
+			"hint": "Polonius advises his departing son to stay honest with himself."
+		},
+		{
+			"id": "shakespeare-merchant-mercy",
+			"text": "The quality of mercy is not strained.",
+			"attribution": "William Shakespeare",
+			"category": "Shakespeare",
+			"hint": "Portia pleads that compassion cannot be forced from anyone."
+		},
+		{
+			"id": "shakespeare-lear-nothing",
+			"text": "Nothing will come of nothing.",
+			"attribution": "William Shakespeare",
+			"category": "Shakespeare",
+			"hint": "An aging monarch warns his daughter that empty words earn empty rewards."
+		},
+		{
+			"id": "shakespeare-richard-winter",
+			"text": "Now is the winter of our discontent.",
+			"attribution": "William Shakespeare",
+			"category": "Shakespeare",
+			"hint": "A scheming duke opens by declaring an end to gloomy days."
 		}
 	]
 }
