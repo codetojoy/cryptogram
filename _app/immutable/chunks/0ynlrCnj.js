@@ -1,0 +1,1 @@
+import{I as e,Y as t,j as n,l as r,v as i,x as a,y as o}from"./wNnpM47b.js";import"./xihTtKlq.js";var s=a(`<nav class="top-nav svelte-1nm93r3"><a class="home-link svelte-1nm93r3"> </a></nav>`);function c(a,c){var l=s(),u=e(l),d=e(u);t(u),t(l),n(()=>{r(u,`href`,c.href),i(d,`← ${c.label??``}`)}),o(a,l)}export{c as t};
