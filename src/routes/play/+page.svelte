@@ -73,6 +73,16 @@
 		ended = false;
 	}
 
+	/** Record a puzzle as moved-past and persist it, once. Idempotent, so it is
+	 *  safe to call every time the solved state is observed. */
+	function markSeen(id: string) {
+		if (seen.has(id)) return;
+		const updated = new Set(seen);
+		updated.add(id);
+		seen = updated;
+		saveSeen(seen);
+	}
+
 	// On the client, honour previously-seen puzzles: open on a random unseen one
 	// (TODO-006), or show the end state if they've all been played.
 	onMount(() => {
@@ -80,6 +90,14 @@
 		const next = randomUnseen();
 		if (next) loadPuzzle(next);
 		else ended = true;
+	});
+
+	// Mark a puzzle seen the instant it's solved, not only when the player clicks
+	// "Next puzzle" (TODO-014) — so a reload after solving won't resurface it.
+	// The `seen.has` guard in markSeen keeps this idempotent (no effect loop), and
+	// "Play again" replays the same puzzle without ever un-marking it.
+	$effect(() => {
+		if (solved) markSeen(game.puzzleId);
 	});
 
 	function selectCell(cipher: string) {
@@ -108,10 +126,7 @@
 	// Mark the current puzzle seen (persisted) and advance; when none are left,
 	// show the end-of-game message.
 	function nextPuzzle() {
-		const updated = new Set(seen);
-		updated.add(game.puzzleId);
-		seen = updated;
-		saveSeen(seen);
+		markSeen(game.puzzleId);
 		const next = randomUnseen();
 		if (next) loadPuzzle(next);
 		else ended = true;
