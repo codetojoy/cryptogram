@@ -669,70 +669,70 @@
 		{
 			"id": "shakespeare-hamlet-question",
 			"text": "To be, or not to be, that is the question.",
-			"attribution": "William Shakespeare",
+			"attribution": "Hamlet",
 			"category": "Shakespeare",
-			"hint": "Hamlet weighs existence against oblivion in his most famous soliloquy."
+			"hint": "A prince weighs existence against oblivion in his most famous soliloquy."
 		},
 		{
 			"id": "shakespeare-romeo-name",
 			"text": "What's in a name? That which we call a rose by any other name would smell as sweet.",
-			"attribution": "William Shakespeare",
+			"attribution": "Juliet",
 			"category": "Shakespeare",
-			"hint": "Juliet argues that labels matter less than the thing itself."
+			"hint": "A lovestruck girl argues that labels matter less than the thing itself."
 		},
 		{
 			"id": "shakespeare-caesar-cowards",
 			"text": "Cowards die many times before their deaths; the valiant never taste of death but once.",
-			"attribution": "William Shakespeare",
+			"attribution": "Julius Caesar",
 			"category": "Shakespeare",
 			"hint": "In a Roman tragedy, the fearful perish repeatedly while the brave meet mortality just a single moment."
 		},
 		{
 			"id": "shakespeare-as-you-like-stage",
 			"text": "All the world's a stage, and all the men and women merely players.",
-			"attribution": "William Shakespeare",
+			"attribution": "Jaques",
 			"category": "Shakespeare",
 			"hint": "A melancholy courtier compares life to a theatrical performance."
 		},
 		{
 			"id": "shakespeare-macbeth-candle",
 			"text": "Out, out, brief candle! Life's but a walking shadow.",
-			"attribution": "William Shakespeare",
+			"attribution": "Macbeth",
 			"category": "Shakespeare",
 			"hint": "A doomed Scottish king likens mortal existence to a flickering flame."
 		},
 		{
 			"id": "shakespeare-twelfth-night-music",
 			"text": "If music be the food of love, play on.",
-			"attribution": "William Shakespeare",
+			"attribution": "Orsino",
 			"category": "Shakespeare",
 			"hint": "A lovesick duke calls for more melody to feed his longing."
 		},
 		{
 			"id": "shakespeare-hamlet-true",
 			"text": "This above all: to thine own self be true.",
-			"attribution": "William Shakespeare",
+			"attribution": "Polonius",
 			"category": "Shakespeare",
-			"hint": "Polonius advises his departing son to stay honest with himself."
+			"hint": "A counselor advises his departing son to stay honest with himself."
 		},
 		{
 			"id": "shakespeare-merchant-mercy",
 			"text": "The quality of mercy is not strained.",
-			"attribution": "William Shakespeare",
+			"attribution": "Portia",
 			"category": "Shakespeare",
-			"hint": "Portia pleads that compassion cannot be forced from anyone."
+			"hint": "A disguised advocate pleads that compassion cannot be forced from anyone."
 		},
 		{
 			"id": "shakespeare-lear-nothing",
 			"text": "Nothing will come of nothing.",
-			"attribution": "William Shakespeare",
+			"attribution": "King Lear",
 			"category": "Shakespeare",
 			"hint": "An aging monarch warns his daughter that empty words earn empty rewards."
 		},
 		{
 			"id": "shakespeare-richard-winter",
 			"text": "Now is the winter of our discontent.",
-			"attribution": "William Shakespeare",
+			"attribution": "Richard, Duke of Gloucester",
 			"category": "Shakespeare",
 			"hint": "A scheming duke opens by declaring an end to gloomy days."
 		}
