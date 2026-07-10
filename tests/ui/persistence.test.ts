@@ -23,15 +23,15 @@ describe('seen-puzzle persistence (SSR-safe)', () => {
 });
 
 describe('settings persistence (SSR-safe, TODO-010)', () => {
-	it('defaults the theme to "Original"', () => {
-		expect(defaultSettings()).toEqual({ theme: 'Original' });
+	it('defaults the theme to "Original" and Show Id off (TODO-016)', () => {
+		expect(defaultSettings()).toEqual({ theme: 'Original', showId: false });
 	});
 
 	it('loadSettings returns the defaults when storage is unavailable', () => {
-		expect(loadSettings()).toEqual({ theme: 'Original' });
+		expect(loadSettings()).toEqual({ theme: 'Original', showId: false });
 	});
 
 	it('saveSettings is a no-op that does not throw', () => {
-		expect(() => saveSettings({ theme: 'Original' })).not.toThrow();
+		expect(() => saveSettings({ theme: 'Original', showId: false })).not.toThrow();
 	});
 });

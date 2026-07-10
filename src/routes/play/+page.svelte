@@ -5,7 +5,7 @@
 	import Keypad from '$lib/ui/Keypad.svelte';
 	import { isLetter } from '$lib/domain/cipher.js';
 	import { puzzles, defaultAlgorithm } from '$lib/data/puzzles.js';
-	import { loadSeen, saveSeen, clearSeen } from '$lib/ui/persistence.js';
+	import { loadSeen, saveSeen, clearSeen, loadSettings } from '$lib/ui/persistence.js';
 	import {
 		startGame,
 		setGuess,
@@ -44,6 +44,11 @@
 	// escalate gradually — peek at the category first, reach for the hint only if needed.
 	let showCategory = $state(false);
 	let showHint = $state(false);
+	// Debug: the "Show Id" reveal (TODO-016). `idEnabled` mirrors the config
+	// setting (whether the link is offered at all); `showId` is the per-puzzle
+	// reveal toggle. Loaded from settings on mount, off during SSR/prerender.
+	let idEnabled = $state(false);
+	let showId = $state(false);
 	// Ids of puzzles already moved past; loaded from localStorage on mount so each
 	// puzzle is shown once (TODO-005). Empty during SSR/prerender.
 	let seen = $state<Set<string>>(new Set());
@@ -70,6 +75,7 @@
 		selected = null;
 		showCategory = false;
 		showHint = false;
+		showId = false;
 		ended = false;
 	}
 
@@ -87,6 +93,7 @@
 	// (TODO-006), or show the end state if they've all been played.
 	onMount(() => {
 		seen = loadSeen();
+		idEnabled = loadSettings().showId;
 		const next = randomUnseen();
 		if (next) loadPuzzle(next);
 		else ended = true;
@@ -261,7 +268,17 @@
 			<button type="button" class="text-button" onclick={crackLetter} disabled={solved}>
 				Crack one
 			</button>
-			{#if showCategory || showHint}
+			{#if idEnabled}
+				<button
+					type="button"
+					class="text-button"
+					aria-expanded={showId}
+					onclick={() => (showId = !showId)}
+				>
+					{showId ? 'Hide Id' : 'Show Id'}
+				</button>
+			{/if}
+			{#if showCategory || showHint || showId}
 				<dl class="clue">
 					{#if showCategory}
 						<dt>Category</dt>
@@ -270,6 +287,10 @@
 					{#if showHint}
 						<dt>Hint</dt>
 						<dd>{game.hint}</dd>
+					{/if}
+					{#if showId}
+						<dt>Puzzle id</dt>
+						<dd>{game.puzzleId}</dd>
 					{/if}
 				</dl>
 			{/if}

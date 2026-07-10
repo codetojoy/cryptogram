@@ -49,19 +49,21 @@ export function clearSeen(): void {
 }
 
 /**
- * Display & interaction preferences (TODO-010). Currently just the theme; only
- * "Original" exists so far. Kept as a plain string (not a union) so adding a
- * theme later is a data change, not a type change.
+ * Display & interaction preferences (TODO-010). The theme is a plain string
+ * (not a union) so adding a theme later is a data change, not a type change.
+ * `showId` is a debug toggle (TODO-016): when on, the play screen offers a link
+ * that reveals the current puzzle's id.
  */
 export interface Settings {
 	theme: string;
+	showId: boolean;
 }
 
 const SETTINGS_KEY = 'cryptogram.settings.v1';
 
 /** The defaults a fresh install (or unavailable storage) falls back to. */
 export function defaultSettings(): Settings {
-	return { theme: 'Original' };
+	return { theme: 'Original', showId: false };
 }
 
 /**
@@ -78,7 +80,8 @@ export function loadSettings(): Settings {
 		const parsed = JSON.parse(raw);
 		if (typeof parsed !== 'object' || parsed === null) return d;
 		return {
-			theme: typeof parsed.theme === 'string' ? parsed.theme : d.theme
+			theme: typeof parsed.theme === 'string' ? parsed.theme : d.theme,
+			showId: typeof parsed.showId === 'boolean' ? parsed.showId : d.showId
 		};
 	} catch {
 		return d;

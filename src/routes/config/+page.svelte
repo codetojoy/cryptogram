@@ -8,7 +8,7 @@
 	let prefs = $state<Settings>(loadSettings());
 	let saved = $state<Settings>({ ...prefs });
 
-	const dirty = $derived(prefs.theme !== saved.theme);
+	const dirty = $derived(prefs.theme !== saved.theme || prefs.showId !== saved.showId);
 
 	function save() {
 		saveSettings({ ...prefs });
@@ -41,6 +41,13 @@
 						<option value={theme.label}>{theme.label}</option>
 					{/each}
 				</select>
+			</div>
+			<div class="setting">
+				<label class="setting-desc" for="show-id">
+					Show Id
+					<span class="setting-note">Reveals a link on the play screen to show the current puzzle's id (for debugging).</span>
+				</label>
+				<input id="show-id" class="toggle" type="checkbox" bind:checked={prefs.showId} />
 			</div>
 		</fieldset>
 
@@ -110,6 +117,28 @@
 	.setting-desc {
 		font-size: 1.1rem;
 		font-weight: 600;
+	}
+
+	.setting-note {
+		display: block;
+		margin-top: 0.15rem;
+		font-size: 0.85rem;
+		font-weight: 400;
+		font-style: italic;
+		color: var(--muted);
+	}
+
+	.toggle {
+		flex: none;
+		width: 28px;
+		height: 28px;
+		accent-color: var(--accent);
+		cursor: pointer;
+	}
+
+	.toggle:focus-visible {
+		outline: 4px solid var(--focus);
+		outline-offset: 2px;
 	}
 
 	.control {
