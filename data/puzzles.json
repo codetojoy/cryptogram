@@ -3,6 +3,7 @@
 	"puzzles": [
 		{
 			"id": "socrates-unexamined-life",
+			"display_num": "0001",
 			"text": "The unexamined life is not worth living.",
 			"attribution": "Socrates",
 			"category": "Philosophy",
@@ -10,6 +11,7 @@
 		},
 		{
 			"id": "descartes-cogito",
+			"display_num": "0002",
 			"text": "I think, therefore I am.",
 			"attribution": "Descartes",
 			"category": "Philosophy",
@@ -17,6 +19,7 @@
 		},
 		{
 			"id": "confucius-slowly",
+			"display_num": "0003",
 			"text": "It does not matter how slowly you go as long as you do not stop.",
 			"attribution": "Confucius",
 			"category": "Philosophy",
@@ -24,6 +27,7 @@
 		},
 		{
 			"id": "nietzsche-stronger",
+			"display_num": "0004",
 			"text": "That which does not kill us makes us stronger.",
 			"attribution": "Nietzsche",
 			"category": "Philosophy",
@@ -31,6 +35,7 @@
 		},
 		{
 			"id": "aristotle-know-yourself",
+			"display_num": "0005",
 			"text": "Knowing yourself is the beginning of all wisdom.",
 			"attribution": "Aristotle",
 			"category": "Philosophy",
@@ -38,6 +43,7 @@
 		},
 		{
 			"id": "plato-measure-power",
+			"display_num": "0006",
 			"text": "The measure of a man is what he does with power.",
 			"attribution": "Plato",
 			"category": "Philosophy",
@@ -45,6 +51,7 @@
 		},
 		{
 			"id": "aristotle-patience-fruit",
+			"display_num": "0007",
 			"text": "Patience is bitter, but its fruit is sweet.",
 			"attribution": "Aristotle",
 			"category": "Philosophy",
@@ -52,6 +59,7 @@
 		},
 		{
 			"id": "confucius-know-ignorance",
+			"display_num": "0008",
 			"text": "Real knowledge is to know the extent of one's ignorance.",
 			"attribution": "Confucius",
 			"category": "Philosophy",
@@ -59,6 +67,7 @@
 		},
 		{
 			"id": "nietzsche-why-live",
+			"display_num": "0009",
 			"text": "He who has a why to live can bear almost any how.",
 			"attribution": "Nietzsche",
 			"category": "Philosophy",
@@ -66,6 +75,7 @@
 		},
 		{
 			"id": "socrates-good-evil",
+			"display_num": "0010",
 			"text": "There is only one good, knowledge, and one evil, ignorance.",
 			"attribution": "Socrates",
 			"category": "Philosophy",
@@ -73,6 +83,7 @@
 		},
 		{
 			"id": "descartes-good-mind",
+			"display_num": "0011",
 			"text": "It is not enough to have a good mind; the main thing is to use it well.",
 			"attribution": "Descartes",
 			"category": "Philosophy",
@@ -80,6 +91,7 @@
 		},
 		{
 			"id": "kant-rich-without",
+			"display_num": "0012",
 			"text": "We are not rich by what we possess but by what we can do without.",
 			"attribution": "Kant",
 			"category": "Philosophy",
@@ -87,6 +99,7 @@
 		},
 		{
 			"id": "epictetus-react",
+			"display_num": "0013",
 			"text": "It is not what happens to you, but how you react to it that matters.",
 			"attribution": "Epictetus",
 			"category": "Philosophy",
@@ -94,6 +107,7 @@
 		},
 		{
 			"id": "seneca-luck-preparation",
+			"display_num": "0014",
 			"text": "Luck is what happens when preparation meets opportunity.",
 			"attribution": "Seneca",
 			"category": "Philosophy",
@@ -101,6 +115,7 @@
 		},
 		{
 			"id": "laotzu-journey-step",
+			"display_num": "0015",
 			"text": "The journey of a thousand miles begins with a single step.",
 			"attribution": "Lao Tzu",
 			"category": "Philosophy",
@@ -108,6 +123,7 @@
 		},
 		{
 			"id": "beethoven-wrong-note",
+			"display_num": "0016",
 			"text": "To play a wrong note is insignificant; to play without passion is inexcusable.",
 			"attribution": "Beethoven",
 			"category": "Music",
@@ -115,6 +131,7 @@
 		},
 		{
 			"id": "armstrong-ask-jazz",
+			"display_num": "0017",
 			"text": "If you have to ask what jazz is, you'll never know.",
 			"attribution": "Louis Armstrong",
 			"category": "Music",
@@ -122,6 +139,7 @@
 		},
 		{
 			"id": "bach-aim-music",
+			"display_num": "0018",
 			"text": "The aim and final end of all music should be none other than the glory of God.",
 			"attribution": "Bach",
 			"category": "Music",
@@ -129,6 +147,7 @@
 		},
 		{
 			"id": "mozart-silence-notes",
+			"display_num": "0019",
 			"text": "The music is not in the notes, but in the silence between.",
 			"attribution": "Mozart",
 			"category": "Music",
@@ -136,6 +155,7 @@
 		},
 		{
 			"id": "ellington-problem-chance",
+			"display_num": "0020",
 			"text": "A problem is a chance for you to do your best.",
 			"attribution": "Duke Ellington",
 			"category": "Music",
@@ -143,6 +163,7 @@
 		},
 		{
 			"id": "tchaikovsky-inspiration-lazy",
+			"display_num": "0021",
 			"text": "Inspiration is a guest that does not willingly visit the lazy.",
 			"attribution": "Tchaikovsky",
 			"category": "Music",
@@ -150,6 +171,7 @@
 		},
 		{
 			"id": "miles-fear-mistakes",
+			"display_num": "0022",
 			"text": "Do not fear mistakes. There are none.",
 			"attribution": "Miles Davis",
 			"category": "Music",
@@ -157,6 +179,7 @@
 		},
 		{
 			"id": "chopin-simplicity",
+			"display_num": "0023",
 			"text": "Simplicity is the final achievement.",
 			"attribution": "Chopin",
 			"category": "Music",
@@ -164,6 +187,7 @@
 		},
 		{
 			"id": "stravinsky-constraints",
+			"display_num": "0024",
 			"text": "The more constraints one imposes, the more one frees oneself.",
 			"attribution": "Stravinsky",
 			"category": "Music",
@@ -171,6 +195,7 @@
 		},
 		{
 			"id": "ray-charles-music-me",
+			"display_num": "0025",
 			"text": "Music is nothing separate from me. It is me.",
 			"attribution": "Ray Charles",
 			"category": "Music",
@@ -178,6 +203,7 @@
 		},
 		{
 			"id": "swing-low-chariot",
+			"display_num": "0026",
 			"text": "Swing low, sweet chariot, coming for to carry me home.",
 			"attribution": "Swing Low, Sweet Chariot",
 			"category": "Lyrics",
@@ -185,6 +211,7 @@
 		},
 		{
 			"id": "amazing-grace",
+			"display_num": "0027",
 			"text": "Amazing grace, how sweet the sound, that saved a wretch like me.",
 			"attribution": "Amazing Grace",
 			"category": "Lyrics",
@@ -192,6 +219,7 @@
 		},
 		{
 			"id": "danny-boy-summer",
+			"display_num": "0028",
 			"text": "The summer's gone, and all the roses falling.",
 			"attribution": "Danny Boy",
 			"category": "Lyrics",
@@ -199,6 +227,7 @@
 		},
 		{
 			"id": "home-on-the-range",
+			"display_num": "0029",
 			"text": "Home, home on the range, where the deer and the antelope play.",
 			"attribution": "Home on the Range",
 			"category": "Lyrics",
@@ -206,6 +235,7 @@
 		},
 		{
 			"id": "scarborough-fair",
+			"display_num": "0030",
 			"text": "Are you going to Scarborough Fair? Parsley, sage, rosemary and thyme.",
 			"attribution": "Scarborough Fair",
 			"category": "Lyrics",
@@ -213,6 +243,7 @@
 		},
 		{
 			"id": "water-is-wide",
+			"display_num": "0031",
 			"text": "The water is wide, I cannot cross over.",
 			"attribution": "The Water Is Wide",
 			"category": "Lyrics",
@@ -220,6 +251,7 @@
 		},
 		{
 			"id": "shenandoah",
+			"display_num": "0032",
 			"text": "Oh Shenandoah, I long to hear you, away you rolling river.",
 			"attribution": "Shenandoah",
 			"category": "Lyrics",
@@ -227,6 +259,7 @@
 		},
 		{
 			"id": "auld-lang-syne",
+			"display_num": "0033",
 			"text": "Should auld acquaintance be forgot, and never brought to mind.",
 			"attribution": "Auld Lang Syne",
 			"category": "Lyrics",
@@ -234,6 +267,7 @@
 		},
 		{
 			"id": "saints-marching-in",
+			"display_num": "0034",
 			"text": "Oh, when the saints go marching in, I want to be in that number.",
 			"attribution": "When the Saints Go Marching In",
 			"category": "Lyrics",
@@ -241,6 +275,7 @@
 		},
 		{
 			"id": "greensleeves",
+			"display_num": "0035",
 			"text": "Alas, my love, you do me wrong to cast me off discourteously.",
 			"attribution": "Greensleeves",
 			"category": "Lyrics",
@@ -248,6 +283,7 @@
 		},
 		{
 			"id": "john-god-loved-world",
+			"display_num": "0036",
 			"text": "For God so loved the world that he gave his one and only Son.",
 			"attribution": "John",
 			"category": "Religion",
@@ -255,6 +291,7 @@
 		},
 		{
 			"id": "proverbs-trust-lord",
+			"display_num": "0037",
 			"text": "Trust in the Lord with all your heart and lean not on your own understanding.",
 			"attribution": "Proverbs",
 			"category": "Religion",
@@ -262,6 +299,7 @@
 		},
 		{
 			"id": "psalms-shepherd",
+			"display_num": "0038",
 			"text": "The Lord is my shepherd, I lack nothing.",
 			"attribution": "Psalms",
 			"category": "Religion",
@@ -269,6 +307,7 @@
 		},
 		{
 			"id": "genesis-beginning",
+			"display_num": "0039",
 			"text": "In the beginning God created the heavens and the earth.",
 			"attribution": "Genesis",
 			"category": "Religion",
@@ -276,6 +315,7 @@
 		},
 		{
 			"id": "matthew-peacemakers",
+			"display_num": "0040",
 			"text": "Blessed are the peacemakers, for they will be called children of God.",
 			"attribution": "Matthew",
 			"category": "Religion",
@@ -283,6 +323,7 @@
 		},
 		{
 			"id": "isaiah-hope-renew",
+			"display_num": "0041",
 			"text": "But those who hope in the Lord will renew their strength.",
 			"attribution": "Isaiah",
 			"category": "Religion",
@@ -290,6 +331,7 @@
 		},
 		{
 			"id": "philippians-strength",
+			"display_num": "0042",
 			"text": "I can do all this through him who gives me strength.",
 			"attribution": "Philippians",
 			"category": "Religion",
@@ -297,6 +339,7 @@
 		},
 		{
 			"id": "romans-overcome-evil",
+			"display_num": "0043",
 			"text": "Do not be overcome by evil, but overcome evil with good.",
 			"attribution": "Romans",
 			"category": "Religion",
@@ -304,6 +347,7 @@
 		},
 		{
 			"id": "ecclesiastes-time-season",
+			"display_num": "0044",
 			"text": "There is a time for everything, and a season for every activity under the heavens.",
 			"attribution": "Ecclesiastes",
 			"category": "Religion",
@@ -311,6 +355,7 @@
 		},
 		{
 			"id": "corinthians-love-patient",
+			"display_num": "0045",
 			"text": "Love is patient, love is kind. It does not envy, it does not boast.",
 			"attribution": "Corinthians",
 			"category": "Religion",
@@ -318,6 +363,7 @@
 		},
 		{
 			"id": "gandhi-be-the-change",
+			"display_num": "0046",
 			"text": "Be the change you wish to see in the world.",
 			"attribution": "Gandhi",
 			"category": "General",
@@ -325,6 +371,7 @@
 		},
 		{
 			"id": "eleanor-roosevelt-dreams",
+			"display_num": "0047",
 			"text": "The future belongs to those who believe in the beauty of their dreams.",
 			"attribution": "Eleanor Roosevelt",
 			"category": "General",
@@ -332,6 +379,7 @@
 		},
 		{
 			"id": "twain-getting-ahead",
+			"display_num": "0048",
 			"text": "The secret of getting ahead is getting started.",
 			"attribution": "Mark Twain",
 			"category": "General",
@@ -339,6 +387,7 @@
 		},
 		{
 			"id": "wilde-be-yourself",
+			"display_num": "0049",
 			"text": "Be yourself; everyone else is already taken.",
 			"attribution": "Oscar Wilde",
 			"category": "General",
@@ -346,6 +395,7 @@
 		},
 		{
 			"id": "angelou-how-you-feel",
+			"display_num": "0050",
 			"text": "People will never forget how you made them feel.",
 			"attribution": "Maya Angelou",
 			"category": "General",
@@ -353,6 +403,7 @@
 		},
 		{
 			"id": "churchill-courage-continue",
+			"display_num": "0051",
 			"text": "Success is not final, failure is not fatal: it is the courage to continue that counts.",
 			"attribution": "Winston Churchill",
 			"category": "General",
@@ -360,6 +411,7 @@
 		},
 		{
 			"id": "jobs-time-limited",
+			"display_num": "0052",
 			"text": "Your time is limited, so do not waste it living someone else's life.",
 			"attribution": "Steve Jobs",
 			"category": "General",
@@ -367,6 +419,7 @@
 		},
 		{
 			"id": "mandela-impossible-until-done",
+			"display_num": "0053",
 			"text": "It always seems impossible until it is done.",
 			"attribution": "Nelson Mandela",
 			"category": "General",
@@ -374,6 +427,7 @@
 		},
 		{
 			"id": "einstein-imagination",
+			"display_num": "0054",
 			"text": "Imagination is more important than knowledge.",
 			"attribution": "Albert Einstein",
 			"category": "General",
@@ -381,6 +435,7 @@
 		},
 		{
 			"id": "theodore-roosevelt-halfway",
+			"display_num": "0055",
 			"text": "Believe you can and you are halfway there.",
 			"attribution": "Theodore Roosevelt",
 			"category": "General",
@@ -388,6 +443,7 @@
 		},
 		{
 			"id": "fischer-chess-war",
+			"display_num": "0056",
 			"text": "Chess is war over the board. The object is to crush the opponent's mind.",
 			"attribution": "Bobby Fischer",
 			"category": "Chess",
@@ -395,6 +451,7 @@
 		},
 		{
 			"id": "kasparov-mental-torture",
+			"display_num": "0057",
 			"text": "Chess is mental torture.",
 			"attribution": "Garry Kasparov",
 			"category": "Chess",
@@ -402,6 +459,7 @@
 		},
 		{
 			"id": "lasker-better-move",
+			"display_num": "0058",
 			"text": "When you see a good move, look for a better one.",
 			"attribution": "Emanuel Lasker",
 			"category": "Chess",
@@ -409,6 +467,7 @@
 		},
 		{
 			"id": "tartakower-blunders-board",
+			"display_num": "0059",
 			"text": "The blunders are all there on the board, waiting to be made.",
 			"attribution": "Tartakower",
 			"category": "Chess",
@@ -416,6 +475,7 @@
 		},
 		{
 			"id": "steinitz-unsound-combination",
+			"display_num": "0060",
 			"text": "A win by an unsound combination, however showy, fills me with artistic horror.",
 			"attribution": "Steinitz",
 			"category": "Chess",
@@ -423,6 +483,7 @@
 		},
 		{
 			"id": "nimzowitsch-threat-stronger",
+			"display_num": "0061",
 			"text": "The threat is stronger than the execution.",
 			"attribution": "Nimzowitsch",
 			"category": "Chess",
@@ -430,6 +491,7 @@
 		},
 		{
 			"id": "tarrasch-chess-love-music",
+			"display_num": "0062",
 			"text": "Chess, like love, like music, has the power to make people happy.",
 			"attribution": "Tarrasch",
 			"category": "Chess",
@@ -437,6 +499,7 @@
 		},
 		{
 			"id": "capablanca-learn-from-loss",
+			"display_num": "0063",
 			"text": "You may learn much more from a game you lose than from a game you win.",
 			"attribution": "Capablanca",
 			"category": "Chess",
@@ -444,6 +507,7 @@
 		},
 		{
 			"id": "tal-dark-forest",
+			"display_num": "0064",
 			"text": "You must take your opponent into a deep dark forest where two plus two equals five.",
 			"attribution": "Mikhail Tal",
 			"category": "Chess",
@@ -451,6 +515,7 @@
 		},
 		{
 			"id": "alekhine-beast-monk",
+			"display_num": "0065",
 			"text": "During a chess competition a chessmaster should be a combination of a beast of prey and a monk.",
 			"attribution": "Alekhine",
 			"category": "Chess",
@@ -458,6 +523,7 @@
 		},
 		{
 			"id": "hendrix-power-of-love",
+			"display_num": "0066",
 			"text": "When the power of love overcomes the love of power, the world will know peace.",
 			"attribution": "Jimi Hendrix",
 			"category": "Music [Guitar]",
@@ -465,6 +531,7 @@
 		},
 		{
 			"id": "bbking-learning",
+			"display_num": "0067",
 			"text": "The beautiful thing about learning is that no one can take it away from you.",
 			"attribution": "B.B. King",
 			"category": "Music [Guitar]",
@@ -472,6 +539,7 @@
 		},
 		{
 			"id": "clapton-just-happens",
+			"display_num": "0068",
 			"text": "I've never been able to explain what happens when I play. It just happens.",
 			"attribution": "Eric Clapton",
 			"category": "Music [Guitar]",
@@ -479,6 +547,7 @@
 		},
 		{
 			"id": "segovia-small-orchestra",
+			"display_num": "0069",
 			"text": "The guitar is a small orchestra. It is polyphonic. Every string is a different color.",
 			"attribution": "Segovia",
 			"category": "Music [Guitar]",
@@ -486,6 +555,7 @@
 		},
 		{
 			"id": "django-never-same",
+			"display_num": "0070",
 			"text": "I never play the same thing twice. I never play the same solo twice.",
 			"attribution": "Django Reinhardt",
 			"category": "Music [Guitar]",
@@ -493,6 +563,7 @@
 		},
 		{
 			"id": "lespaul-easiest-hardest",
+			"display_num": "0071",
 			"text": "The guitar is the easiest instrument to play badly and the hardest to play well.",
 			"attribution": "Les Paul",
 			"category": "Music [Guitar]",
@@ -500,6 +571,7 @@
 		},
 		{
 			"id": "chuckberry-same-dog-twice",
+			"display_num": "0072",
 			"text": "Don't let the same dog bite you twice.",
 			"attribution": "Chuck Berry",
 			"category": "Music [Guitar]",
@@ -507,6 +579,7 @@
 		},
 		{
 			"id": "santana-open-heart",
+			"display_num": "0073",
 			"text": "The most valuable possession you can own is an open heart.",
 			"attribution": "Carlos Santana",
 			"category": "Music [Guitar]",
@@ -514,6 +587,7 @@
 		},
 		{
 			"id": "srv-soul-happy",
+			"display_num": "0074",
 			"text": "Take the time to make your soul happy.",
 			"attribution": "Stevie Ray Vaughan",
 			"category": "Music [Guitar]",
@@ -521,6 +595,7 @@
 		},
 		{
 			"id": "keith-richards-emotions",
+			"display_num": "0075",
 			"text": "Music is a language that doesn't speak in particular words. It speaks in emotions.",
 			"attribution": "Keith Richards",
 			"category": "Music [Guitar]",
@@ -528,6 +603,7 @@
 		},
 		{
 			"id": "groucho-marx-club",
+			"display_num": "0076",
 			"text": "I refuse to join any club that would have me as a member.",
 			"attribution": "Groucho Marx",
 			"category": "Humor",
@@ -535,6 +611,7 @@
 		},
 		{
 			"id": "wc-fields-wine",
+			"display_num": "0077",
 			"text": "I cook with wine. Sometimes I even add it to the food.",
 			"attribution": "W. C. Fields",
 			"category": "Humor",
@@ -542,6 +619,7 @@
 		},
 		{
 			"id": "steven-wright-forever",
+			"display_num": "0078",
 			"text": "I intend to live forever. So far, so good.",
 			"attribution": "Steven Wright",
 			"category": "Humor",
@@ -549,6 +627,7 @@
 		},
 		{
 			"id": "george-burns-family",
+			"display_num": "0079",
 			"text": "Happiness is having a large, loving, caring, close-knit family in another city.",
 			"attribution": "George Burns",
 			"category": "Humor",
@@ -556,6 +635,7 @@
 		},
 		{
 			"id": "phyllis-diller-shoveling",
+			"display_num": "0080",
 			"text": "Cleaning your house while your kids are still growing up is like shoveling the walk before it stops snowing.",
 			"attribution": "Phyllis Diller",
 			"category": "Humor",
@@ -563,6 +643,7 @@
 		},
 		{
 			"id": "bob-hope-bank",
+			"display_num": "0081",
 			"text": "A bank is a place that will lend you money if you can prove that you don't need it.",
 			"attribution": "Bob Hope",
 			"category": "Humor",
@@ -570,6 +651,7 @@
 		},
 		{
 			"id": "will-rogers-track",
+			"display_num": "0082",
 			"text": "Even if you're on the right track, you'll get run over if you just sit there.",
 			"attribution": "Will Rogers",
 			"category": "Humor",
@@ -577,6 +659,7 @@
 		},
 		{
 			"id": "erma-bombeck-housework",
+			"display_num": "0083",
 			"text": "Housework, if you do it right, will kill you.",
 			"attribution": "Erma Bombeck",
 			"category": "Humor",
@@ -584,6 +667,7 @@
 		},
 		{
 			"id": "robert-benchley-language",
+			"display_num": "0084",
 			"text": "Drawing on my fine command of the English language, I said nothing.",
 			"attribution": "Robert Benchley",
 			"category": "Humor",
@@ -591,6 +675,7 @@
 		},
 		{
 			"id": "milton-berle-committee",
+			"display_num": "0085",
 			"text": "A committee is a group that keeps minutes and loses hours.",
 			"attribution": "Milton Berle",
 			"category": "Humor",
@@ -598,6 +683,7 @@
 		},
 		{
 			"id": "julia-child-love",
+			"display_num": "0086",
 			"text": "People who love to eat are always the best people.",
 			"attribution": "Julia Child",
 			"category": "Cuisine",
@@ -605,6 +691,7 @@
 		},
 		{
 			"id": "james-beard-common",
+			"display_num": "0087",
 			"text": "Food is our common ground, a universal experience.",
 			"attribution": "James Beard",
 			"category": "Cuisine",
@@ -612,6 +699,7 @@
 		},
 		{
 			"id": "anthony-bourdain-temple",
+			"display_num": "0088",
 			"text": "Your body is not a temple, it's an amusement park.",
 			"attribution": "Anthony Bourdain",
 			"category": "Cuisine",
@@ -619,6 +707,7 @@
 		},
 		{
 			"id": "wolfgang-puck-painting",
+			"display_num": "0089",
 			"text": "Cooking is like painting or writing a song.",
 			"attribution": "Wolfgang Puck",
 			"category": "Cuisine",
@@ -626,6 +715,7 @@
 		},
 		{
 			"id": "escoffier-foundation",
+			"display_num": "0090",
 			"text": "Good food is the foundation of genuine happiness.",
 			"attribution": "Auguste Escoffier",
 			"category": "Cuisine",
@@ -633,6 +723,7 @@
 		},
 		{
 			"id": "paul-prudhomme-fork",
+			"display_num": "0091",
 			"text": "You don't need a silver fork to eat good food.",
 			"attribution": "Paul Prudhomme",
 			"category": "Cuisine",
@@ -640,6 +731,7 @@
 		},
 		{
 			"id": "alice-waters-taste",
+			"display_num": "0092",
 			"text": "Let things taste of what they are.",
 			"attribution": "Alice Waters",
 			"category": "Cuisine",
@@ -647,6 +739,7 @@
 		},
 		{
 			"id": "fernand-point-details",
+			"display_num": "0093",
 			"text": "Success is the sum of a lot of small things done correctly.",
 			"attribution": "Fernand Point",
 			"category": "Cuisine",
@@ -654,6 +747,7 @@
 		},
 		{
 			"id": "thomas-keller-soul",
+			"display_num": "0094",
 			"text": "A recipe has no soul. You as the cook must bring soul to the recipe.",
 			"attribution": "Thomas Keller",
 			"category": "Cuisine",
@@ -661,6 +755,7 @@
 		},
 		{
 			"id": "marco-pierre-white-nature",
+			"display_num": "0095",
 			"text": "Mother Nature is the true artist and our job as cooks is to allow her to shine.",
 			"attribution": "Marco Pierre White",
 			"category": "Cuisine",
@@ -668,6 +763,7 @@
 		},
 		{
 			"id": "shakespeare-hamlet-question",
+			"display_num": "0096",
 			"text": "To be, or not to be, that is the question.",
 			"attribution": "Hamlet",
 			"category": "Shakespeare",
@@ -675,6 +771,7 @@
 		},
 		{
 			"id": "shakespeare-romeo-name",
+			"display_num": "0097",
 			"text": "What's in a name? That which we call a rose by any other name would smell as sweet.",
 			"attribution": "Juliet",
 			"category": "Shakespeare",
@@ -682,6 +779,7 @@
 		},
 		{
 			"id": "shakespeare-caesar-cowards",
+			"display_num": "0098",
 			"text": "Cowards die many times before their deaths; the valiant never taste of death but once.",
 			"attribution": "Julius Caesar",
 			"category": "Shakespeare",
@@ -689,6 +787,7 @@
 		},
 		{
 			"id": "shakespeare-as-you-like-stage",
+			"display_num": "0099",
 			"text": "All the world's a stage, and all the men and women merely players.",
 			"attribution": "Jaques",
 			"category": "Shakespeare",
@@ -696,6 +795,7 @@
 		},
 		{
 			"id": "shakespeare-macbeth-candle",
+			"display_num": "0100",
 			"text": "Out, out, brief candle! Life's but a walking shadow.",
 			"attribution": "Macbeth",
 			"category": "Shakespeare",
@@ -703,6 +803,7 @@
 		},
 		{
 			"id": "shakespeare-twelfth-night-music",
+			"display_num": "0101",
 			"text": "If music be the food of love, play on.",
 			"attribution": "Orsino",
 			"category": "Shakespeare",
@@ -710,6 +811,7 @@
 		},
 		{
 			"id": "shakespeare-hamlet-true",
+			"display_num": "0102",
 			"text": "This above all: to thine own self be true.",
 			"attribution": "Polonius",
 			"category": "Shakespeare",
@@ -717,6 +819,7 @@
 		},
 		{
 			"id": "shakespeare-merchant-mercy",
+			"display_num": "0103",
 			"text": "The quality of mercy is not strained.",
 			"attribution": "Portia",
 			"category": "Shakespeare",
@@ -724,6 +827,7 @@
 		},
 		{
 			"id": "shakespeare-lear-nothing",
+			"display_num": "0104",
 			"text": "Nothing will come of nothing.",
 			"attribution": "King Lear",
 			"category": "Shakespeare",
@@ -731,6 +835,7 @@
 		},
 		{
 			"id": "shakespeare-richard-winter",
+			"display_num": "0105",
 			"text": "Now is the winter of our discontent.",
 			"attribution": "Richard, Duke of Gloucester",
 			"category": "Shakespeare",

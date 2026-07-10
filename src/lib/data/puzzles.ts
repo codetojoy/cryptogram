@@ -21,6 +21,7 @@ function toPuzzle(raw: unknown, i: number): Puzzle {
 	const o = raw as Record<string, unknown>;
 	return {
 		id: asString(o.id, `puzzles[${i}].id`),
+		displayNum: asString(o.display_num, `puzzles[${i}].display_num`),
 		text: asString(o.text, `puzzles[${i}].text`),
 		attribution: asString(o.attribution, `puzzles[${i}].attribution`),
 		category: asString(o.category, `puzzles[${i}].category`),

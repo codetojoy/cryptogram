@@ -16,6 +16,7 @@ import { hashString } from '$lib/domain/rng.js';
 
 const puzzle: Puzzle = {
 	id: 'test',
+	displayNum: '0001',
 	text: 'Bee to bee.',
 	attribution: 'Test',
 	category: 'Test category',

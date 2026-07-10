@@ -18,6 +18,9 @@ import { hashString } from './rng.js';
 /** A puzzle answer, as stored in data/puzzles.json. */
 export interface Puzzle {
 	id: string;
+	/** Human-facing reference number, zero-padded and sequential (e.g. "0001").
+	 *  For referring to puzzles out-of-band; not used in gameplay or storage. */
+	displayNum: string;
 	/** The solved quotation, in natural case. */
 	text: string;
 	/** Author or source (e.g. a name, or "Anonymous"). */

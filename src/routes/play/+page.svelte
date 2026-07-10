@@ -59,6 +59,13 @@
 	const authorWords = $derived(buildWords(game.attributionCiphertext));
 	const solved = $derived(isSolved(game));
 	const used = $derived(new Set(Object.values(game.guesses)));
+	// The "Show Id" debug string (TODO-017): "${display_num}-${id}". display_num
+	// is a data-only reference number, looked up here rather than carried on the
+	// game state, so it stays out of the domain layer.
+	const displayId = $derived.by(() => {
+		const p = puzzles.find((x) => x.id === game.puzzleId);
+		return p ? `${p.displayNum}-${p.id}` : game.puzzleId;
+	});
 
 	/** A random puzzle the player hasn't moved past yet (TODO-006), or undefined
 	 *  once every puzzle has been seen. Randomised so the order varies each play,
@@ -290,7 +297,7 @@
 					{/if}
 					{#if showId}
 						<dt>Puzzle id</dt>
-						<dd>{game.puzzleId}</dd>
+						<dd>{displayId}</dd>
 					{/if}
 				</dl>
 			{/if}

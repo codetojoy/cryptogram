@@ -82,4 +82,14 @@ describe('puzzle data', () => {
 	it('has one hundred and five puzzles in total (TODO-015)', () => {
 		expect(puzzles.length).toBe(105);
 	});
+
+	it('numbers every puzzle 0001.. sequentially in array order (TODO-017)', () => {
+		const nums = puzzles.map((p) => p.displayNum);
+		// Each is a 4-digit, zero-padded string.
+		for (const n of nums) expect(n).toMatch(/^\d{4}$/);
+		// The sequence is exactly 0001..(length) with no gaps or dupes.
+		const expected = puzzles.map((_, i) => String(i + 1).padStart(4, '0'));
+		expect(nums).toEqual(expected);
+		expect(puzzles[0].displayNum).toBe('0001');
+	});
 });
