@@ -59,12 +59,15 @@
 	const authorWords = $derived(buildWords(game.attributionCiphertext));
 	const solved = $derived(isSolved(game));
 	const used = $derived(new Set(Object.values(game.guesses)));
-	// The "Show Id" debug string (TODO-017): "${display_num}-${id}". display_num
-	// is a data-only reference number, looked up here rather than carried on the
-	// game state, so it stays out of the domain layer.
+	// The "Show Id" debug string (TODO-018): "${display_num}-${category}", e.g.
+	// "0001-Philosophy". We use the category rather than the id because the id is a
+	// kebab of the author and a quote word, which would spoil an unseen puzzle; the
+	// category is already available via "Show category", so this leaks nothing new.
+	// display_num is a data-only reference number, looked up here rather than carried
+	// on the game state, so it stays out of the domain layer.
 	const displayId = $derived.by(() => {
 		const p = puzzles.find((x) => x.id === game.puzzleId);
-		return p ? `${p.displayNum}-${p.id}` : game.puzzleId;
+		return p ? `${p.displayNum}-${p.category}` : game.category;
 	});
 
 	/** A random puzzle the player hasn't moved past yet (TODO-006), or undefined
