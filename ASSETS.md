@@ -24,9 +24,10 @@ re-authored for this project.
 The quotations in `data/puzzles.json` are short excerpts used as game answers. Their
 provenance by category:
 
-- **Humor / Philosophy / Music / General / Chess / Music [Guitar] / Cuisine** — brief
-  attributed quotations (aphorisms, quips and remarks). Short factual quotations attributed
-  to their author; used here as puzzle answers.
+- **Humor / Philosophy / Music / General / Chess / Music [Guitar] / Cuisine / Canada** —
+  brief attributed quotations (aphorisms, quips and remarks). Short factual quotations
+  attributed to their author; used here as puzzle answers. (The Canada set's L. M.
+  Montgomery line is from *Anne of Green Gables*, 1908, public domain.)
 - **Shakespeare** — short lines from the plays of William Shakespeare (d. 1616), long in
   the public domain.
 - **Lyrics** — lines from **public-domain / traditional songs only** (spirituals, folk

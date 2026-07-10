@@ -840,6 +840,86 @@
 			"attribution": "Richard, Duke of Gloucester",
 			"category": "Shakespeare",
 			"hint": "A scheming duke opens by declaring an end to gloomy days."
+		},
+		{
+			"id": "wayne-gretzky-shots",
+			"display_num": "0106",
+			"text": "You miss one hundred percent of the shots you don't take.",
+			"attribution": "Wayne Gretzky",
+			"category": "Canada",
+			"hint": "A hockey legend on the chances lost by never trying."
+		},
+		{
+			"id": "terry-fox-possible",
+			"display_num": "0107",
+			"text": "Anything is possible if you try.",
+			"attribution": "Terry Fox",
+			"category": "Canada",
+			"hint": "A one-legged runner's creed of relentless hope."
+		},
+		{
+			"id": "margaret-atwood-word",
+			"display_num": "0108",
+			"text": "A word after a word after a word is power.",
+			"attribution": "Margaret Atwood",
+			"category": "Canada",
+			"hint": "A celebrated novelist on the cumulative force of writing."
+		},
+		{
+			"id": "marshall-mcluhan-medium",
+			"display_num": "0109",
+			"text": "The medium is the message.",
+			"attribution": "Marshall McLuhan",
+			"category": "Canada",
+			"hint": "A media theorist's most quoted line about how form shapes meaning."
+		},
+		{
+			"id": "lucy-maud-montgomery-tomorrow",
+			"display_num": "0110",
+			"text": "Tomorrow is always fresh, with no mistakes in it yet.",
+			"attribution": "Lucy Maud Montgomery",
+			"category": "Canada",
+			"hint": "A beloved Island novelist on second chances each new day brings."
+		},
+		{
+			"id": "tommy-douglas-courage",
+			"display_num": "0111",
+			"text": "Courage, my friends; it's not too late to build a better world.",
+			"attribution": "Tommy Douglas",
+			"category": "Canada",
+			"hint": "A prairie statesman rallies people toward a fairer society."
+		},
+		{
+			"id": "jim-carrey-chance",
+			"display_num": "0112",
+			"text": "You can fail at what you don't want, so take a chance on doing what you love.",
+			"attribution": "Jim Carrey",
+			"category": "Canada",
+			"hint": "A rubber-faced comedian urges pursuing passion over safe bets."
+		},
+		{
+			"id": "chris-hadfield-problem",
+			"display_num": "0113",
+			"text": "There is no problem so bad that you can't make it worse.",
+			"attribution": "Chris Hadfield",
+			"category": "Canada",
+			"hint": "An astronaut's wry rule about keeping calm under pressure."
+		},
+		{
+			"id": "pierre-trudeau-bedrooms",
+			"display_num": "0114",
+			"text": "There's no place for the state in the bedrooms of the nation.",
+			"attribution": "Pierre Elliott Trudeau",
+			"category": "Canada",
+			"hint": "A prime minister on privacy and the limits of government."
+		},
+		{
+			"id": "alice-munro-complexity",
+			"display_num": "0115",
+			"text": "The complexity of things - the things within things - just seems to be endless.",
+			"attribution": "Alice Munro",
+			"category": "Canada",
+			"hint": "A Nobel laureate on the infinite depth hidden in ordinary life."
 		}
 	]
 }

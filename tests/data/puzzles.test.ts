@@ -79,8 +79,12 @@ describe('puzzle data', () => {
 		expect(count('Shakespeare'), 'Shakespeare').toBe(10);
 	});
 
-	it('has one hundred and five puzzles in total (TODO-015)', () => {
-		expect(puzzles.length).toBe(105);
+	it('includes ten Canada puzzles (TODO-019)', () => {
+		expect(puzzles.filter((p) => p.category === 'Canada').length).toBe(10);
+	});
+
+	it('has one hundred and fifteen puzzles in total (TODO-019)', () => {
+		expect(puzzles.length).toBe(115);
 	});
 
 	it('numbers every puzzle 0001.. sequentially in array order (TODO-017)', () => {
