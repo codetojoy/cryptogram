@@ -8,7 +8,9 @@
 	let prefs = $state<Settings>(loadSettings());
 	let saved = $state<Settings>({ ...prefs });
 
-	const dirty = $derived(prefs.theme !== saved.theme || prefs.showId !== saved.showId);
+	const dirty = $derived(
+		prefs.theme !== saved.theme || prefs.showId !== saved.showId || prefs.sound !== saved.sound
+	);
 
 	function save() {
 		saveSettings({ ...prefs });
@@ -41,6 +43,13 @@
 						<option value={theme.label}>{theme.label}</option>
 					{/each}
 				</select>
+			</div>
+			<div class="setting">
+				<label class="setting-desc" for="sound">
+					Sound
+					<span class="setting-note">Gentle audio cues when you place or clear a letter, and when a puzzle is solved.</span>
+				</label>
+				<input id="sound" class="toggle" type="checkbox" bind:checked={prefs.sound} />
 			</div>
 			<div class="setting">
 				<label class="setting-desc" for="show-id">

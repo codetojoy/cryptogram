@@ -52,18 +52,20 @@ export function clearSeen(): void {
  * Display & interaction preferences (TODO-010). The theme is a plain string
  * (not a union) so adding a theme later is a data change, not a type change.
  * `showId` is a debug toggle (TODO-016): when on, the play screen offers a link
- * that reveals the current puzzle's id.
+ * that reveals the current puzzle's id. `sound` toggles the optional audio cues
+ * (TODO-020); off by default.
  */
 export interface Settings {
 	theme: string;
 	showId: boolean;
+	sound: boolean;
 }
 
 const SETTINGS_KEY = 'cryptogram.settings.v1';
 
 /** The defaults a fresh install (or unavailable storage) falls back to. */
 export function defaultSettings(): Settings {
-	return { theme: 'Original', showId: false };
+	return { theme: 'Original', showId: false, sound: false };
 }
 
 /**
@@ -81,7 +83,8 @@ export function loadSettings(): Settings {
 		if (typeof parsed !== 'object' || parsed === null) return d;
 		return {
 			theme: typeof parsed.theme === 'string' ? parsed.theme : d.theme,
-			showId: typeof parsed.showId === 'boolean' ? parsed.showId : d.showId
+			showId: typeof parsed.showId === 'boolean' ? parsed.showId : d.showId,
+			sound: typeof parsed.sound === 'boolean' ? parsed.sound : d.sound
 		};
 	} catch {
 		return d;

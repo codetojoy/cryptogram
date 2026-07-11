@@ -6,6 +6,7 @@
 	import { isLetter } from '$lib/domain/cipher.js';
 	import { puzzles, defaultAlgorithm } from '$lib/data/puzzles.js';
 	import { loadSeen, saveSeen, clearSeen, loadSettings } from '$lib/ui/persistence.js';
+	import * as sound from '$lib/ui/sound.js';
 	import {
 		startGame,
 		setGuess,
@@ -103,10 +104,23 @@
 	// (TODO-006), or show the end state if they've all been played.
 	onMount(() => {
 		seen = loadSeen();
-		idEnabled = loadSettings().showId;
+		const settings = loadSettings();
+		idEnabled = settings.showId;
+		sound.setEnabled(settings.sound);
 		const next = randomUnseen();
 		if (next) loadPuzzle(next);
 		else ended = true;
+	});
+
+	// Play the positive chime once each time the puzzle transitions to solved
+	// (TODO-020). Edge-triggered on `solved` via a plain (non-reactive) flag so a
+	// re-run of the effect while already solved doesn't re-fire; sound.solved()
+	// itself no-ops when the Sound setting is off.
+	let prevSolved = false;
+	$effect(() => {
+		const now = solved;
+		if (now && !prevSolved) sound.solved();
+		prevSolved = now;
 	});
 
 	// Mark a puzzle seen the instant it's solved, not only when the player clicks
@@ -125,13 +139,20 @@
 	function assign(letter: string) {
 		if (selected === null) return;
 		game = setGuess(game, selected, letter);
-		// Drop the selection highlight once the puzzle is complete.
-		if (isSolved(game)) selected = null;
+		if (isSolved(game)) {
+			// Drop the selection highlight once complete; the solve chime covers the
+			// final letter, so no place cue here (avoids tick-then-chime overlap).
+			selected = null;
+		} else {
+			sound.letterPlaced();
+		}
 	}
 
 	function clearSelected() {
 		if (selected === null) return;
+		const had = !!game.guesses[selected];
 		game = clearGuess(game, selected);
+		if (had) sound.letterCleared();
 	}
 
 	/** Restart the current puzzle from scratch (does not mark it seen). */
@@ -165,6 +186,7 @@
 		game = crackOne(game);
 		// Dropping in the last letter can complete the puzzle; clear the highlight.
 		if (isSolved(game)) selected = null;
+		else sound.letterPlaced();
 	}
 
 	// Physical-keyboard support (desktop / accessibility): with a cell selected,
