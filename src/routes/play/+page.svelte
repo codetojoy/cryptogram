@@ -388,7 +388,7 @@
 	.board {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 0.35rem 1rem;
+		gap: 0.45rem 1.75rem;
 		justify-content: center;
 		margin-bottom: 1.75rem;
 	}
@@ -422,7 +422,7 @@
 		line-height: 1.1;
 		min-height: 1.5rem;
 		color: var(--ink);
-		border-bottom: 2px solid var(--rule);
+		border-bottom: 2px solid var(--muted);
 		width: 100%;
 		text-align: center;
 	}
@@ -472,7 +472,7 @@
 
 	/* The enciphered author line: same cipher cells as the quote, set apart as a byline. */
 	.byline {
-		gap: 0.35rem 0.75rem;
+		gap: 0.45rem 1.25rem;
 		margin-top: -0.75rem;
 		margin-bottom: 1.5rem;
 	}
