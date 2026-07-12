@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import {
 	startGame,
+	restoreGame,
 	setGuess,
 	clearGuess,
 	clearAll,
@@ -180,5 +181,39 @@ describe('isSolved', () => {
 		for (const c of cipherLetters(s)) s = setGuess(s, c, s.solution[c]);
 		expect(isSolved(s)).toBe(true);
 		expect(reconstruct(s, s.attributionCiphertext)).toBe('TEST');
+	});
+});
+
+describe('restoreGame (TODO-022)', () => {
+	it('re-derives the same board as startGame', () => {
+		const fresh = startGame(puzzle, algorithm);
+		const restored = restoreGame(puzzle, algorithm, {});
+		expect(restored).toEqual(fresh);
+	});
+
+	it('replays saved guesses, round-tripping a game exactly', () => {
+		const played = setGuess(setGuess(startGame(puzzle, algorithm), 'A', 'X'), 'B', 'Y');
+		const restored = restoreGame(puzzle, algorithm, played.guesses);
+		expect(restored).toEqual(played);
+	});
+
+	it('restores a solved game as solved (so a reload shows the banner)', () => {
+		const won = solve();
+		const restored = restoreGame(puzzle, algorithm, won.guesses);
+		expect(isSolved(restored)).toBe(true);
+		expect(reconstruct(restored)).toBe(puzzle.text.toUpperCase());
+	});
+
+	it('throws on a corrupt (non-letter) save, so the caller can discard it', () => {
+		expect(() => restoreGame(puzzle, algorithm, { A: '!' })).toThrow();
+		expect(() => restoreGame(puzzle, algorithm, { '1': 'X' })).toThrow();
+	});
+
+	it('re-applies injectivity: a duplicated plaintext letter cannot survive a save', () => {
+		// A hand-edited save assigning X to two cipher letters must not yield an
+		// illegal state — setGuess moves the letter rather than duplicating it.
+		const restored = restoreGame(puzzle, algorithm, { A: 'X', B: 'X' });
+		const used = Object.values(restored.guesses);
+		expect(new Set(used).size).toBe(used.length);
 	});
 });

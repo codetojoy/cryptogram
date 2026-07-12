@@ -100,3 +100,67 @@ export function saveSettings(settings: Settings): void {
 		// won't persist across sessions.
 	}
 }
+
+/**
+ * The in-progress (or just-solved) game (TODO-022, closing the SPEC §3 gap:
+ * localStorage persists "settings, in-progress game").
+ *
+ * Only the puzzle id and the player's guesses are stored — *not* the board. The
+ * ciphertext and answer key are a deterministic function of the puzzle and the
+ * cipher algorithm, so they are re-derived on load (see `restoreGame`); that
+ * keeps the payload small and means a save can never resurrect a stale board.
+ */
+export interface SavedGame {
+	puzzleId: string;
+	/** Cipher letter → guessed plaintext letter. */
+	guesses: Record<string, string>;
+}
+
+const GAME_KEY = 'cryptogram.game.v1';
+
+export function saveGame(puzzleId: string, guesses: Record<string, string>): void {
+	if (!browser) return;
+	try {
+		localStorage.setItem(GAME_KEY, JSON.stringify({ puzzleId, guesses } satisfies SavedGame));
+	} catch {
+		// Storage may be unavailable (private browsing); the game still works,
+		// it just won't survive a reload.
+	}
+}
+
+/**
+ * The saved game, or null if there isn't a well-formed one. This validates
+ * *shape* only — it deliberately does not know whether the puzzle id still
+ * exists, so persistence stays independent of the puzzle data. The caller
+ * resolves the id against `puzzles` and discards the save if it no longer
+ * matches (puzzle content can change between visits).
+ */
+export function loadGame(): SavedGame | null {
+	if (!browser) return null;
+	try {
+		const raw = localStorage.getItem(GAME_KEY);
+		if (!raw) return null;
+		const parsed = JSON.parse(raw);
+		if (typeof parsed !== 'object' || parsed === null) return null;
+		if (typeof parsed.puzzleId !== 'string' || !parsed.puzzleId) return null;
+		const g = parsed.guesses;
+		if (typeof g !== 'object' || g === null || Array.isArray(g)) return null;
+		const guesses: Record<string, string> = {};
+		for (const [cipher, plain] of Object.entries(g)) {
+			if (typeof plain === 'string') guesses[cipher] = plain;
+		}
+		return { puzzleId: parsed.puzzleId, guesses };
+	} catch {
+		return null;
+	}
+}
+
+/** Forget the saved game (no puzzle in play). */
+export function clearGame(): void {
+	if (!browser) return;
+	try {
+		localStorage.removeItem(GAME_KEY);
+	} catch {
+		// Nothing to do — storage is unavailable.
+	}
+}

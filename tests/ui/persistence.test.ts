@@ -5,7 +5,10 @@ import {
 	clearSeen,
 	loadSettings,
 	saveSettings,
-	defaultSettings
+	defaultSettings,
+	loadGame,
+	saveGame,
+	clearGame
 } from '$lib/ui/persistence.js';
 
 // These run under the node (SSR) test environment, where `browser` is false.
@@ -33,5 +36,16 @@ describe('settings persistence (SSR-safe, TODO-010)', () => {
 
 	it('saveSettings is a no-op that does not throw', () => {
 		expect(() => saveSettings({ theme: 'Original', showId: false, sound: false })).not.toThrow();
+	});
+});
+
+describe('saved-game persistence (SSR-safe, TODO-022)', () => {
+	it('loadGame returns null when storage is unavailable', () => {
+		expect(loadGame()).toBeNull();
+	});
+
+	it('saveGame and clearGame are no-ops that do not throw', () => {
+		expect(() => saveGame('socrates-examined', { A: 'X' })).not.toThrow();
+		expect(() => clearGame()).not.toThrow();
 	});
 });

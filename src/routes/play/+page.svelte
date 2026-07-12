@@ -5,17 +5,27 @@
 	import Keypad from '$lib/ui/Keypad.svelte';
 	import { isLetter } from '$lib/domain/cipher.js';
 	import { puzzles, defaultAlgorithm } from '$lib/data/puzzles.js';
-	import { loadSeen, saveSeen, clearSeen, loadSettings } from '$lib/ui/persistence.js';
+	import {
+		loadSeen,
+		saveSeen,
+		clearSeen,
+		loadSettings,
+		saveGame,
+		loadGame,
+		clearGame
+	} from '$lib/ui/persistence.js';
 	import * as sound from '$lib/ui/sound.js';
 	import {
 		startGame,
+		restoreGame,
 		setGuess,
 		clearGuess,
 		clearAll,
 		crackOne,
 		reconstruct,
 		isSolved,
-		type Puzzle
+		type Puzzle,
+		type GameState
 	} from '$lib/domain/cryptogram-game-state.js';
 
 	type Cell = { letter: true; cipher: string } | { letter: false; ch: string };
@@ -55,6 +65,11 @@
 	let seen = $state<Set<string>>(new Set());
 	// True once every puzzle has been seen — the end-of-game state.
 	let ended = $state(false);
+	// False until onMount has picked the real puzzle (TODO-022). Every route is
+	// prerendered, so without this gate the static HTML bakes in puzzles[0]'s board
+	// and every visitor sees a flash of the wrong puzzle before hydration swaps in
+	// theirs. The board renders only once we know which puzzle is actually in play.
+	let ready = $state(false);
 
 	const words = $derived(buildWords(game.ciphertext));
 	const authorWords = $derived(buildWords(game.attributionCiphertext));
@@ -100,27 +115,71 @@
 		saveSeen(seen);
 	}
 
-	// On the client, honour previously-seen puzzles: open on a random unseen one
-	// (TODO-006), or show the end state if they've all been played.
+	/** Resume the saved game (TODO-022), or undefined if there isn't a usable one.
+	 *  The save holds only a puzzle id + guesses, so the board is re-derived here;
+	 *  we discard the save if the id no longer resolves (puzzle content can change
+	 *  between visits) or if the guesses are corrupt (restoreGame throws). A *solved*
+	 *  save is restored too — reloading after a win brings back the "Solved!" banner. */
+	function resumeSaved(): GameState | undefined {
+		const saved = loadGame();
+		if (!saved) return undefined;
+		const puzzle = puzzles.find((p) => p.id === saved.puzzleId);
+		if (!puzzle) return undefined;
+		try {
+			return restoreGame(puzzle, defaultAlgorithm, saved.guesses);
+		} catch {
+			return undefined;
+		}
+	}
+
+	// On the client: resume the game in progress if there is one (TODO-022);
+	// otherwise open on a random unseen puzzle (TODO-006), or show the end state if
+	// they've all been played.
 	onMount(() => {
 		seen = loadSeen();
 		const settings = loadSettings();
 		idEnabled = settings.showId;
 		sound.setEnabled(settings.sound);
-		const next = randomUnseen();
-		if (next) loadPuzzle(next);
-		else ended = true;
+
+		const resumed = resumeSaved();
+		if (resumed) {
+			game = resumed;
+			selected = null;
+			showCategory = false;
+			showHint = false;
+			showId = false;
+			ended = false;
+			// Seed the chime's edge detector from the restored state so reloading an
+			// already-solved puzzle shows the banner *without* replaying the chime —
+			// the chime marks the act of solving, not the sight of a solved board.
+			prevSolved = isSolved(resumed);
+		} else {
+			clearGame();
+			const next = randomUnseen();
+			if (next) loadPuzzle(next);
+			else ended = true;
+		}
+		ready = true;
 	});
 
 	// Play the positive chime once each time the puzzle transitions to solved
 	// (TODO-020). Edge-triggered on `solved` via a plain (non-reactive) flag so a
 	// re-run of the effect while already solved doesn't re-fire; sound.solved()
-	// itself no-ops when the Sound setting is off.
+	// itself no-ops when the Sound setting is off. `prevSolved` is seeded in onMount
+	// when restoring a solved save, which suppresses a chime on reload regardless of
+	// whether this effect or onMount runs first.
 	let prevSolved = false;
 	$effect(() => {
 		const now = solved;
 		if (now && !prevSolved) sound.solved();
 		prevSolved = now;
+	});
+
+	// Persist the game on every change (TODO-022) so a reload resumes exactly where
+	// the player left off — including a solved board. Nothing to save once the deck
+	// is exhausted; `ended` clears the save via nextPuzzle so the end screen sticks.
+	$effect(() => {
+		if (!ended) saveGame(game.puzzleId, game.guesses);
 	});
 
 	// Mark a puzzle seen the instant it's solved, not only when the player clicks
@@ -162,12 +221,18 @@
 	}
 
 	// Mark the current puzzle seen (persisted) and advance; when none are left,
-	// show the end-of-game message.
+	// show the end-of-game message. Advancing to a new puzzle re-saves via the
+	// persistence effect; reaching the end drops the save so a reload lands back on
+	// the end screen rather than resurrecting the last solved board.
 	function nextPuzzle() {
 		markSeen(game.puzzleId);
 		const next = randomUnseen();
-		if (next) loadPuzzle(next);
-		else ended = true;
+		if (next) {
+			loadPuzzle(next);
+		} else {
+			ended = true;
+			clearGame();
+		}
 	}
 
 	/** Forget all progress and begin again on a random puzzle. */
@@ -246,7 +311,9 @@
 		<p class="subtitle">Every letter stands for another. Crack the substitution to reveal the quote — and who said it.</p>
 	</header>
 
-	{#if ended}
+	{#if !ready}
+		<p class="loading" role="status">Shuffling the deck…</p>
+	{:else if ended}
 		<div class="banner end" role="status">
 			<p class="banner-title">That's every puzzle! 🏁</p>
 			<p>You've reached the end of the game — you've played every cryptogram.</p>
@@ -379,6 +446,19 @@
 		font-size: 1rem;
 		color: var(--muted);
 		text-align: center;
+	}
+
+	/* Placeholder shown until onMount picks the puzzle (TODO-022). Roughly the
+	   height of the board it replaces, so hydration doesn't jolt the layout. */
+	.loading {
+		min-height: 12rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 0;
+		font-family: var(--serif);
+		font-style: italic;
+		color: var(--muted);
 	}
 
 	.hint strong {

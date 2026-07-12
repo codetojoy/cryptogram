@@ -78,6 +78,29 @@ export function startGame(puzzle: Puzzle, algorithm: CipherAlgorithm): GameState
 }
 
 /**
+ * Rebuild a game from a saved `puzzleId` + `guesses` pair (TODO-022). The board
+ * itself is *re-derived* rather than restored: ciphertext and answer key are a
+ * deterministic function of the puzzle and the algorithm seed, so a save can
+ * never resurrect a stale board if the puzzle text or cipher algorithm changes.
+ *
+ * Replaying the guesses through `setGuess` re-applies the injectivity invariant,
+ * so a corrupt or hand-edited save cannot produce an illegal state — it throws on
+ * a non-letter (the caller discards the save) and silently drops duplicate
+ * plaintext assignments.
+ */
+export function restoreGame(
+	puzzle: Puzzle,
+	algorithm: CipherAlgorithm,
+	guesses: Substitution
+): GameState {
+	let state = startGame(puzzle, algorithm);
+	for (const [cipher, plain] of Object.entries(guesses)) {
+		state = setGuess(state, cipher, plain);
+	}
+	return state;
+}
+
+/**
  * The distinct cipher letters in the puzzle (quote and author together), in
  * first-seen order.
  */
