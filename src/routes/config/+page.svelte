@@ -9,7 +9,10 @@
 	let saved = $state<Settings>({ ...prefs });
 
 	const dirty = $derived(
-		prefs.theme !== saved.theme || prefs.showId !== saved.showId || prefs.sound !== saved.sound
+		prefs.theme !== saved.theme ||
+			prefs.showId !== saved.showId ||
+			prefs.sound !== saved.sound ||
+			prefs.showStats !== saved.showStats
 	);
 
 	function save() {
@@ -50,6 +53,13 @@
 					<span class="setting-note">Gentle audio cues when you place or clear a letter, and when a puzzle is solved.</span>
 				</label>
 				<input id="sound" class="toggle" type="checkbox" bind:checked={prefs.sound} />
+			</div>
+			<div class="setting">
+				<label class="setting-desc" for="show-stats">
+					Show Stats
+					<span class="setting-note">Shows a discreet footer on the play screen: how many puzzles you've solved, played, and the total.</span>
+				</label>
+				<input id="show-stats" class="toggle" type="checkbox" bind:checked={prefs.showStats} />
 			</div>
 			<div class="setting">
 				<label class="setting-desc" for="show-id">

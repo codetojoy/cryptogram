@@ -9,6 +9,9 @@
 		loadSeen,
 		saveSeen,
 		clearSeen,
+		loadSolved,
+		saveSolved,
+		clearSolved,
 		loadSettings,
 		saveGame,
 		loadGame,
@@ -60,9 +63,16 @@
 	// reveal toggle. Loaded from settings on mount, off during SSR/prerender.
 	let idEnabled = $state(false);
 	let showId = $state(false);
+	// Debug/stats toggles, mirroring the config settings; loaded on mount.
+	let statsEnabled = $state(false);
 	// Ids of puzzles already moved past; loaded from localStorage on mount so each
 	// puzzle is shown once (TODO-005). Empty during SSR/prerender.
 	let seen = $state<Set<string>>(new Set());
+	// Ids of puzzles actually SOLVED (TODO-023). Deliberately distinct from `seen`,
+	// which also counts puzzles skipped via "Next puzzle" — so `seen` measures how
+	// far through the deck you are, while `solvedIds` measures what you actually
+	// cracked. Reporting the former as the latter would flatter the player.
+	let solvedIds = $state<Set<string>>(new Set());
 	// True once every puzzle has been seen — the end-of-game state.
 	let ended = $state(false);
 	// False until onMount has picked the real puzzle (TODO-022). Every route is
@@ -115,6 +125,18 @@
 		saveSeen(seen);
 	}
 
+	/** Record a puzzle as SOLVED and persist it, once (TODO-023). Called only from the
+	 *  solved transition — never from nextPuzzle — which is precisely what keeps the
+	 *  stat honest: skipping a puzzle marks it seen but not solved. Idempotent, so
+	 *  re-solving via "Play again" cannot inflate the count. */
+	function markSolved(id: string) {
+		if (solvedIds.has(id)) return;
+		const updated = new Set(solvedIds);
+		updated.add(id);
+		solvedIds = updated;
+		saveSolved(solvedIds);
+	}
+
 	/** Resume the saved game (TODO-022), or undefined if there isn't a usable one.
 	 *  The save holds only a puzzle id + guesses, so the board is re-derived here;
 	 *  we discard the save if the id no longer resolves (puzzle content can change
@@ -137,8 +159,10 @@
 	// they've all been played.
 	onMount(() => {
 		seen = loadSeen();
+		solvedIds = loadSolved();
 		const settings = loadSettings();
 		idEnabled = settings.showId;
+		statsEnabled = settings.showStats;
 		sound.setEnabled(settings.sound);
 
 		const resumed = resumeSaved();
@@ -185,9 +209,13 @@
 	// Mark a puzzle seen the instant it's solved, not only when the player clicks
 	// "Next puzzle" (TODO-014) — so a reload after solving won't resurface it.
 	// The `seen.has` guard in markSeen keeps this idempotent (no effect loop), and
-	// "Play again" replays the same puzzle without ever un-marking it.
+	// "Play again" replays the same puzzle without ever un-marking it. This is also
+	// the ONLY place a puzzle is marked solved (TODO-023).
 	$effect(() => {
-		if (solved) markSeen(game.puzzleId);
+		if (solved) {
+			markSeen(game.puzzleId);
+			markSolved(game.puzzleId);
+		}
 	});
 
 	function selectCell(cipher: string) {
@@ -235,10 +263,13 @@
 		}
 	}
 
-	/** Forget all progress and begin again on a random puzzle. */
+	/** Forget all progress and begin again on a random puzzle. A full reset: the
+	 *  solved stats go too (TODO-023). */
 	function startOver() {
 		clearSeen();
+		clearSolved();
 		seen = new Set();
+		solvedIds = new Set();
 		loadPuzzle(randomUnseen() ?? puzzles[0]);
 	}
 
@@ -409,6 +440,21 @@
 				<button type="button" class="text-button" onclick={nextPuzzle}>Next puzzle</button>
 			</div>
 		{/if}
+	{/if}
+
+	<!-- Discreet stats footer (TODO-023), opt-in via the "Show Stats" setting. Gated on
+	     `ready` because it reads localStorage, which is empty until hydration. Shows
+	     "played" alongside "solved" so the two explain each other: solve-tracking began
+	     in 0.2.23, so an established player legitimately sees a low solved count next to
+	     a high played count — without that context, a 0 would look like a bug. -->
+	{#if ready && statsEnabled}
+		<footer class="stats" role="status">
+			<span><strong>{solvedIds.size}</strong> solved</span>
+			<span class="sep" aria-hidden="true">·</span>
+			<span><strong>{seen.size}</strong> played</span>
+			<span class="sep" aria-hidden="true">·</span>
+			<span><strong>{puzzles.length}</strong> total</span>
+		</footer>
 	{/if}
 </main>
 
@@ -689,5 +735,28 @@
 	.text-button:disabled {
 		opacity: 0.45;
 		cursor: default;
+	}
+
+	/* Stats footer (TODO-023): discreet by design — it sits under the keypad and is
+	   meant to be glanceable, not to compete with the puzzle. */
+	.stats {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 0.5rem;
+		margin-top: 2rem;
+		padding-top: 1rem;
+		border-top: 1px solid var(--rule);
+		font-size: 0.9rem;
+		color: var(--muted);
+	}
+
+	.stats strong {
+		font-weight: 700;
+		color: var(--ink);
+	}
+
+	.stats .sep {
+		opacity: 0.6;
 	}
 </style>

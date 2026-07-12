@@ -8,7 +8,10 @@ import {
 	defaultSettings,
 	loadGame,
 	saveGame,
-	clearGame
+	clearGame,
+	loadSolved,
+	saveSolved,
+	clearSolved
 } from '$lib/ui/persistence.js';
 
 // These run under the node (SSR) test environment, where `browser` is false.
@@ -26,16 +29,28 @@ describe('seen-puzzle persistence (SSR-safe)', () => {
 });
 
 describe('settings persistence (SSR-safe, TODO-010)', () => {
-	it('defaults theme "Original", Show Id off, Sound off (TODO-016, TODO-020)', () => {
-		expect(defaultSettings()).toEqual({ theme: 'Original', showId: false, sound: false });
+	it('defaults theme "Original", every toggle off (TODO-016, TODO-020, TODO-023)', () => {
+		expect(defaultSettings()).toEqual({
+			theme: 'Original',
+			showId: false,
+			sound: false,
+			showStats: false
+		});
 	});
 
 	it('loadSettings returns the defaults when storage is unavailable', () => {
-		expect(loadSettings()).toEqual({ theme: 'Original', showId: false, sound: false });
+		expect(loadSettings()).toEqual({
+			theme: 'Original',
+			showId: false,
+			sound: false,
+			showStats: false
+		});
 	});
 
 	it('saveSettings is a no-op that does not throw', () => {
-		expect(() => saveSettings({ theme: 'Original', showId: false, sound: false })).not.toThrow();
+		expect(() =>
+			saveSettings({ theme: 'Original', showId: false, sound: false, showStats: false })
+		).not.toThrow();
 	});
 });
 
@@ -47,5 +62,16 @@ describe('saved-game persistence (SSR-safe, TODO-022)', () => {
 	it('saveGame and clearGame are no-ops that do not throw', () => {
 		expect(() => saveGame('socrates-examined', { A: 'X' })).not.toThrow();
 		expect(() => clearGame()).not.toThrow();
+	});
+});
+
+describe('solved-puzzle persistence (SSR-safe, TODO-023)', () => {
+	it('loadSolved returns an empty set when storage is unavailable', () => {
+		expect(loadSolved()).toEqual(new Set());
+	});
+
+	it('saveSolved and clearSolved are no-ops that do not throw', () => {
+		expect(() => saveSolved(new Set(['a', 'b']))).not.toThrow();
+		expect(() => clearSolved()).not.toThrow();
 	});
 });

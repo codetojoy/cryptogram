@@ -49,23 +49,71 @@ export function clearSeen(): void {
 }
 
 /**
+ * The ids of puzzles the player has actually SOLVED (TODO-023), tracked separately
+ * from `seen` because the two are not the same thing: `seen` is marked both when a
+ * puzzle is solved *and* when it is skipped via "Next puzzle", so it cannot tell an
+ * accomplishment from a surrender. Counting `seen` as "solved" would silently
+ * flatter the player.
+ *
+ * A Set of ids rather than a counter, so re-solving the same puzzle via "Play again"
+ * cannot inflate the total. Deliberately NOT backfilled from `seen` — the history to
+ * do so honestly doesn't exist, and an inflated "solved" number is worse than one
+ * that starts at zero.
+ */
+const SOLVED_KEY = 'cryptogram.solved.v1';
+
+export function loadSolved(): Set<string> {
+	if (!browser) return new Set();
+	try {
+		const raw = localStorage.getItem(SOLVED_KEY);
+		if (!raw) return new Set();
+		const parsed = JSON.parse(raw);
+		if (!Array.isArray(parsed)) return new Set();
+		return new Set(parsed.filter((id): id is string => typeof id === 'string'));
+	} catch {
+		return new Set();
+	}
+}
+
+export function saveSolved(solved: Set<string>): void {
+	if (!browser) return;
+	try {
+		localStorage.setItem(SOLVED_KEY, JSON.stringify([...solved]));
+	} catch {
+		// Storage may be unavailable (private browsing); stats just won't persist.
+	}
+}
+
+/** Forget every solved puzzle (the "Start over" action resets stats too). */
+export function clearSolved(): void {
+	if (!browser) return;
+	try {
+		localStorage.removeItem(SOLVED_KEY);
+	} catch {
+		// Nothing to do — storage is unavailable.
+	}
+}
+
+/**
  * Display & interaction preferences (TODO-010). The theme is a plain string
  * (not a union) so adding a theme later is a data change, not a type change.
  * `showId` is a debug toggle (TODO-016): when on, the play screen offers a link
  * that reveals the current puzzle's id. `sound` toggles the optional audio cues
- * (TODO-020); off by default.
+ * (TODO-020); off by default. `showStats` toggles the discreet solved/played footer
+ * on the play screen (TODO-023); off by default, like every other toggle.
  */
 export interface Settings {
 	theme: string;
 	showId: boolean;
 	sound: boolean;
+	showStats: boolean;
 }
 
 const SETTINGS_KEY = 'cryptogram.settings.v1';
 
 /** The defaults a fresh install (or unavailable storage) falls back to. */
 export function defaultSettings(): Settings {
-	return { theme: 'Original', showId: false, sound: false };
+	return { theme: 'Original', showId: false, sound: false, showStats: false };
 }
 
 /**
@@ -84,7 +132,8 @@ export function loadSettings(): Settings {
 		return {
 			theme: typeof parsed.theme === 'string' ? parsed.theme : d.theme,
 			showId: typeof parsed.showId === 'boolean' ? parsed.showId : d.showId,
-			sound: typeof parsed.sound === 'boolean' ? parsed.sound : d.sound
+			sound: typeof parsed.sound === 'boolean' ? parsed.sound : d.sound,
+			showStats: typeof parsed.showStats === 'boolean' ? parsed.showStats : d.showStats
 		};
 	} catch {
 		return d;
