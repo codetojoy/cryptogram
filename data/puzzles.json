@@ -920,6 +920,646 @@
 			"attribution": "Alice Munro",
 			"category": "Canada",
 			"hint": "A Nobel laureate on the infinite depth hidden in ordinary life."
+		},
+		{
+			"id": "seneca-suffer-imagination",
+			"display_num": "0116",
+			"text": "We suffer more often in imagination than in reality.",
+			"attribution": "Seneca",
+			"category": "Philosophy",
+			"hint": "A Roman Stoic on fears that never come to pass."
+		},
+		{
+			"id": "epictetus-views-of-things",
+			"display_num": "0117",
+			"text": "Men are disturbed not by things, but by the views they take of them.",
+			"attribution": "Epictetus",
+			"category": "Philosophy",
+			"hint": "A former slave turned Stoic teacher on judgment, not fact, upsetting us."
+		},
+		{
+			"id": "marcus-aurelius-quality-thoughts",
+			"display_num": "0118",
+			"text": "The happiness of your life depends upon the quality of your thoughts.",
+			"attribution": "Marcus Aurelius",
+			"category": "Philosophy",
+			"hint": "An emperor on the mind as the wellspring of contentment."
+		},
+		{
+			"id": "kant-starry-heavens",
+			"display_num": "0119",
+			"text": "The starry heavens above me and the moral law within me.",
+			"attribution": "Immanuel Kant",
+			"category": "Philosophy",
+			"hint": "A Prussian thinker awed by the sky outside and the conscience inside."
+		},
+		{
+			"id": "hume-reason-passions",
+			"display_num": "0120",
+			"text": "Reason is, and ought only to be, the slave of the passions.",
+			"attribution": "David Hume",
+			"category": "Philosophy",
+			"hint": "A Scottish empiricist puts feeling in charge of logic."
+		},
+		{
+			"id": "beauvoir-becomes-woman",
+			"display_num": "0121",
+			"text": "One is not born, but rather becomes, a woman.",
+			"attribution": "Simone de Beauvoir",
+			"category": "Philosophy",
+			"hint": "A twentieth-century feminist philosopher on identity as shaped by society."
+		},
+		{
+			"id": "spinoza-peace-virtue",
+			"display_num": "0122",
+			"text": "Peace is not an absence of war, it is a virtue, a state of mind.",
+			"attribution": "Spinoza",
+			"category": "Philosophy",
+			"hint": "A Dutch rationalist insists calm is an inner disposition, not merely quiet guns."
+		},
+		{
+			"id": "heraclitus-same-river",
+			"display_num": "0123",
+			"text": "No man ever steps in the same river twice.",
+			"attribution": "Heraclitus",
+			"category": "Philosophy",
+			"hint": "An ancient Greek thinker on ceaseless flux."
+		},
+		{
+			"id": "kierkegaard-backwards-forwards",
+			"display_num": "0124",
+			"text": "Life can only be understood backwards; but it must be lived forwards.",
+			"attribution": "Kierkegaard",
+			"category": "Philosophy",
+			"hint": "A Danish thinker on the direction of meaning versus the direction of living."
+		},
+		{
+			"id": "sartre-freedom-what-you-do",
+			"display_num": "0125",
+			"text": "Freedom is what you do with what has been done to you.",
+			"attribution": "Sartre",
+			"category": "Philosophy",
+			"hint": "A French existentialist on the room left inside our circumstances."
+		},
+		{
+			"id": "oh-susanna",
+			"display_num": "0126",
+			"text": "Oh, Susanna, don't you cry for me.",
+			"attribution": "Oh Susanna",
+			"category": "Lyrics",
+			"hint": "A banjo tune of a traveler reassuring his sweetheart."
+		},
+		{
+			"id": "my-darling-clementine",
+			"display_num": "0127",
+			"text": "Oh my darling, oh my darling, oh my darling Clementine.",
+			"attribution": "My Darling Clementine",
+			"category": "Lyrics",
+			"hint": "A gold rush ballad lamenting a miner's daughter lost to the water."
+		},
+		{
+			"id": "simple-gifts",
+			"display_num": "0128",
+			"text": "Tis the gift to be simple, tis the gift to be free.",
+			"attribution": "Simple Gifts",
+			"category": "Lyrics",
+			"hint": "A Shaker hymn praising plainness and liberty."
+		},
+		{
+			"id": "rock-of-ages",
+			"display_num": "0129",
+			"text": "Rock of ages, cleft for me, let me hide myself in thee.",
+			"attribution": "Rock of Ages",
+			"category": "Lyrics",
+			"hint": "A hymn seeking shelter inside a cloven stone."
+		},
+		{
+			"id": "shall-we-gather-at-the-river",
+			"display_num": "0130",
+			"text": "Shall we gather at the river, where bright angel feet have trod.",
+			"attribution": "Shall We Gather at the River",
+			"category": "Lyrics",
+			"hint": "A hymn picturing the blessed assembling on a heavenly shore."
+		},
+		{
+			"id": "yankee-doodle",
+			"display_num": "0131",
+			"text": "Yankee Doodle went to town, riding on a pony.",
+			"attribution": "Yankee Doodle",
+			"category": "Lyrics",
+			"hint": "A colonial marching air about a rustic and his feathered cap."
+		},
+		{
+			"id": "loch-lomond",
+			"display_num": "0132",
+			"text": "You take the high road and I'll take the low road.",
+			"attribution": "Loch Lomond",
+			"category": "Lyrics",
+			"hint": "A Scottish song of two parted soldiers, one going by the fairy path."
+		},
+		{
+			"id": "red-river-valley",
+			"display_num": "0133",
+			"text": "Come and sit by my side if you love me, do not hasten to bid me adieu.",
+			"attribution": "Red River Valley",
+			"category": "Lyrics",
+			"hint": "A cowboy ballad pleading against a swift farewell."
+		},
+		{
+			"id": "down-in-the-valley",
+			"display_num": "0134",
+			"text": "Down in the valley, the valley so low, hang your head over, hear the wind blow.",
+			"attribution": "Down in the Valley",
+			"category": "Lyrics",
+			"hint": "A mountain folk lament sung from a lonesome hollow."
+		},
+		{
+			"id": "wayfaring-stranger",
+			"display_num": "0135",
+			"text": "I am a poor wayfaring stranger, traveling through this world of woe.",
+			"attribution": "Wayfaring Stranger",
+			"category": "Lyrics",
+			"hint": "An American spiritual of a pilgrim bound for a brighter country."
+		},
+		{
+			"id": "micah-act-justly",
+			"display_num": "0136",
+			"text": "Act justly, love mercy, and walk humbly with your God.",
+			"attribution": "Micah",
+			"category": "Religion",
+			"hint": "A prophet's summary of all that is required of us."
+		},
+		{
+			"id": "james-faith-deeds",
+			"display_num": "0137",
+			"text": "Faith without deeds is dead.",
+			"attribution": "James",
+			"category": "Religion",
+			"hint": "An epistle insisting belief must show itself in action."
+		},
+		{
+			"id": "john-truth-set-you-free",
+			"display_num": "0138",
+			"text": "You will know the truth, and the truth will set you free.",
+			"attribution": "John",
+			"category": "Religion",
+			"hint": "A gospel promise of liberation through what is real."
+		},
+		{
+			"id": "psalms-lamp-for-my-feet",
+			"display_num": "0139",
+			"text": "Your word is a lamp for my feet, a light on my path.",
+			"attribution": "Psalms",
+			"category": "Religion",
+			"hint": "A poet of scripture on guidance through darkness."
+		},
+		{
+			"id": "proverbs-gentle-answer",
+			"display_num": "0140",
+			"text": "A gentle answer turns away wrath, but a harsh word stirs up anger.",
+			"attribution": "Proverbs",
+			"category": "Religion",
+			"hint": "A saying on how softness cools a quarrel."
+		},
+		{
+			"id": "matthew-treasure-heart",
+			"display_num": "0141",
+			"text": "For where your treasure is, there your heart will be also.",
+			"attribution": "Matthew",
+			"category": "Religion",
+			"hint": "A gospel line on what our devotion follows."
+		},
+		{
+			"id": "genesis-brothers-keeper",
+			"display_num": "0142",
+			"text": "Am I my brother's keeper?",
+			"attribution": "Genesis",
+			"category": "Religion",
+			"hint": "The first evasion, spoken after the first murder."
+		},
+		{
+			"id": "isaiah-swords-into-plowshares",
+			"display_num": "0143",
+			"text": "They will beat their swords into plowshares and their spears into pruning hooks.",
+			"attribution": "Isaiah",
+			"category": "Religion",
+			"hint": "A vision of weapons remade as farm tools."
+		},
+		{
+			"id": "luke-golden-rule",
+			"display_num": "0144",
+			"text": "Do to others as you would have them do to you.",
+			"attribution": "Luke",
+			"category": "Religion",
+			"hint": "The rule of reciprocity, stated plainly."
+		},
+		{
+			"id": "ecclesiastes-nothing-new",
+			"display_num": "0145",
+			"text": "There is nothing new under the sun.",
+			"attribution": "Ecclesiastes",
+			"category": "Religion",
+			"hint": "A weary verdict on the repetition of history."
+		},
+		{
+			"id": "thoreau-castles-in-the-air",
+			"display_num": "0146",
+			"text": "If you have built castles in the air, that is where they should be.",
+			"attribution": "Thoreau",
+			"category": "General",
+			"hint": "An American naturalist on grand dreams awaiting a foundation."
+		},
+		{
+			"id": "helen-keller-together",
+			"display_num": "0147",
+			"text": "Alone we can do so little; together we can do so much.",
+			"attribution": "Helen Keller",
+			"category": "General",
+			"hint": "A deafblind author on the power of shared effort."
+		},
+		{
+			"id": "edison-perspiration",
+			"display_num": "0148",
+			"text": "Genius is one percent inspiration and ninety-nine percent perspiration.",
+			"attribution": "Thomas Edison",
+			"category": "General",
+			"hint": "A prolific inventor credits sweat over brilliance."
+		},
+		{
+			"id": "curie-nothing-feared",
+			"display_num": "0149",
+			"text": "Nothing in life is to be feared, it is only to be understood.",
+			"attribution": "Marie Curie",
+			"category": "General",
+			"hint": "A pioneering physicist urging comprehension over dread."
+		},
+		{
+			"id": "da-vinci-simplicity",
+			"display_num": "0150",
+			"text": "Simplicity is the ultimate sophistication.",
+			"attribution": "Leonardo da Vinci",
+			"category": "General",
+			"hint": "A Renaissance polymath on the refinement of the plain."
+		},
+		{
+			"id": "franklin-involve-me",
+			"display_num": "0151",
+			"text": "Tell me and I forget. Teach me and I remember. Involve me and I learn.",
+			"attribution": "Benjamin Franklin",
+			"category": "General",
+			"hint": "An American printer and statesman on the ladder of instruction."
+		},
+		{
+			"id": "earhart-decision-to-act",
+			"display_num": "0152",
+			"text": "The most difficult thing is the decision to act, the rest is merely tenacity.",
+			"attribution": "Amelia Earhart",
+			"category": "General",
+			"hint": "An aviator on the hardest step being the first."
+		},
+		{
+			"id": "ford-think-you-can",
+			"display_num": "0153",
+			"text": "Whether you think you can or you think you cannot, you are right.",
+			"attribution": "Henry Ford",
+			"category": "General",
+			"hint": "An automaker on belief becoming reality."
+		},
+		{
+			"id": "aesop-slow-and-steady",
+			"display_num": "0154",
+			"text": "Slow and steady wins the race.",
+			"attribution": "Aesop",
+			"category": "General",
+			"hint": "A fabulist draws the moral of a famous mismatch."
+		},
+		{
+			"id": "rosa-parks-never-fearful",
+			"display_num": "0155",
+			"text": "You must never be fearful about what you are doing when it is right.",
+			"attribution": "Rosa Parks",
+			"category": "General",
+			"hint": "A civil rights icon on courage in a just cause."
+		},
+		{
+			"id": "capablanca-good-player-lucky",
+			"display_num": "0156",
+			"text": "The good player is always lucky.",
+			"attribution": "Capablanca",
+			"category": "Chess",
+			"hint": "A Cuban champion on skill dressed up as fortune."
+		},
+		{
+			"id": "tartakower-sacrifice-opponents-men",
+			"display_num": "0157",
+			"text": "It is always better to sacrifice your opponent's men.",
+			"attribution": "Tartakower",
+			"category": "Chess",
+			"hint": "A witty grandmaster on whose pieces to give up."
+		},
+		{
+			"id": "philidor-pawns-soul",
+			"display_num": "0158",
+			"text": "The pawns are the soul of chess.",
+			"attribution": "Philidor",
+			"category": "Chess",
+			"hint": "An eighteenth-century master exalts the humblest pieces."
+		},
+		{
+			"id": "spassky-sense-the-climax",
+			"display_num": "0159",
+			"text": "The best indicator of a chess player's form is his ability to sense the climax.",
+			"attribution": "Boris Spassky",
+			"category": "Chess",
+			"hint": "A Soviet champion on knowing the decisive moment."
+		},
+		{
+			"id": "euwe-strategy-tactics",
+			"display_num": "0160",
+			"text": "Strategy requires thought, tactics require observation.",
+			"attribution": "Max Euwe",
+			"category": "Chess",
+			"hint": "A Dutch world champion distinguishes planning from seeing."
+		},
+		{
+			"id": "korchnoi-no-grandmaster-normal",
+			"display_num": "0161",
+			"text": "No chess grandmaster is normal; they only differ in the extent of their madness.",
+			"attribution": "Viktor Korchnoi",
+			"category": "Chess",
+			"hint": "A famously combative defector on the eccentricity of the elite."
+		},
+		{
+			"id": "botvinnik-art-of-analysis",
+			"display_num": "0162",
+			"text": "Chess is the art of analysis.",
+			"attribution": "Botvinnik",
+			"category": "Chess",
+			"hint": "A Soviet patriarch treats the board as a laboratory."
+		},
+		{
+			"id": "spielmann-book-magician-machine",
+			"display_num": "0163",
+			"text": "Play the opening like a book, the middle game like a magician, the endgame like a machine.",
+			"attribution": "Rudolf Spielmann",
+			"category": "Chess",
+			"hint": "An attacking master prescribes three different moods."
+		},
+		{
+			"id": "tarrasch-gods-middlegame",
+			"display_num": "0164",
+			"text": "Before the endgame, the gods have placed the middlegame.",
+			"attribution": "Tarrasch",
+			"category": "Chess",
+			"hint": "A classical German master on the trial that comes first."
+		},
+		{
+			"id": "karpov-art-science-sport",
+			"display_num": "0165",
+			"text": "Chess is everything: art, science, and sport.",
+			"attribution": "Anatoly Karpov",
+			"category": "Chess",
+			"hint": "A patient positional champion on the many faces of the game."
+		},
+		{
+			"id": "twain-giving-up-smoking",
+			"display_num": "0166",
+			"text": "Giving up smoking is easy. I've done it hundreds of times.",
+			"attribution": "Mark Twain",
+			"category": "Humor",
+			"hint": "A riverboat wit on the ease of a repeated resolution."
+		},
+		{
+			"id": "wilde-resist-temptation",
+			"display_num": "0167",
+			"text": "I can resist everything except temptation.",
+			"attribution": "Oscar Wilde",
+			"category": "Humor",
+			"hint": "An Irish playwright confesses a single weakness."
+		},
+		{
+			"id": "dangerfield-second-opinion",
+			"display_num": "0168",
+			"text": "My psychiatrist told me I was crazy and I said I want a second opinion.",
+			"attribution": "Rodney Dangerfield",
+			"category": "Humor",
+			"hint": "A tie-tugging comic doubts his diagnosis."
+		},
+		{
+			"id": "woody-allen-afraid-of-death",
+			"display_num": "0169",
+			"text": "I am not afraid of death; I just don't want to be there when it happens.",
+			"attribution": "Woody Allen",
+			"category": "Humor",
+			"hint": "A neurotic filmmaker would rather dodge the appointment."
+		},
+		{
+			"id": "parker-brevity-lingerie",
+			"display_num": "0170",
+			"text": "Brevity is the soul of lingerie.",
+			"attribution": "Dorothy Parker",
+			"category": "Humor",
+			"hint": "An Algonquin Round Table wit puns on a famous maxim."
+		},
+		{
+			"id": "yogi-berra-fork-in-the-road",
+			"display_num": "0171",
+			"text": "When you come to a fork in the road, take it.",
+			"attribution": "Yogi Berra",
+			"category": "Humor",
+			"hint": "A baseball catcher's useless directions."
+		},
+		{
+			"id": "milligan-prove-money",
+			"display_num": "0172",
+			"text": "All I ask is the chance to prove that money can't make me happy.",
+			"attribution": "Spike Milligan",
+			"category": "Humor",
+			"hint": "A zany comic volunteers for a difficult experiment."
+		},
+		{
+			"id": "seinfeld-casket-eulogy",
+			"display_num": "0173",
+			"text": "People would rather be in the casket than delivering the eulogy.",
+			"attribution": "Jerry Seinfeld",
+			"category": "Humor",
+			"hint": "An observational comic ranks public speaking below death."
+		},
+		{
+			"id": "tomlin-rat-race",
+			"display_num": "0174",
+			"text": "The trouble with the rat race is that even if you win, you're still a rat.",
+			"attribution": "Lily Tomlin",
+			"category": "Humor",
+			"hint": "A comic actress on the hollow prize of ambition."
+		},
+		{
+			"id": "youngman-die-by-four",
+			"display_num": "0175",
+			"text": "I've got all the money I'll ever need if I die by four o'clock.",
+			"attribution": "Henny Youngman",
+			"category": "Humor",
+			"hint": "A one-liner king describes a very tight budget."
+		},
+		{
+			"id": "brillat-savarin-tell-me-what-you-eat",
+			"display_num": "0176",
+			"text": "Tell me what you eat, and I will tell you what you are.",
+			"attribution": "Brillat-Savarin",
+			"category": "Cuisine",
+			"hint": "A French gastronome on diet as identity."
+		},
+		{
+			"id": "fisher-first-we-eat",
+			"display_num": "0177",
+			"text": "First we eat, then we do everything else.",
+			"attribution": "M. F. K. Fisher",
+			"category": "Cuisine",
+			"hint": "An American food writer sets her priorities at the table."
+		},
+		{
+			"id": "adria-act-of-love",
+			"display_num": "0178",
+			"text": "Cooking is an act of love.",
+			"attribution": "Ferran Adria",
+			"category": "Cuisine",
+			"hint": "A Catalan avant-garde chef on the spirit behind a dish."
+		},
+		{
+			"id": "pepin-cooking-not-difficult",
+			"display_num": "0179",
+			"text": "Cooking is not difficult. Everyone has taste, even if they don't realize it.",
+			"attribution": "Jacques Pepin",
+			"category": "Cuisine",
+			"hint": "A French-born teacher insists the kitchen is within reach."
+		},
+		{
+			"id": "curnonsky-taste-like-themselves",
+			"display_num": "0180",
+			"text": "Cooking is when things taste like themselves.",
+			"attribution": "Curnonsky",
+			"category": "Cuisine",
+			"hint": "A gourmand's rule of purity at the stove."
+		},
+		{
+			"id": "elizabeth-david-honest-sincere",
+			"display_num": "0181",
+			"text": "Good cooking is honest, sincere and simple.",
+			"attribution": "Elizabeth David",
+			"category": "Cuisine",
+			"hint": "An English writer who taught a rationed nation about the Mediterranean."
+		},
+		{
+			"id": "brillat-savarin-new-dish",
+			"display_num": "0182",
+			"text": "The discovery of a new dish does more for human happiness than the discovery of a star.",
+			"attribution": "Brillat-Savarin",
+			"category": "Cuisine",
+			"hint": "A gourmet ranks the kitchen above the observatory."
+		},
+		{
+			"id": "julia-child-enough-butter",
+			"display_num": "0183",
+			"text": "With enough butter, anything is good.",
+			"attribution": "Julia Child",
+			"category": "Cuisine",
+			"hint": "A doyenne of French cookery names her favorite fat."
+		},
+		{
+			"id": "james-beard-good-bread",
+			"display_num": "0184",
+			"text": "Good bread is the most fundamentally satisfying of all foods.",
+			"attribution": "James Beard",
+			"category": "Cuisine",
+			"hint": "An American cooking authority praises the simplest loaf."
+		},
+		{
+			"id": "bourdain-skills-character",
+			"display_num": "0185",
+			"text": "Skills can be taught. Character you either have or you do not have.",
+			"attribution": "Anthony Bourdain",
+			"category": "Cuisine",
+			"hint": "A blunt chef and traveler on what a kitchen cannot instill."
+		},
+		{
+			"id": "leonard-cohen-crack-light",
+			"display_num": "0186",
+			"text": "There is a crack in everything. That's how the light gets in.",
+			"attribution": "Leonard Cohen",
+			"category": "Canada",
+			"hint": "A Montreal poet and singer on imperfection as an opening."
+		},
+		{
+			"id": "glenn-gould-state-of-wonder",
+			"display_num": "0187",
+			"text": "The purpose of art is the lifelong construction of a state of wonder.",
+			"attribution": "Glenn Gould",
+			"category": "Canada",
+			"hint": "A reclusive pianist on the slow building of awe."
+		},
+		{
+			"id": "leacock-believer-in-luck",
+			"display_num": "0188",
+			"text": "I am a great believer in luck, and I find the harder I work, the more I have of it.",
+			"attribution": "Stephen Leacock",
+			"category": "Canada",
+			"hint": "A humorist and economist ties fortune to effort."
+		},
+		{
+			"id": "nellie-mcclung-never-retract",
+			"display_num": "0189",
+			"text": "Never retract, never explain, never apologize. Get things done and let them howl.",
+			"attribution": "Nellie McClung",
+			"category": "Canada",
+			"hint": "A suffragist offers women advice for facing outrage."
+		},
+		{
+			"id": "banting-insulin-world",
+			"display_num": "0190",
+			"text": "Insulin does not belong to me, it belongs to the world.",
+			"attribution": "Frederick Banting",
+			"category": "Canada",
+			"hint": "A discoverer refuses to profit from a life-saving remedy."
+		},
+		{
+			"id": "emily-carr-your-own",
+			"display_num": "0191",
+			"text": "Be careful that you do not write or paint anything that is not your own.",
+			"attribution": "Emily Carr",
+			"category": "Canada",
+			"hint": "A West Coast painter warns against a borrowed vision."
+		},
+		{
+			"id": "robertson-davies-eye-sees",
+			"display_num": "0192",
+			"text": "The eye sees only what the mind is prepared to comprehend.",
+			"attribution": "Robertson Davies",
+			"category": "Canada",
+			"hint": "A bearded novelist on perception limited by understanding."
+		},
+		{
+			"id": "pearson-ignorance-fear",
+			"display_num": "0193",
+			"text": "Misunderstanding arising from ignorance breeds fear, and fear is the enemy of peace.",
+			"attribution": "Lester B. Pearson",
+			"category": "Canada",
+			"hint": "A diplomat and prime minister on the roots of conflict."
+		},
+		{
+			"id": "bethune-function-of-artist",
+			"display_num": "0194",
+			"text": "The function of the artist is to disturb.",
+			"attribution": "Norman Bethune",
+			"category": "Canada",
+			"hint": "A surgeon and revolutionary on the duty of art."
+		},
+		{
+			"id": "michael-j-fox-excellence",
+			"display_num": "0195",
+			"text": "Excellence I can reach for; perfection is God's business.",
+			"attribution": "Michael J. Fox",
+			"category": "Canada",
+			"hint": "An actor living with illness sets himself an attainable aim."
 		}
 	]
 }

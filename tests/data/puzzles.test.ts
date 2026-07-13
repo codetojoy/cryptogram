@@ -49,42 +49,40 @@ describe('puzzle data', () => {
 		}
 	});
 
-	it('includes fifteen Philosophy puzzles (TODO-004 + TODO-005)', () => {
-		const philosophy = puzzles.filter((p) => p.category === 'Philosophy');
-		expect(philosophy.length).toBe(15);
-	});
+	// TODO-024 added ten more to each of eight categories. The three it left alone
+	// (Music, Music [Guitar], Shakespeare) still stand at ten.
+	const count = (category: string) => puzzles.filter((p) => p.category === category).length;
 
-	it('includes ten each of Music, Lyrics and Religion (TODO-006)', () => {
-		const count = (category: string) => puzzles.filter((p) => p.category === category).length;
-		expect(count('Music'), 'Music').toBe(10);
-		expect(count('Lyrics'), 'Lyrics').toBe(10);
-		expect(count('Religion'), 'Religion').toBe(10);
-	});
-
-	it('includes ten each of General, Chess and Music [Guitar] (TODO-007)', () => {
-		const count = (category: string) => puzzles.filter((p) => p.category === category).length;
-		expect(count('General'), 'General').toBe(10);
-		expect(count('Chess'), 'Chess').toBe(10);
-		expect(count('Music [Guitar]'), 'Music [Guitar]').toBe(10);
-	});
-
-	it('includes ten Humor puzzles and retired the proof-of-concept seed (TODO-013)', () => {
-		expect(puzzles.filter((p) => p.category === 'Humor').length).toBe(10);
+	it('retired the proof-of-concept seed (TODO-013)', () => {
 		expect(puzzles.some((p) => p.id === 'lenny-duchovny')).toBe(false);
 	});
 
-	it('includes ten each of Cuisine and Shakespeare (TODO-015)', () => {
-		const count = (category: string) => puzzles.filter((p) => p.category === category).length;
-		expect(count('Cuisine'), 'Cuisine').toBe(10);
+	it('includes twenty-five Philosophy puzzles (TODO-005 + TODO-024)', () => {
+		expect(count('Philosophy')).toBe(25);
+	});
+
+	it('includes twenty each of the eight categories grown by TODO-024', () => {
+		for (const category of [
+			'Lyrics',
+			'Religion',
+			'General',
+			'Chess',
+			'Humor',
+			'Cuisine',
+			'Canada'
+		]) {
+			expect(count(category), category).toBe(20);
+		}
+	});
+
+	it('leaves Music, Music [Guitar] and Shakespeare at ten (TODO-006, TODO-007, TODO-015)', () => {
+		expect(count('Music'), 'Music').toBe(10);
+		expect(count('Music [Guitar]'), 'Music [Guitar]').toBe(10);
 		expect(count('Shakespeare'), 'Shakespeare').toBe(10);
 	});
 
-	it('includes ten Canada puzzles (TODO-019)', () => {
-		expect(puzzles.filter((p) => p.category === 'Canada').length).toBe(10);
-	});
-
-	it('has one hundred and fifteen puzzles in total (TODO-019)', () => {
-		expect(puzzles.length).toBe(115);
+	it('has one hundred and ninety-five puzzles in total (TODO-024)', () => {
+		expect(puzzles.length).toBe(195);
 	});
 
 	it('numbers every puzzle 0001.. sequentially in array order (TODO-017)', () => {
