@@ -49,30 +49,28 @@ describe('puzzle data', () => {
 		}
 	});
 
-	// TODO-024 added ten more to each of eight categories. The three it left alone
-	// (Music, Music [Guitar], Shakespeare) still stand at ten.
+	// TODO-025 added ten more to six categories on top of TODO-024's eight.
+	// Philosophy now 35; the five categories in both rounds are at 30; Lyrics and
+	// Chess (grown only in TODO-024) hold at 20; the untouched three stay at 10.
 	const count = (category: string) => puzzles.filter((p) => p.category === category).length;
 
 	it('retired the proof-of-concept seed (TODO-013)', () => {
 		expect(puzzles.some((p) => p.id === 'lenny-duchovny')).toBe(false);
 	});
 
-	it('includes twenty-five Philosophy puzzles (TODO-005 + TODO-024)', () => {
-		expect(count('Philosophy')).toBe(25);
+	it('includes thirty-five Philosophy puzzles (TODO-005, TODO-024, TODO-025)', () => {
+		expect(count('Philosophy')).toBe(35);
 	});
 
-	it('includes twenty each of the eight categories grown by TODO-024', () => {
-		for (const category of [
-			'Lyrics',
-			'Religion',
-			'General',
-			'Chess',
-			'Humor',
-			'Cuisine',
-			'Canada'
-		]) {
-			expect(count(category), category).toBe(20);
+	it('includes thirty each of the five categories grown by TODO-025', () => {
+		for (const category of ['Religion', 'General', 'Humor', 'Cuisine', 'Canada']) {
+			expect(count(category), category).toBe(30);
 		}
+	});
+
+	it('leaves Lyrics and Chess at twenty (grown in TODO-024, not TODO-025)', () => {
+		expect(count('Lyrics'), 'Lyrics').toBe(20);
+		expect(count('Chess'), 'Chess').toBe(20);
 	});
 
 	it('leaves Music, Music [Guitar] and Shakespeare at ten (TODO-006, TODO-007, TODO-015)', () => {
@@ -81,8 +79,8 @@ describe('puzzle data', () => {
 		expect(count('Shakespeare'), 'Shakespeare').toBe(10);
 	});
 
-	it('has one hundred and ninety-five puzzles in total (TODO-024)', () => {
-		expect(puzzles.length).toBe(195);
+	it('has two hundred and fifty-five puzzles in total (TODO-025)', () => {
+		expect(puzzles.length).toBe(255);
 	});
 
 	it('numbers every puzzle 0001.. sequentially in array order (TODO-017)', () => {

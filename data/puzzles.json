@@ -1560,6 +1560,486 @@
 			"attribution": "Michael J. Fox",
 			"category": "Canada",
 			"hint": "An actor living with illness sets himself an attainable aim."
+		},
+		{
+			"id": "aristotle-whole-greater",
+			"display_num": "0196",
+			"text": "The whole is greater than the sum of its parts.",
+			"attribution": "Aristotle",
+			"category": "Philosophy",
+			"hint": "A classical Greek thinker on how combined things exceed a mere tally."
+		},
+		{
+			"id": "wittgenstein-limits-language",
+			"display_num": "0197",
+			"text": "The limits of my language mean the limits of my world.",
+			"attribution": "Wittgenstein",
+			"category": "Philosophy",
+			"hint": "An Austrian logician on how words bound what we can grasp."
+		},
+		{
+			"id": "nietzsche-gaze-into-abyss",
+			"display_num": "0198",
+			"text": "If you gaze long into an abyss, the abyss also gazes into you.",
+			"attribution": "Nietzsche",
+			"category": "Philosophy",
+			"hint": "A German thinker warns that studying darkness changes the student."
+		},
+		{
+			"id": "plato-beginning-most-important",
+			"display_num": "0199",
+			"text": "The beginning is the most important part of the work.",
+			"attribution": "Plato",
+			"category": "Philosophy",
+			"hint": "An Athenian founder of the Academy on why a strong start decides much."
+		},
+		{
+			"id": "confucius-move-a-mountain",
+			"display_num": "0200",
+			"text": "The man who moves a mountain begins by carrying away small stones.",
+			"attribution": "Confucius",
+			"category": "Philosophy",
+			"hint": "A Chinese sage on vast tasks tackled one pebble at a time."
+		},
+		{
+			"id": "aurelius-obstacle-is-way",
+			"display_num": "0201",
+			"text": "The impediment to action advances action. What stands in the way becomes the way.",
+			"attribution": "Marcus Aurelius",
+			"category": "Philosophy",
+			"hint": "A Stoic emperor on turning a barrier into a path."
+		},
+		{
+			"id": "diogenes-blush-color-virtue",
+			"display_num": "0202",
+			"text": "Blushing is the color of virtue.",
+			"attribution": "Diogenes",
+			"category": "Philosophy",
+			"hint": "A cynic who lived in a barrel praises the reddening of shame."
+		},
+		{
+			"id": "schopenhauer-talent-genius",
+			"display_num": "0203",
+			"text": "Talent hits a target no one else can hit; genius hits a target no one else can see.",
+			"attribution": "Schopenhauer",
+			"category": "Philosophy",
+			"hint": "A pessimistic German distinguishes rare skill from rarer vision."
+		},
+		{
+			"id": "lao-tzu-know-others-wisdom",
+			"display_num": "0204",
+			"text": "Knowing others is intelligence; knowing yourself is true wisdom.",
+			"attribution": "Lao Tzu",
+			"category": "Philosophy",
+			"hint": "A Taoist master ranks self-insight above reading other people."
+		},
+		{
+			"id": "aristotle-excellence-habit",
+			"display_num": "0205",
+			"text": "We are what we repeatedly do. Excellence, then, is not an act, but a habit.",
+			"attribution": "Aristotle",
+			"category": "Philosophy",
+			"hint": "A Greek philosopher roots greatness in routine rather than a single feat."
+		},
+		{
+			"id": "matthew-ask-and-given",
+			"display_num": "0206",
+			"text": "Ask and it will be given to you; seek and you will find.",
+			"attribution": "Matthew",
+			"category": "Religion",
+			"hint": "A gospel promise to those who petition and search."
+		},
+		{
+			"id": "psalms-be-still",
+			"display_num": "0207",
+			"text": "Be still, and know that I am God.",
+			"attribution": "Psalms",
+			"category": "Religion",
+			"hint": "A verse counseling quiet trust in the divine."
+		},
+		{
+			"id": "john-in-beginning-word",
+			"display_num": "0208",
+			"text": "In the beginning was the Word, and the Word was with God.",
+			"attribution": "John",
+			"category": "Religion",
+			"hint": "A gospel opening on speech present at creation."
+		},
+		{
+			"id": "proverbs-iron-sharpens",
+			"display_num": "0209",
+			"text": "As iron sharpens iron, so one person sharpens another.",
+			"attribution": "Proverbs",
+			"category": "Religion",
+			"hint": "A saying on how people hone each other like blades."
+		},
+		{
+			"id": "romans-all-things-work",
+			"display_num": "0210",
+			"text": "In all things God works for the good of those who love him.",
+			"attribution": "Romans",
+			"category": "Religion",
+			"hint": "An epistle assuring the faithful of a hidden purpose."
+		},
+		{
+			"id": "galatians-fruit-spirit",
+			"display_num": "0211",
+			"text": "The fruit of the Spirit is love, joy, peace, patience and kindness.",
+			"attribution": "Galatians",
+			"category": "Religion",
+			"hint": "An epistle names the harvest of a devout heart."
+		},
+		{
+			"id": "joshua-be-strong-courageous",
+			"display_num": "0212",
+			"text": "Be strong and courageous. Do not be afraid; do not be discouraged.",
+			"attribution": "Joshua",
+			"category": "Religion",
+			"hint": "A charge to a new leader on the eve of a great task."
+		},
+		{
+			"id": "psalms-joy-in-the-morning",
+			"display_num": "0213",
+			"text": "Weeping may stay for the night, but rejoicing comes in the morning.",
+			"attribution": "Psalms",
+			"category": "Religion",
+			"hint": "A poem promising that sorrow yields to dawn."
+		},
+		{
+			"id": "matthew-light-of-the-world",
+			"display_num": "0214",
+			"text": "You are the light of the world. A town built on a hill cannot be hidden.",
+			"attribution": "Matthew",
+			"category": "Religion",
+			"hint": "A gospel image of believers as a beacon none can conceal."
+		},
+		{
+			"id": "jeremiah-plans-to-prosper",
+			"display_num": "0215",
+			"text": "For I know the plans I have for you, plans to prosper you and not to harm you.",
+			"attribution": "Jeremiah",
+			"category": "Religion",
+			"hint": "A prophet relays a promise of a hopeful future."
+		},
+		{
+			"id": "churchill-never-give-in",
+			"display_num": "0216",
+			"text": "Never give in. Never give in. Never, never, never.",
+			"attribution": "Winston Churchill",
+			"category": "General",
+			"hint": "A wartime British leader hammers home relentless resolve."
+		},
+		{
+			"id": "einstein-life-like-bicycle",
+			"display_num": "0217",
+			"text": "Life is like riding a bicycle. To keep your balance you must keep moving.",
+			"attribution": "Albert Einstein",
+			"category": "General",
+			"hint": "A physicist compares living well to staying upright on two wheels."
+		},
+		{
+			"id": "booker-washington-obstacles",
+			"display_num": "0218",
+			"text": "Success is to be measured not by the position reached, but by the obstacles overcome.",
+			"attribution": "Booker T. Washington",
+			"category": "General",
+			"hint": "An educator born into slavery judges a life by barriers cleared, not rank gained."
+		},
+		{
+			"id": "keller-face-to-sunshine",
+			"display_num": "0219",
+			"text": "Keep your face always toward the sunshine, and shadows will fall behind you.",
+			"attribution": "Helen Keller",
+			"category": "General",
+			"hint": "A deafblind writer on facing the bright side so gloom falls away."
+		},
+		{
+			"id": "confucius-rising-every-time",
+			"display_num": "0220",
+			"text": "Our greatest glory is not in never falling, but in rising every time we fall.",
+			"attribution": "Confucius",
+			"category": "General",
+			"hint": "A Chinese sage locates honor in recovery, not perfection."
+		},
+		{
+			"id": "twain-kindness-deaf-blind",
+			"display_num": "0221",
+			"text": "Kindness is the language which the deaf can hear and the blind can see.",
+			"attribution": "Mark Twain",
+			"category": "General",
+			"hint": "An American humorist on a tongue that needs no senses."
+		},
+		{
+			"id": "roosevelt-comparison-thief-of-joy",
+			"display_num": "0222",
+			"text": "Comparison is the thief of joy.",
+			"attribution": "Theodore Roosevelt",
+			"category": "General",
+			"hint": "An American president warns against measuring yourself by others."
+		},
+		{
+			"id": "emerson-friend-be-one",
+			"display_num": "0223",
+			"text": "The only way to have a friend is to be one.",
+			"attribution": "Ralph Waldo Emerson",
+			"category": "General",
+			"hint": "A New England essayist on earning companionship by first giving it."
+		},
+		{
+			"id": "chanel-think-for-yourself",
+			"display_num": "0224",
+			"text": "The most courageous act is still to think for yourself. Aloud.",
+			"attribution": "Coco Chanel",
+			"category": "General",
+			"hint": "A French couturier calls independent judgment, voiced openly, the bravest deed."
+		},
+		{
+			"id": "lombardi-success-before-work",
+			"display_num": "0225",
+			"text": "The dictionary is the only place that success comes before work.",
+			"attribution": "Vince Lombardi",
+			"category": "General",
+			"hint": "A championship football coach on how effort must precede any reward."
+		},
+		{
+			"id": "wilde-work-curse-drinking",
+			"display_num": "0226",
+			"text": "Work is the curse of the drinking classes.",
+			"attribution": "Oscar Wilde",
+			"category": "Humor",
+			"hint": "An Irish wit inverts a temperance slogan."
+		},
+		{
+			"id": "twain-reports-death-exaggerated",
+			"display_num": "0227",
+			"text": "The reports of my death are greatly exaggerated.",
+			"attribution": "Mark Twain",
+			"category": "Humor",
+			"hint": "An American author corrects a premature obituary."
+		},
+		{
+			"id": "rivers-i-hate-housework",
+			"display_num": "0228",
+			"text": "I hate housework. You make the beds, you wash the dishes and six months later you have to start all over again.",
+			"attribution": "Joan Rivers",
+			"category": "Humor",
+			"hint": "A brash comedienne on the maddening loop of chores."
+		},
+		{
+			"id": "mason-money-buy-something",
+			"display_num": "0229",
+			"text": "I have enough money to last me the rest of my life, unless I buy something.",
+			"attribution": "Jackie Mason",
+			"category": "Humor",
+			"hint": "A stand-up comic on a fortune undone by any purchase."
+		},
+		{
+			"id": "allen-relationship-shark",
+			"display_num": "0230",
+			"text": "A relationship is like a shark. It has to constantly move forward or it dies.",
+			"attribution": "Woody Allen",
+			"category": "Humor",
+			"hint": "A neurotic filmmaker compares romance to a fish that cannot stop swimming."
+		},
+		{
+			"id": "marx-outside-of-a-dog-book",
+			"display_num": "0231",
+			"text": "Outside of a dog, a book is a man's best friend. Inside of a dog it's too dark to read.",
+			"attribution": "Groucho Marx",
+			"category": "Humor",
+			"hint": "A cigar-wielding comic puns on where a loyal companion stands."
+		},
+		{
+			"id": "wright-everywhere-walking-distance",
+			"display_num": "0232",
+			"text": "Everywhere is within walking distance if you have the time.",
+			"attribution": "Steven Wright",
+			"category": "Humor",
+			"hint": "A deadpan comic redefines how far your feet can carry you."
+		},
+		{
+			"id": "white-explaining-a-joke",
+			"display_num": "0233",
+			"text": "Analyzing humor is like dissecting a frog. Few people are interested and the frog dies of it.",
+			"attribution": "E. B. White",
+			"category": "Humor",
+			"hint": "An essayist warns that picking a joke apart kills it."
+		},
+		{
+			"id": "rogers-everybody-ignorant",
+			"display_num": "0234",
+			"text": "Everybody is ignorant, only on different subjects.",
+			"attribution": "Will Rogers",
+			"category": "Humor",
+			"hint": "A homespun humorist democratizes not knowing things."
+		},
+		{
+			"id": "bombeck-guilt-gift-keeps-giving",
+			"display_num": "0235",
+			"text": "Guilt is the gift that keeps on giving.",
+			"attribution": "Erma Bombeck",
+			"category": "Humor",
+			"hint": "A domestic humorist on a present nobody wants but everyone retains."
+		},
+		{
+			"id": "child-fear-of-failure",
+			"display_num": "0236",
+			"text": "The only real stumbling block is fear of failure. In cooking you have got to have a what-the-hell attitude.",
+			"attribution": "Julia Child",
+			"category": "Cuisine",
+			"hint": "A doyenne of French technique urges boldness at the stove."
+		},
+		{
+			"id": "shaw-love-of-food",
+			"display_num": "0237",
+			"text": "There is no love sincerer than the love of food.",
+			"attribution": "George Bernard Shaw",
+			"category": "Cuisine",
+			"hint": "An Irish playwright ranks the appetite above all other passions."
+		},
+		{
+			"id": "child-slave-to-recipes",
+			"display_num": "0238",
+			"text": "You learn to cook so that you do not have to be a slave to recipes.",
+			"attribution": "Julia Child",
+			"category": "Cuisine",
+			"hint": "A television teacher on cooking your way free of printed instructions."
+		},
+		{
+			"id": "claiborne-adult-joy",
+			"display_num": "0239",
+			"text": "Cooking is at once child's play and adult joy, and cooking done with care is an act of love.",
+			"attribution": "Craig Claiborne",
+			"category": "Cuisine",
+			"hint": "An American food critic calls the kitchen both fun and devotion."
+		},
+		{
+			"id": "colwin-eating-with-friends",
+			"display_num": "0240",
+			"text": "One of the delights of life is eating with friends.",
+			"attribution": "Laurie Colwin",
+			"category": "Cuisine",
+			"hint": "An American food writer on the pleasure of a shared meal."
+		},
+		{
+			"id": "wright-dining-artistic",
+			"display_num": "0241",
+			"text": "Dining is and always was a great artistic opportunity.",
+			"attribution": "Frank Lloyd Wright",
+			"category": "Cuisine",
+			"hint": "A famous architect calls the shared table a canvas for creativity."
+		},
+		{
+			"id": "woolf-dined-well",
+			"display_num": "0242",
+			"text": "One cannot think well, love well, sleep well, if one has not dined well.",
+			"attribution": "Virginia Woolf",
+			"category": "Cuisine",
+			"hint": "A modernist novelist ties clear minds and rest to a good supper."
+		},
+		{
+			"id": "cervantes-hunger-best-sauce",
+			"display_num": "0243",
+			"text": "Hunger is the best sauce in the world.",
+			"attribution": "Miguel de Cervantes",
+			"category": "Cuisine",
+			"hint": "A Spanish novelist names the seasoning no kitchen can supply."
+		},
+		{
+			"id": "nosrat-salt-fat-acid-heat",
+			"display_num": "0244",
+			"text": "Salt, fat, acid, and heat are the four elements of good cooking.",
+			"attribution": "Samin Nosrat",
+			"category": "Cuisine",
+			"hint": "A teacher distills the whole craft into a quartet of basics."
+		},
+		{
+			"id": "farmer-progress-cookery",
+			"display_num": "0245",
+			"text": "Progress in civilization has been accompanied by progress in cookery.",
+			"attribution": "Fannie Farmer",
+			"category": "Cuisine",
+			"hint": "An early American cookbook author links human advancement to the kitchen."
+		},
+		{
+			"id": "gretzky-procrastinate-canada",
+			"display_num": "0246",
+			"text": "Procrastination is one of the most common and deadliest of diseases.",
+			"attribution": "Wayne Gretzky",
+			"category": "Canada",
+			"hint": "A hockey great warns against putting things off."
+		},
+		{
+			"id": "laurier-freedom-nationality",
+			"display_num": "0247",
+			"text": "Canada is free and freedom is its nationality.",
+			"attribution": "Wilfrid Laurier",
+			"category": "Canada",
+			"hint": "A silver-tongued prime minister ties this country's very identity to liberty."
+		},
+		{
+			"id": "atwood-war-language-fails",
+			"display_num": "0248",
+			"text": "War is what happens when language fails.",
+			"attribution": "Margaret Atwood",
+			"category": "Canada",
+			"hint": "A novelist ties armed conflict to the breakdown of words."
+		},
+		{
+			"id": "suzuki-giant-car-brick-wall",
+			"display_num": "0249",
+			"text": "We're in a giant car heading towards a brick wall and everyone's arguing over where they will sit.",
+			"attribution": "David Suzuki",
+			"category": "Canada",
+			"hint": "A geneticist and broadcaster on humanity racing heedlessly toward disaster."
+		},
+		{
+			"id": "hansen-disability-defines",
+			"display_num": "0250",
+			"text": "It's not the disability that defines you, but how you deal with the challenges it presents.",
+			"attribution": "Rick Hansen",
+			"category": "Canada",
+			"hint": "A wheelchair athlete who circled the globe on what truly measures a person."
+		},
+		{
+			"id": "frye-book-machine",
+			"display_num": "0251",
+			"text": "The most technologically efficient machine that man has ever invented is the book.",
+			"attribution": "Northrop Frye",
+			"category": "Canada",
+			"hint": "A literary critic crowns the humble printed volume as our finest device."
+		},
+		{
+			"id": "oscar-peterson-group-sound",
+			"display_num": "0252",
+			"text": "It's the group sound that's important, even when you are playing a solo.",
+			"attribution": "Oscar Peterson",
+			"category": "Canada",
+			"hint": "A jazz pianist insists the ensemble matters more than any lone flourish."
+		},
+		{
+			"id": "hadfield-early-success",
+			"display_num": "0253",
+			"text": "Early success is a terrible teacher. You are essentially being rewarded for a lack of preparation.",
+			"attribution": "Chris Hadfield",
+			"category": "Canada",
+			"hint": "An astronaut warns that winning too soon can leave you unready."
+		},
+		{
+			"id": "berton-racism-refuge",
+			"display_num": "0254",
+			"text": "Racism is a refuge for the ignorant.",
+			"attribution": "Pierre Berton",
+			"category": "Canada",
+			"hint": "A popular historian brands prejudice a hiding place for the unthinking."
+		},
+		{
+			"id": "penny-life-is-choice",
+			"display_num": "0255",
+			"text": "Life is choice. All day, everyday. Who we talk to, where we sit, what we say, how we say it.",
+			"attribution": "Louise Penny",
+			"category": "Canada",
+			"hint": "A mystery novelist on how endless small decisions shape a person."
 		}
 	]
 }
